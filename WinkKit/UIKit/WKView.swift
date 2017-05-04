@@ -29,7 +29,7 @@ public protocol PropertiesInspectable: class {
 
 public extension PropertiesInspectable where Self : UIView {
     
-    /// Call this in didSet of `cornerRadius` property. MUST be called in `layoutSubviews()` to update the corner radius when layout chages.
+    /// Call this in `didSet` of `cornerRadius` property. MUST be called in `layoutSubviews()` to update the corner radius when layout chages.
     func updateCornerRadiusIfRounded() {
         if isRounded {
             cornerRadius = bounds.width / 2
