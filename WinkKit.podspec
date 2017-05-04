@@ -25,6 +25,9 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+  This framework have a set of UIKit subclasses to improve their implementation; 
+  it has been written to create a guideline for Wink's projects and to have some common
+  behaviours: for example `UIView` is sublcassed to provide more control in InterfaceBuilder.
                    DESC
 
   s.homepage     = "https://github.com/WINKgroup/WinkKit"
@@ -38,7 +41,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
