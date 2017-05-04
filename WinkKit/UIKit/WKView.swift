@@ -12,34 +12,34 @@ import UIKit
 @IBDesignable
 open class WKView: UIView {
     
-    @IBInspectable open var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
+    @IBInspectable open var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
         }
     }
     
-    @IBInspectable open var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
+    @IBInspectable open var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
         }
     }
     
     @IBInspectable open var borderColor: UIColor? {
-        get {
-            if let color = layer.borderColor {
-                return UIColor(cgColor: color)
-            }
-            return nil
+        didSet {
+            layer.borderColor = borderColor?.cgColor
         }
-        set {
-            layer.borderColor = newValue?.cgColor
+    }
+    
+    @IBInspectable open var isRounded: Bool = false {
+        didSet {
+            cornerRadius = bounds.width / 2
+        }
+    }
+    
+    @IBInspectable open var shadowColor: UIColor? {
+        didSet {
+            layer.shadowColor = shadowColor?.cgColor
         }
     }
     
