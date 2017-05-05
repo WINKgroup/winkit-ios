@@ -1,6 +1,6 @@
 //
 //  WKTableViewController.swift
-//  Pods
+//  WinkKit
 //
 //  Created by Rico Crescenzio on 04/05/17.
 //

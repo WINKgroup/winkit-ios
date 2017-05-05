@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F97FBC01EBCEA070064BE5F /* WKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBB81EBCEA070064BE5F /* WKButton.swift */; };
+		1F97FBC11EBCEA070064BE5F /* WKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBB91EBCEA070064BE5F /* WKImageView.swift */; };
+		1F97FBC21EBCEA070064BE5F /* WKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBBA1EBCEA070064BE5F /* WKView.swift */; };
+		1F97FBC31EBCEA070064BE5F /* WKAlertControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBBC1EBCEA070064BE5F /* WKAlertControllers.swift */; };
+		1F97FBC41EBCEA070064BE5F /* WKCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBBD1EBCEA070064BE5F /* WKCollectionViewController.swift */; };
+		1F97FBC51EBCEA070064BE5F /* WKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBBE1EBCEA070064BE5F /* WKTableViewController.swift */; };
+		1F97FBC61EBCEA070064BE5F /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97FBBF1EBCEA070064BE5F /* WKViewController.swift */; };
 		1FE91E761EBB50790056D27D /* WinkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE91E741EBB50790056D27D /* WinkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FE91E7E1EBB51770056D27D /* WKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE91E7D1EBB51770056D27D /* WKView.swift */; };
-		1FE91E9E1EBB7AC30056D27D /* WKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE91E9D1EBB7AC30056D27D /* WKButton.swift */; };
 		723890B6576DF9C0ABE394B9 /* Pods_WinkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB55D80BB0D3C4B0CB4230D /* Pods_WinkKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F97FBB81EBCEA070064BE5F /* WKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKButton.swift; sourceTree = "<group>"; };
+		1F97FBB91EBCEA070064BE5F /* WKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKImageView.swift; sourceTree = "<group>"; };
+		1F97FBBA1EBCEA070064BE5F /* WKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKView.swift; sourceTree = "<group>"; };
+		1F97FBBC1EBCEA070064BE5F /* WKAlertControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKAlertControllers.swift; sourceTree = "<group>"; };
+		1F97FBBD1EBCEA070064BE5F /* WKCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKCollectionViewController.swift; sourceTree = "<group>"; };
+		1F97FBBE1EBCEA070064BE5F /* WKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewController.swift; sourceTree = "<group>"; };
+		1F97FBBF1EBCEA070064BE5F /* WKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
 		1FE91E711EBB50790056D27D /* WinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91E741EBB50790056D27D /* WinkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinkKit.h; sourceTree = "<group>"; };
 		1FE91E751EBB50790056D27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FE91E7D1EBB51770056D27D /* WKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKView.swift; sourceTree = "<group>"; };
-		1FE91E9D1EBB7AC30056D27D /* WKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKButton.swift; sourceTree = "<group>"; };
 		20CC7AB49C38AC6C6D51CB0A /* Pods-WinkKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinkKit/Pods-WinkKit.debug.xcconfig"; sourceTree = "<group>"; };
 		3A09CA5221DE1C7DC47E9D29 /* Pods-WinkKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinkKit/Pods-WinkKit.release.xcconfig"; sourceTree = "<group>"; };
 		3AB55D80BB0D3C4B0CB4230D /* Pods_WinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +46,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F97FBB71EBCEA070064BE5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F97FBB81EBCEA070064BE5F /* WKButton.swift */,
+				1F97FBB91EBCEA070064BE5F /* WKImageView.swift */,
+				1F97FBBA1EBCEA070064BE5F /* WKView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1F97FBBB1EBCEA070064BE5F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F97FBBC1EBCEA070064BE5F /* WKAlertControllers.swift */,
+				1F97FBBD1EBCEA070064BE5F /* WKCollectionViewController.swift */,
+				1F97FBBE1EBCEA070064BE5F /* WKTableViewController.swift */,
+				1F97FBBF1EBCEA070064BE5F /* WKViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1FE91E671EBB50790056D27D = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +98,8 @@
 		1FE91E7C1EBB51680056D27D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1FE91E7D1EBB51770056D27D /* WKView.swift */,
-				1FE91E9D1EBB7AC30056D27D /* WKButton.swift */,
+				1F97FBB71EBCEA070064BE5F /* Views */,
+				1F97FBBB1EBCEA070064BE5F /* ViewControllers */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -147,6 +178,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				it,
 			);
 			mainGroup = 1FE91E671EBB50790056D27D;
 			productRefGroup = 1FE91E721EBB50790056D27D /* Products */;
@@ -206,8 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE91E7E1EBB51770056D27D /* WKView.swift in Sources */,
-				1FE91E9E1EBB7AC30056D27D /* WKButton.swift in Sources */,
+				1F97FBC31EBCEA070064BE5F /* WKAlertControllers.swift in Sources */,
+				1F97FBC21EBCEA070064BE5F /* WKView.swift in Sources */,
+				1F97FBC11EBCEA070064BE5F /* WKImageView.swift in Sources */,
+				1F97FBC41EBCEA070064BE5F /* WKCollectionViewController.swift in Sources */,
+				1F97FBC61EBCEA070064BE5F /* WKViewController.swift in Sources */,
+				1F97FBC01EBCEA070064BE5F /* WKButton.swift in Sources */,
+				1F97FBC51EBCEA070064BE5F /* WKTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
