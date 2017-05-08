@@ -117,7 +117,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit"
+  s.frameworks  = "UIKit", "Foundation", "Alamofire"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -133,6 +133,12 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.dependency "Alamofire", "~> 4.0"
+  s.dependency "AlamofireImage", "~> 3.1"
+  s.dependency "Argo"
+  s.dependency "Runes"
+  s.dependency "Curry"
+  s.dependency "UIColor_Hex_Swift", "~> 3.0.2"
+  s.dependency "DateTools"
 
 end

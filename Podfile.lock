@@ -1,3 +1,32 @@
-PODFILE CHECKSUM: a0690dd7caa74fe281085867b0ee4b325540df18
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - Argo (4.1.2):
+    - Runes (>= 4.0.0)
+  - Curry (3.0.0)
+  - DateTools (2.0.0)
+  - Runes (4.0.1)
+  - UIColor_Hex_Swift (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.1)
+  - Argo
+  - Curry
+  - DateTools
+  - Runes
+  - UIColor_Hex_Swift (~> 3.0.2)
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Argo: 5db06502fc1222d83011f574243089dab25202ff
+  Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
+
+PODFILE CHECKSUM: 5fc3f75c944ef78e167910da57068b19ddbb7cd2
 
 COCOAPODS: 1.2.0
