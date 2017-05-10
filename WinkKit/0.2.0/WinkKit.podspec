@@ -140,5 +140,8 @@ Pod::Spec.new do |s|
   s.dependency "Curry"
   s.dependency "UIColor_Hex_Swift", "~> 3.0.2"
   s.dependency "DateTools"
+  s.dependency "RxSwift"
+  s.dependency "RxCocoa"
+
 
 end
