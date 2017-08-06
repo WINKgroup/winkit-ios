@@ -14,11 +14,10 @@ import UIKit
 ///
 open class WKButton: UIButton {
     
-    // MARK: view's lifecycle methods
+    // MARK: UIView Lifecycle
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        print("layout subview")
         roundLayerIfNeeded()
         updateShadowIfNeeded()
     }

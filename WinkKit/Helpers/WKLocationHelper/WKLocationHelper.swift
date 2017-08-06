@@ -6,11 +6,10 @@
 //  Copyright © 2016 Wink. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 import Alamofire
 
-/// The different result returned when calling `getCurrentLocation(completion:)`.
+/// The different result returned when calling `getCurrentLocation(completion:)` from `WKLocationHelper`.
 public enum LocationResult {
     
     /// A location has been found.
@@ -26,7 +25,7 @@ public enum LocationResult {
     case denied
 }
 
-/// The different error that can occur when calling `getAddress(by:language:completion:)`.
+/// The different error that can occur when calling `getAddress(by:language:completion:)` from `WKLocationHelper`.
 public enum WKLocationError: WKError {
     
     /// When GoogleMaps API doesn't return any address, because you passed
@@ -37,18 +36,33 @@ public enum WKLocationError: WKError {
     case unknown
 }
 
+/// The closure called when `getCurrentLocation(completion:)` from `WKLocationHelper ends its task.
 public typealias LocationCallback = (_ result: LocationResult)->Void
+
+/// The closure called when `getAddress(by:language:completion:)` from `WKLocationHelper ends its task.
 public typealias AddressCallback = (Resource<GoogleLocation, WKLocationError>) -> Void
 
+/// This class simplify the usage of the gps to get the user current location or to
+/// get an address from a `CLLocation` by using [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro).
+/// The picker will also handle for you the permission for the localization usage.
 open class WKLocationHelper: NSObject {
     
-    public static let mapsURL = URL(string: "https://maps.googleapis.com/maps/api/geocode/json")!
+    fileprivate static let mapsURL = URL(string: "https://maps.googleapis.com/maps/api/geocode/json")!
     
     fileprivate let locationManager = CLLocationManager()
     fileprivate var callback: LocationCallback?
     
+    // MARK: - Properties
+    
+    /// The current request of the `getAddress(by:language:completion:)`. Useful if you want to cancel request.
     fileprivate(set) public var currentRequest: DataRequest?
     
+    // MARK: - Methods
+    
+    /// Get your current location only once.
+    ///
+    /// - Parameter completion: A closure called when a location is found, not found or an error occurred.
+    ///                         Check `LocationResult` for all cases.
     open func getCurrentLocation(completion: @escaping LocationCallback) {
         self.callback = completion
         
@@ -145,6 +159,9 @@ open class WKLocationHelper: NSObject {
 
 extension WKLocationHelper: CLLocationManagerDelegate {
     
+    // MARK: - CLLocationManagerDelegate
+    
+    /// Automatically called from the `CLLocationManager`. You don't have to call it.
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locationManager.location {

@@ -10,11 +10,21 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 
-/// The media type that could be picked
+/// The media type that could be picked.
+///
+/// SeeAlso: `WKMediaPickerHelper`
+///
 public enum WKMediaType {
+    
+    // MARK: - Cases
+    
     case image
     case video
     
+    // MARK: - Computed Properties
+    
+    /// Return the `UTType` based on the case of `self`.
+    /// if `self == .image` return `kUTTypeImage` otherwise return `kUTTypeMovie`.
     public var uTType: String {
         switch self {
         case .image:
@@ -74,7 +84,8 @@ public typealias WKPickerCallback = (WKPickerResult)->Void
 ///         case .pickedVideo(let media):
 ///             print(media.name)
 ///
-///         case .fileSizeExceeded(let mediaType):
+///         case .fileSizeExceeded(let mediaType, let maxSize):
+///             print("Max size exceeded: \(maxSize)")
 ///
 ///         default:
 ///             break
@@ -82,6 +93,9 @@ public typealias WKPickerCallback = (WKPickerResult)->Void
 ///     }
 ///
 open class WKMediaPickerHelper: NSObject {
+    
+    // MARK: - Properties
+    
     fileprivate let imagePicker = UIImagePickerController()
     fileprivate var completion: WKPickerCallback!
     fileprivate var activityIndicator: UIActivityIndicatorView!
@@ -108,6 +122,8 @@ open class WKMediaPickerHelper: NSObject {
         }
     }
     
+    // MARK: - Initializers
+    
     public init(imageMaxByte: Int64? = nil, videoMaxByte: Int64? = nil, allowsEditing: Bool = false, videoQuality: UIImagePickerControllerQualityType = .typeIFrame1280x720) {
         super.init()
         imagePicker.delegate = self
@@ -124,6 +140,8 @@ open class WKMediaPickerHelper: NSObject {
         imagePicker.view.addSubview(activityIndicator)
         activityIndicator.center = imagePicker.view.center
     }
+    
+    // MARK: - Methods
     
     /// Pick the media. You can specify different options of picking.
     ///
@@ -224,6 +242,8 @@ open class WKMediaPickerHelper: NSObject {
 }
 
 extension WKMediaPickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: - UIImagePickerControllerDelegate
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let mediaType = info[UIImagePickerControllerMediaType] as! String

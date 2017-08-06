@@ -8,6 +8,8 @@
 
 public extension Date {
     
+    // MARK: - Initializers
+    
     /// Create a `Date` object with the given `value` and a `dateFormat`, both as `String`.
     /// Useful when a date string is fetched from an API.
     /// 
@@ -23,6 +25,8 @@ public extension Date {
             self = date
         }
     }
+    
+    // MARK: - Computed properties
     
     /// Return the start of month as `Date`.
     var wk_startOfMonth: Date {

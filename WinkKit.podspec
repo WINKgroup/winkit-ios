@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WinkKit"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "Base UIKit classes with more features."
 
   # This description is used to generate tags and improve search results.
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT", :file => "WinkKit/LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -117,7 +117,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.frameworks  = "UIKit", "Foundation", "Alamofire"
+  s.frameworks  = "UIKit", "Foundation"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -140,5 +140,8 @@ Pod::Spec.new do |s|
   s.dependency "Curry"
   s.dependency "UIColor_Hex_Swift", "~> 3.0.2"
   s.dependency "DateTools"
+  s.dependency "RxSwift"
+  s.dependency "RxCocoa"
+
 
 end

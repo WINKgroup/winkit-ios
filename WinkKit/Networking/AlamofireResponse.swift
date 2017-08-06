@@ -10,31 +10,49 @@ import Foundation
 import Alamofire
 import Argo
 
+/// The base protocol `Error` of the web requests of the Framework.
 public protocol WKError: Error {
     
 }
 
+/// The concrete `Error` of the web requests of the Framework.
 struct WKWebError: WKError {
     
+    /// The different error types.
     enum WKErrorType {
+        
+        /// A json decoding fails due to client or server problem.
         case jsonSerializingError
+        
+        /// The client side error occurred.
         case clientError
+        
+        /// A server side error occurred.
         case serverError
     }
     
+    // MARK: - Properties
+    
+    /// Indicates the error type.
     let errorType: WKWebError.WKErrorType
+    
+    /// Textual description of the error or nil.
     let description: String?
-    let code: Int
+    
+    /// The error code if available or nil.
+    let code: Int?
+    
+    // MARK: - Initializers
     
     init(error: WKWebError.WKErrorType) {
         self.errorType = error
-        self.code = 0
+        self.code = nil
         self.description = nil
     }
     
     init(error: WKWebError.WKErrorType, localizedDescription: String) {
         self.errorType = error
-        self.code = 0
+        self.code = nil
         self.description = localizedDescription
     }
     
@@ -54,7 +72,7 @@ struct WKWebError: WKError {
 
 extension DataRequest {
     
-    @discardableResult func responseObject<T: Decodable>(completionHandler: @escaping (DataResponse<T>) -> Void) -> Self where T == T.DecodedType {
+    @discardableResult func responseObject<T: Argo.Decodable>(completionHandler: @escaping (DataResponse<T>) -> Void) -> Self where T == T.DecodedType {
         let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
             guard error == nil, let response = response else {
                 let errDesc = error?.localizedDescription ?? "unknown"
@@ -68,7 +86,7 @@ extension DataRequest {
             switch result {
             //Response contains a valid JSON
             case .success(let value):
-                let value = value as AnyObject
+                let value = value as Any
                 
                 //Status code 2XX: expecting a resource object
                 if case 200 ... 299 = response.statusCode {
@@ -99,7 +117,7 @@ extension DataRequest {
     }
     
     
-    @discardableResult func responseCollection<T: Decodable>(arrayName: String = "objects", completionHandler: @escaping (DataResponse<[T]>) -> Void) -> Self where T == T.DecodedType {
+    @discardableResult func responseCollection<T: Argo.Decodable>(arrayName: String = "objects", completionHandler: @escaping (DataResponse<[T]>) -> Void) -> Self where T == T.DecodedType {
         let responseSerializer = DataResponseSerializer<[T]> { request, response, data, error in
             guard error == nil, let response = response else {
                 let errDesc = error?.localizedDescription ?? "unknown"

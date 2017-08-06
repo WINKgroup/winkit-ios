@@ -30,7 +30,10 @@ public struct WKCustomLayerStyleKey {
 ///     }
 ///
 /// - Important: You must add the annotation `@IBInspectable` to show the control in the InterfaceBuilder!
-public protocol PropertiesInspectable: class {
+public protocol WKPropertiesInspectable: class {
+    
+    // MARK: - Properties
+    
     var cornerRadius: CGFloat { get set }
     var borderWidth: CGFloat { get set }
     var borderColor: UIColor? { get set }
@@ -42,10 +45,20 @@ public protocol PropertiesInspectable: class {
     var shadowOpacity: Float { get set }
 }
 
+/// Here are all the Properties defined into `WKPropertiesInspectable`.
+/// Most of the properties in the extension apply the value to the main
+/// `CALayer` of the view.
 @IBDesignable
-extension UIView: PropertiesInspectable {
+extension UIView: WKPropertiesInspectable {
     
-    // MARK: inspectable properies
+    // MARK: IBInspectable Properies
+    
+    /// Apply this properties to `layer.cornerRadius`.
+    /// The radius to use when drawing rounded corners for the layer’s background. Animatable.
+    /// Setting the radius to a value greater than 0.0 causes the layer to begin drawing rounded corners on its background. 
+    /// By default, the corner radius does not apply to the image in the layer’s contents property; it applies only to the background color and border of the layer. 
+    /// However, setting the masksToBounds property to true causes the content to be clipped to the rounded corners.
+    /// The default value of this property is 0.0.
     @IBInspectable public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -55,6 +68,12 @@ extension UIView: PropertiesInspectable {
         }
     }
     
+    /// Apply this properties to `layer.borderWidth`.
+    /// The width of the layer’s border. Animatable.
+    /// When this value is greater than 0.0, the layer draws a border using the current borderColor value. 
+    /// The border is drawn inset from the receiver’s bounds by the value specified in this property. 
+    /// It is composited above the receiver’s contents and sublayers and includes the effects of the cornerRadius property.
+    /// The default value of this property is 0.0.
     @IBInspectable public var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -64,6 +83,11 @@ extension UIView: PropertiesInspectable {
         }
     }
     
+    /// Apply this properties to `layer.borderColor`.
+    /// The color of the layer’s border. Animatable.
+    /// The default value of this property is an opaque black color.
+    /// The value of this property is retained using the Core Foundation retain/release semantics. 
+    /// This behavior occurs despite the fact that the property declaration appears to use the default assign semantics for object retention.
     @IBInspectable public var borderColor: UIColor? {
         get {
             if let color = layer.borderColor {
@@ -88,11 +112,12 @@ extension UIView: PropertiesInspectable {
         }
     }
     
-    /// The color of the shadow. Defaults to opaque black. Colors created
-    /// from patterns are currently NOT supported. Animatable.
-    @IBInspectable public
-    
-    var shadowColor: UIColor? {
+    /// Apply this properties to `layer.shadowColor`.
+    /// The color of the layer’s shadow. Animatable.
+    /// The default value of this property is an opaque black color.
+    /// The value of this property is retained using the Core Foundation retain/release semantics. 
+    /// This behavior occurs despite the fact that the property declaration appears to use the default assign semantics for object retention.
+    @IBInspectable public var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor:color)
@@ -106,6 +131,7 @@ extension UIView: PropertiesInspectable {
         }
     }
     
+    /// Apply this properties to `layer.shadowOpacity`.
     /// The opacity of the shadow. Defaults to 0. Specifying a value outside the
     /// [0,1] range will give undefined results. Animatable.
     @IBInspectable public var shadowOpacity: Float {
@@ -116,8 +142,10 @@ extension UIView: PropertiesInspectable {
             applyShadowOpacity(value: newValue)
         }
     }
-    
-    /// The shadow offset. Defaults to (0, -3). Animatable.
+
+    /// Apply this properties to `layer.shadowOffset`.
+    /// The offset (in points) of the layer’s shadow. Animatable.
+    /// The default value of this property is (0.0, -3.0).
     @IBInspectable public var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
@@ -127,7 +155,9 @@ extension UIView: PropertiesInspectable {
         }
     }
     
-    /// The blur radius used to create the shadow. Defaults to 3. Animatable.
+    /// Apply this properties to `layer.shadowRadius`.
+    /// The blur radius (in points) used to render the layer’s shadow. Animatable.
+    /// You specify the radius The default value of this property is 3.0.
     @IBInspectable public var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
@@ -209,12 +239,12 @@ extension UIView: PropertiesInspectable {
 }
 
 /// This class is a simple subclass of `UIView` that adds more control in InterfaceBuilder.
-/// In this framework, `UIImageView` and `UIButton` conform to `PropertiesInspectable` and have same behaviour; 
+/// In this framework, `UIImageView` and `UIButton` conform to `WKPropertiesInspectable` and have same behaviour; 
 /// We will implement this common behaviour for as many as possible `UIView` classes, but remember that you can 
 /// wrap a `UIView` in this `WKView`.
 open class WKView: UIView {
         
-    // MARK: view's lifecycle methods
+    // MARK: UIView Lifecycle
     
     open override var clipsToBounds: Bool {
         didSet {
@@ -224,7 +254,6 @@ open class WKView: UIView {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        print("layout subview")
         roundLayerIfNeeded()
         updateShadowIfNeeded()
     }

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WKInstantiableViewController Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/WKInstantiableViewController" class="dashAnchor"></a>
+    <a title="WKInstantiableViewController Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">WinkKit Docs</a> (73% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">WinkKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        WKInstantiableViewController Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/GoogleLocation.html">GoogleLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKButton.html">WKButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKCollectionViewController.html">WKCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKImageView.html">WKImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKLocationHelper.html">WKLocationHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKMediaPickerHelper.html">WKMediaPickerHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTableViewController.html">WKTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKView.html">WKView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKViewController.html">WKViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LocationResult.html">LocationResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Resource.html">Resource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WKLocationError.html">WKLocationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WKMediaType.html">WKMediaType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WKPickerResult.html">WKPickerResult</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/AddressComponent.html">AddressComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CALayer.html">CALayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIAlertController.html">UIAlertController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P7WinkKit7WKError">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKMedia.html">WKMedia</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/WKCustomLayerStyleKey.html">WKCustomLayerStyleKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WKMediaImage.html">WKMediaImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WKMediaVideo.html">WKMediaVideo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Subscripts.html">Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Subscripts.html#/s:ie7WinkKitRxs10CollectionWx7IndicesPs8Sequence8Iterator7Element_zwx5IndexrS0_9subscriptFT4safewxS5__GSqWx8IteratorS4___">subscript(safe:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7WinkKit15AddressCallback">AddressCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7WinkKit16LocationCallback">LocationCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7WinkKit16WKPickerCallback">WKPickerCallback</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>WKInstantiableViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKInstantiableViewController</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                </div>
+              </div>
+            <p>All <code><a href="../Classes/WKViewController.html">WKViewController</a></code>, <code><a href="../Classes/WKTableViewController.html">WKTableViewController</a></code>, <code><a href="../Classes/WKCollectionViewController.html">WKCollectionViewController</a></code> conform to this protocol
+to achieve the static instantiation feature.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvP7WinkKit28WKInstantiableViewController14storyboardNameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Variable/storyboardName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvP7WinkKit28WKInstantiableViewController14storyboardNameGSqSS_">storyboardName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The storyboard name in which the sbuclassed <code><a href="../Classes/WKViewController.html">WKViewController</a></code> is created (if the viewController is
+defined into a <code>UIStoryboard</code> instead of a xib). You must override this property
+if this viewController exists in a storyboard to call <code>instantiate(budle:) -&gt; WKViewController?</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">storyboardName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvP7WinkKit28WKInstantiableViewController10identifierGSqSS_"></a>
+                    <a name="//apple_ref/swift/Variable/identifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvP7WinkKit28WKInstantiableViewController10identifierGSqSS_">identifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Override this variable with the identifier that you will assign in the <code>UIStoryboard</code>
+in which the subclass of <code><a href="../Classes/WKViewController.html">WKViewController</a></code> is created.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFe7WinkKitRxCS_16WKViewControllerrPS_28WKInstantiableViewController11instantiateFT6bundleGSqCSo6Bundle__x"></a>
+                    <a name="//apple_ref/swift/Method/instantiate(bundle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFe7WinkKitRxCS_16WKViewControllerrPS_28WKInstantiableViewController11instantiateFT6bundleGSqCSo6Bundle__x">instantiate(bundle:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>You can call this function to instantiate the <code><a href="../Classes/WKViewController.html">WKViewController</a></code> from code if the
+<code>viewController</code> is in a <code>UIStoryboard</code>; This method will automatically create a <code>UIStoryboard</code>
+with the name of the class property <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZvP7WinkKit28WKInstantiableViewController14storyboardNameGSqSS_">storyboardName</a></code> and the <code>Bundle</code> object passed as argument.
+If you want to specify a different <code>UIStoryboard</code> instead of the overriden property, you can
+use <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZFe7WinkKitRxCS_16WKViewControllerrPS_28WKInstantiableViewController11instantiateFT14fromStoryboardSS6bundleGSqCSo6Bundle__x">instantiate(fromStoryboard:bundle:)</a></code> that accept a param which is the storybaord name.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    If <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZvP7WinkKit28WKInstantiableViewController10identifierGSqSS_">identifier</a></code> or <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZvP7WinkKit28WKInstantiableViewController14storyboardNameGSqSS_">storyboardName</a></code> are not overriden in the subclass
+this method will throws a <code>fatalError</code>!
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">instantiate</span><span class="p">(</span><span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>Bundle</code> that can be pass when the <code>UIStoryboard</code> will be created. Default is nil.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFe7WinkKitRxCS_16WKViewControllerrPS_28WKInstantiableViewController11instantiateFT14fromStoryboardSS6bundleGSqCSo6Bundle__x"></a>
+                    <a name="//apple_ref/swift/Method/instantiate(fromStoryboard:bundle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFe7WinkKitRxCS_16WKViewControllerrPS_28WKInstantiableViewController11instantiateFT14fromStoryboardSS6bundleGSqCSo6Bundle__x">instantiate(fromStoryboard:bundle:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>You can call this function to instantiate the <code><a href="../Classes/WKViewController.html">WKViewController</a></code> from code if the
+<code>viewController</code> is in a <code>UIStoryboard</code>; This method will automatically create a <code>UIStoryboard</code>
+with the name of the argument <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZvP7WinkKit28WKInstantiableViewController14storyboardNameGSqSS_">storyboardName</a></code> and the <code>Bundle</code> object passed as argument.
+If you want to specify a different <code>UIStoryboard</code> instead of the overriden property, you can
+use <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZFe7WinkKitRxCS_16WKViewControllerrPS_28WKInstantiableViewController11instantiateFT6bundleGSqCSo6Bundle__x">instantiate(bundle:)</a></code> that accept a param which is the storybaord name.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    If <code><a href="../Protocols/WKInstantiableViewController.html#/s:ZvP7WinkKit28WKInstantiableViewController10identifierGSqSS_">identifier</a></code> is not overriden in the subclass this method will throws a <code>fatalError</code>!
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">instantiate</span><span class="p">(</span><span class="n">fromStoryboard</span> <span class="nv">storyboardName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>storyboardName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the name of the <code>UIStoryboard</code> that will be created.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>Bundle</code> that can be pass when the <code>UIStoryboard</code> will be created. Default is nil.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-05-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

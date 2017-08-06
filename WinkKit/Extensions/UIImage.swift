@@ -10,6 +10,8 @@ import UIKit.UIImage
 
 public extension UIImage {
     
+    // MARK: - Methods
+    
     /// Return the same UIImage with gray scale colors.
     public func wk_convertedToGrayScale() -> UIImage {
         let imageRect:CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
