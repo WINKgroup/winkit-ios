@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class WKCollectionViewCell<VM: WKViewModel>: UICollectionViewCell {
+open class WKCollectionViewCell<P: WKPresenter>: UICollectionViewCell {
     
     /// The reuse identifier accessible before the object instantiation.
     /// If you want to use it, you **MUST** override.
@@ -19,17 +19,17 @@ open class WKCollectionViewCell<VM: WKViewModel>: UICollectionViewCell {
         fatalError("Must override reuse identifier")
     }
     
-    /// The `WKViewModel` subclassed owned by the cell.
-    open var viewModel: VM?
+    /// The `WKPresenter` subclassed owned by the cell.
+    open var presenter: P?
     
-    /// The method to be called to configure the cell with the `WKViewModel`.
-    /// You should override this method to configure the cell to follow the MVVM design pattern correctly.
+    /// The method to be called to configure the cell with the `WKPresenter`.
+    /// You should override this method to configure the cell to follow the MVP design pattern correctly.
     /// If you override this method, you **MUST** call super.
     ///
-    /// - Parameter viewModel: the `WKViewModel` that will be owned by the cell.
-    open func configure(with viewModel: VM) {
+    /// - Parameter presenter: the `WKPresenter` that will be owned by the cell.
+    open func configure(with presenter: P) {
         // Override to custom configuration
-        self.viewModel = viewModel
+        self.presenter = presenter
     }
     
 }

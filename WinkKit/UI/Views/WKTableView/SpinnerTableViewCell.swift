@@ -20,15 +20,15 @@ public class SpinnerTableViewCell: UITableViewCell {
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupActivityIndicatorView()
+        setup()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupActivityIndicatorView()
+        setup()
     }
     
-    private func setupActivityIndicatorView() {
+    private func setup() {
         activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         contentView.addSubview(activityIndicatorView)
     }

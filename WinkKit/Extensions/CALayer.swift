@@ -17,18 +17,18 @@ public extension CALayer {
     public func wk_addBorder(edges: UIRectEdge, color: UIColor, thickness: CGFloat) {
         
         let border = CALayer()
-        
+    
         switch edges {
-        case UIRectEdge.top:
+        case .top:
             border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
             break
-        case UIRectEdge.bottom:
+        case .bottom:
             border.frame = CGRect(x: 0, y: frame.height - thickness, width: frame.width, height: thickness)
             break
-        case UIRectEdge.left:
+        case .left:
             border.frame = CGRect(x: 0, y: 0, width: thickness, height: frame.height)
             break
-        case UIRectEdge.right:
+        case .right:
             border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: frame.height)
             break
         default:

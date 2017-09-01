@@ -194,7 +194,7 @@ open class WKMediaPickerHelper: NSObject {
         exportSession.timeRange = CMTimeRangeMake(kCMTimeZero, urlAsset.duration) //needed to know the estimate final size
         let uuid = NSUUID().uuidString
         exportSession.outputURL = URL(fileURLWithPath: NSTemporaryDirectory() + uuid + ".mp4")
-        exportSession.outputFileType = AVFileTypeMPEG4
+        exportSession.outputFileType = .mp4
         exportSession.shouldOptimizeForNetworkUse = true
         
         if let maxSize = self.videoMaxByte, exportSession.estimatedOutputFileLength >= maxSize {

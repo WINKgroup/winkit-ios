@@ -17,7 +17,7 @@ public extension UITableView {
     /// Since it uses a `UINib`, the `nibName` **MUST** be the same of the class name!
     ///
     /// Parameter cell: The `WKTableViewCell` to be registered.
-    public func register<VM>(cell: WKTableViewCell<VM>.Type) {
+    public func register<P>(cell: WKTableViewCell<P>.Type) {
         register(UINib(nibName: String(describing: cell), bundle: nil), forCellReuseIdentifier: cell.reuseIdentifier)
     }
 
@@ -29,12 +29,6 @@ public extension UITableView {
 open class WKTableView: UITableView {
     
     // MARK: - Properties
-    
-    public var isInfiniteScrollEnabled = false {
-        didSet {
-            
-        }
-    }
     
     /// Return `true` if you add a pull to refresh behaviour before with
     /// `addPullToRefresh(tintColor:refreshClosure:)`.

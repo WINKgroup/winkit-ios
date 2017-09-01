@@ -7,19 +7,15 @@
 //
 
 import Foundation
-import RxSwift
 
 /// All `WKViewController`, `WKTableViewController`, `WKCollectionViewController` conform to this protocol
-/// to achieve the MVVM feature and static instantiation feature.
+/// to achieve some new features.
 public protocol WKBaseViewController: class {
     
-    /// The `WKViewControllerViewModel` owned by this class. Since `UIStoryboard` doesn't support
-    /// `UIViewController` with a generic parameter, this viewModel needs to be casted
-    /// in subviews
-    var viewModel: WKViewControllerViewModel! { get set }
+    associatedtype P = WKViewControllerPresenter
     
-    /// The `DisposeBag` used to dispose stuff of `RxSwift`.
-    var disposeBag: DisposeBag { get }
+    /// The `WKViewControllerPresenter` owned by this class.
+    var presenter: P! { get set }
     
     /// The storyboard name in which the sbuclassed `WKViewController` is created (if the viewController is
     /// defined into a `UIStoryboard` instead of a xib). You must override this property

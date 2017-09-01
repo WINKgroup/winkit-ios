@@ -112,7 +112,7 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
         lastContentOffset = scrollView.contentOffset
     }
     
-    /// You can't override this method, it is intended for internal purpose; instead, override `tableView(_:infiniteCellForRowAt:)`.
+    /// You can't override this method, it is intended for internal purpose; instead, override `tableView(_:normalCellForRowAt:)`.
     public final func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == loaderSection && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 && isLoading {
             return self.tableView(tableView, loadingCellForRowAt: indexPath)

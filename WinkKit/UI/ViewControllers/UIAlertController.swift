@@ -63,7 +63,7 @@ public extension UIAlertController {
     public static func showOkAlert(in viewController: UIViewController, withTitle title: String, andMessage message: String, completion: (()-> Void)? = nil, okButtonHandler: ((UIAlertAction)->Void)? = nil) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        viewController.present(viewController, animated: true, completion: completion)
+        viewController.present(alert, animated: true, completion: completion)
         
         return alert
     }

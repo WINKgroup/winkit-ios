@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D6D9E19ABFE15FA9B315E0F95611D3A"
+               BlueprintIdentifier = "7BAA847B168C762E34AEFB7B635F512E"
                BuildableName = "Pods_WinkKit.framework"
                BlueprintName = "Pods-WinkKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D6D9E19ABFE15FA9B315E0F95611D3A"
+            BlueprintIdentifier = "7BAA847B168C762E34AEFB7B635F512E"
             BuildableName = "Pods_WinkKit.framework"
             BlueprintName = "Pods-WinkKit"
             ReferencedContainer = "container:Pods.xcodeproj">

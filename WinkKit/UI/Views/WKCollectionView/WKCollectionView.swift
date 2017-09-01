@@ -15,7 +15,7 @@ public extension UICollectionView {
     /// Since it uses a `UINib`, the `nibName` **MUST** be the same of the class name!
     ///
     /// Parameter cell: The `WKCollectionViewCell` to be registered.
-    public func register<VM: WKViewModel>(cell: WKCollectionViewCell<VM>.Type) {
+    public func register<P>(cell: WKCollectionViewCell<P>.Type) {
         register(UINib(nibName: String(describing: cell), bundle: nil), forCellWithReuseIdentifier: cell.reuseIdentifier)
     }
     
@@ -26,12 +26,6 @@ public extension UICollectionView {
 open class WKCollectionView: UICollectionView {
     
     // MARK: - Properties
-    
-    public var isInfiniteScrollEnabled = false {
-        didSet {
-            
-        }
-    }
     
     /// Return `true` if you add a pull to refresh behaviour before with
     /// `addPullToRefresh(tintColor:refreshClosure:)`.

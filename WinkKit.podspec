@@ -133,15 +133,13 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "Alamofire", "~> 4.0"
-  s.dependency "AlamofireImage", "~> 3.1"
+  s.dependency "Alamofire", "~> 4.5"
+  s.dependency "AlamofireImage", "~> 3.2"
   s.dependency "Argo"
   s.dependency "Runes"
   s.dependency "Curry"
   s.dependency "UIColor_Hex_Swift", "~> 3.0.2"
   s.dependency "DateTools"
-  s.dependency "RxSwift"
-  s.dependency "RxCocoa"
 
 
 end

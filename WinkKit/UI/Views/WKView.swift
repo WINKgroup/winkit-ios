@@ -169,7 +169,7 @@ extension UIView: WKPropertiesInspectable {
     
     // MARK: Internal method that are called by inspectable properties.
     
-    func applyCornerRadius(value: CGFloat) {
+    @objc func applyCornerRadius(value: CGFloat) {
         if !isRounded {
             layer.cornerRadius = value
             updateShadowIfNeeded()
@@ -184,7 +184,7 @@ extension UIView: WKPropertiesInspectable {
          layer.borderColor = value?.cgColor
     }
     
-    func applyIsRounded(value: Bool) {
+    @objc func applyIsRounded(value: Bool) {
         layer.style = [WKCustomLayerStyleKey.isRounded : value]
         roundLayerIfNeeded()
         updateShadowIfNeeded()
@@ -233,9 +233,6 @@ extension UIView: WKPropertiesInspectable {
         
     }
     
-    func applyClipToBounds() {
-        
-    }
 }
 
 /// This class is a simple subclass of `UIView` that adds more control in InterfaceBuilder.
@@ -245,12 +242,6 @@ extension UIView: WKPropertiesInspectable {
 open class WKView: UIView {
         
     // MARK: UIView Lifecycle
-    
-    open override var clipsToBounds: Bool {
-        didSet {
-            applyClipToBounds()
-        }
-    }
     
     open override func layoutSubviews() {
         super.layoutSubviews()
