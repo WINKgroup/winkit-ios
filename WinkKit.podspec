@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WinkKit"
-  s.version      = "0.2.0"
-  s.summary      = "Base UIKit classes with more features."
+  s.version      = "0.3.0"
+  s.summary      = "Base UIKit classes with more features and MVP/Viper implementation."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
   This framework have a set of UIKit subclasses to improve their implementation; 
   it has been written to create a guideline for Wink's projects and to have some common
   behaviours: for example `UIView` is sublcassed to provide more control in InterfaceBuilder.
+  Morover, it follows a kind of MVP/Viper architecture implementation.
                    DESC
 
   s.homepage     = "https://github.com/WINKgroup/WinkKit"

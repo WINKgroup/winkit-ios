@@ -37,7 +37,9 @@ This kind of architecture is try to follow the **Responsability Distribution** c
 <img src="readme-res/xcode_structure.png" width=50% />
 
 <br>
+
 ### Presentation
+
 It's the layer that contains all iOS Framework dedicated classes, like `UIKit` framework. We could say that this layer cannot exists without an iPhone/iPad because `UIKit` can run only there.
 
 <img src="readme-res/presentation_layer.png" width=50% />
