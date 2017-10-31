@@ -7,7 +7,6 @@ PODS:
   - Curry (3.0.0)
   - DateTools (2.0.0)
   - Runes (4.0.1)
-  - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
@@ -16,7 +15,6 @@ DEPENDENCIES:
   - Curry
   - DateTools
   - Runes
-  - UIColor_Hex_Swift (~> 3.0.2)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -25,8 +23,7 @@ SPEC CHECKSUMS:
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
-  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: a78a4de8b6a2c83de87792257fbd15779343b296
+PODFILE CHECKSUM: bcae37d5b5abf71b266e5d425a4971faefcf175a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

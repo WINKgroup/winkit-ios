@@ -9,7 +9,6 @@ target 'WinkKit' do
   pod 'Argo'
   pod 'Curry'
   pod 'Runes'
-  pod 'UIColor_Hex_Swift', '~> 3.0.2'
   pod 'DateTools'
   # Pods for WinkKit
 
