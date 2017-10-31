@@ -148,7 +148,7 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     /// a `dequeueReusableCell(withIdentifier:)` message to tableView.
     /// Various attributes of a table cell are set automatically based on whether the cell is
     /// a separator and on information the data source provides, such as for accessory views and editing controls.
-    /// The default implementation return a simple `UITableViewCell`, so in your overridden mthod, you can skip
+    /// The default implementation return a simple `UITableViewCell`, so in your overridden method, you can skip
     /// the super call.
     ///
     /// - Parameters:

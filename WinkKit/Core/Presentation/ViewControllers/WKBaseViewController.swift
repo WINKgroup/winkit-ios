@@ -39,7 +39,7 @@ public extension WKBaseViewController where Self : UIViewController  {
     /// - Parameters:
     ///     - bundle: the `Bundle` that can be pass when the `UIStoryboard` will be created. Default is nil.
     /// - Warning: If `identifier` or `storyboardName` are not overriden in the subclass
-    /// this method will throws a `fatalError`!
+    ///            this method will throw a `fatalError`!
     public static func instantiate(bundle: Bundle? = nil) -> Self {
         guard let storyboard = storyboardName, let identifier = identifier else {
             fatalError("Cannot invoke instantiate: you did not override `storyboardName` or `identifier` in \(self)")
@@ -58,7 +58,7 @@ public extension WKBaseViewController where Self : UIViewController  {
     /// - Parameters:
     ///     - storyboardName: the name of the `UIStoryboard` that will be created.
     ///     - bundle: the `Bundle` that can be pass when the `UIStoryboard` will be created. Default is nil.
-    /// - Warning: If `identifier` is not overriden in the subclass this method will throws a `fatalError`!
+    /// - Warning: If `identifier` is not overriden in the subclass this method will throw a `fatalError`!
     public static func instantiate(fromStoryboard storyboardName: String, bundle: Bundle? = nil) -> Self {
         guard let identifier = identifier else {
             fatalError("Cannot invoke instantiate: you did not override or `identifier` in \(self)")

@@ -38,5 +38,4 @@ public extension WKViewControllerPresenter {
     
     func viewDidDisappear() { /* does nothing */ }
     
-    
 }

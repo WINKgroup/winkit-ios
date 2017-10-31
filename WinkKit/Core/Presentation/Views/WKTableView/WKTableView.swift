@@ -14,9 +14,11 @@ public extension UITableView {
     
     /// Registers a `WKTableViewCell` object as cell if the cell view is into a xib.
     /// This method internally calls the `register(_:forCellReuseIdentifier:)` of the `UITableVIew`.
-    /// Since it uses a `UINib`, the `nibName` **MUST** be the same of the class name!
+    /// Since it uses a `UINib`, the `nibName` **must** be the same of the class name!
     ///
-    /// Parameter cell: The `WKTableViewCell` to be registered.
+    ///         register(cell: MyCustomCell.self)
+    ///
+    /// - Parameter cell: The `WKTableViewCell` to be registered.
     public func register<P>(cell: WKTableViewCell<P>.Type) {
         register(UINib(nibName: String(describing: cell), bundle: nil), forCellReuseIdentifier: cell.reuseIdentifier)
     }
