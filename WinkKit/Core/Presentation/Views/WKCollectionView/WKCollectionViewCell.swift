@@ -11,12 +11,9 @@ import UIKit
 open class WKCollectionViewCell<P: WKPresenter>: UICollectionViewCell {
     
     /// The reuse identifier accessible before the object instantiation.
-    /// If you want to use it, you **MUST** override.
-    ///
-    /// - Warning: If you try to access this property without overriding it, a `fatalError`
-    ///             will be thrown.
+    /// You can override this var, default value is `String(describing: self)`.
     open class var reuseIdentifier: String {
-        fatalError("Must override reuse identifier")
+        return String(describing: self)
     }
     
     /// The `WKPresenter` subclassed owned by the cell.
