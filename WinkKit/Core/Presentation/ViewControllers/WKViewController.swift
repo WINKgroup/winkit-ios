@@ -16,7 +16,7 @@ import UIKit
 ///              of `WKBaseViewController`.
 open class WKViewController<P>: UIViewController, WKBaseViewController where P: WKViewControllerPresenter {
     
-    public var presenter: P!
+    open var presenter: P!
     
     open var navigator: WKNavigator!
     
