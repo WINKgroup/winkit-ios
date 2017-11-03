@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1369C91FAC7A6E008A9006 /* WKNavigator.swift */; };
 		1F1560D01F59858F00C95450 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1560CF1F59858F00C95450 /* Queue.swift */; };
 		1F1560D21F598A9D00C95450 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1560D11F598A9C00C95450 /* UIAlertController.swift */; };
 		1F1560D51F598AF600C95450 /* WKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1560D41F598AF600C95450 /* WKService.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1369C91FAC7A6E008A9006 /* WKNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigator.swift; sourceTree = "<group>"; };
 		1F1560CF1F59858F00C95450 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		1F1560D11F598A9C00C95450 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		1F1560D41F598AF600C95450 /* WKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKService.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				1F432DBE1F599FD0006A2006 /* Presenter */,
 				1F780EBB1EC0B51E003A326D /* ViewControllers */,
 				1F780EC01EC0B51E003A326D /* Views */,
+				1F1369C91FAC7A6E008A9006 /* WKNavigator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				1F1560D01F59858F00C95450 /* Queue.swift in Sources */,
 				1F780EC81EC0B51E003A326D /* WKButton.swift in Sources */,
 				1F5A5AFE1F364523005F7F18 /* WKViewControllerPresenter.swift in Sources */,
+				1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */,
 				1FE5486F1EBD34DF0010A630 /* WKLocationHelper.swift in Sources */,
 				1F1560D21F598A9D00C95450 /* UIAlertController.swift in Sources */,
 				1FA16D511FA8D23D008602DC /* UIColor.swift in Sources */,

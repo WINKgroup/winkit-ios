@@ -10,9 +10,11 @@ import UIKit
 
 /// The base TableViewController that will be subclassed in your project instead of subclassing `UITableViewController`.
 /// This provides some useful methods like the static instantiation.
-open class WKTableViewController: UITableViewController, WKBaseViewController {
-        
-    open var presenter: WKViewControllerPresenter!
+open class WKTableViewController<P>: UITableViewController, WKBaseViewController where P: WKViewControllerPresenter {
+    
+    open var presenter: P!
+
+    internal(set) open var navigator: WKNavigator!
     
     open class var storyboardName: String? {
         return nil
@@ -36,6 +38,7 @@ open class WKTableViewController: UITableViewController, WKBaseViewController {
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigator.currentViewController = self
         presenter.viewDidAppear()
     }
     

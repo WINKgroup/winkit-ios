@@ -17,6 +17,8 @@ public protocol WKBaseViewController: class {
     /// The `WKViewControllerPresenter` owned by this class.
     var presenter: P! { get set }
     
+    var navigator: WKNavigator! { get }
+    
     /// The storyboard name in which the sbuclassed `WKViewController` is created (if the viewController is
     /// defined into a `UIStoryboard` instead of a xib). You must override this property
     /// if this viewController exists in a storyboard to call `instantiate(budle:) -> WKViewController?`.

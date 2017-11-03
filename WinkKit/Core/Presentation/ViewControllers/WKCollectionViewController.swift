@@ -10,10 +10,12 @@ import UIKit
 
 /// The base CollectionViewController that will be subclassed in your project instead of subclassing `UICollectionViewController`.
 /// This provides some useful methods like the static instantiation.
-open class WKCollectionViewController: UICollectionViewController, WKBaseViewController {
+open class WKCollectionViewController<P>: UICollectionViewController, WKBaseViewController where P: WKViewControllerPresenter {
 
-    open var presenter: WKViewControllerPresenter!
+    open var presenter: P!
     
+    internal(set) open var navigator: WKNavigator!
+
     open class var storyboardName: String? {
         return nil
     }
@@ -36,6 +38,7 @@ open class WKCollectionViewController: UICollectionViewController, WKBaseViewCon
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigator.currentViewController = self
         presenter.viewDidAppear()
     }
     
