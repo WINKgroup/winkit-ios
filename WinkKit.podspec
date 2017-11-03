@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WinkKit"
-  s.version      = "0.4.5"
+  s.version      = "0.4.6"
   s.summary      = "Base UIKit classes with more features and MVP/Viper implementation."
 
   # This description is used to generate tags and improve search results.
