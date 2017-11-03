@@ -14,12 +14,16 @@ open class WKCollectionViewController<P>: UICollectionViewController, WKBaseView
 
     open var presenter: P!
     
+    /// If your project has a storyboard that contains an instance of the subclass of this view controller,
+    /// you can override this property to indicate the name of that storyboard to allow auto-instantiation feature
     open class var storyboardName: String? {
         return nil
     }
     
+    /// The identifier that is set in Storybaord. Default value is `String(describing: self)`, which means that
+    /// the identifier of the view controller is the view controller class name.
     open class var identifier: String? {
-        return nil
+        return String(describing: self)
     }
     
     open override func viewDidLoad() {
