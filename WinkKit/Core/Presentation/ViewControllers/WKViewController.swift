@@ -17,9 +17,7 @@ import UIKit
 open class WKViewController<P>: UIViewController, WKBaseViewController where P: WKViewControllerPresenter {
     
     open var presenter: P!
-    
-    open var navigator: WKNavigator!
-    
+        
     open class var storyboardName: String? {
         return nil
     }
@@ -42,7 +40,7 @@ open class WKViewController<P>: UIViewController, WKBaseViewController where P: 
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigator.currentViewController = self
+        WKNavigator.shared.currentViewController = self
         presenter.viewDidAppear()
     }
     

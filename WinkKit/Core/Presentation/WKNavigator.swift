@@ -21,7 +21,7 @@ open class WKNavigator {
     
     public static let shared = WKNavigator()
     
-    internal(set) open weak var currentViewController: UIViewController?
+    internal(set) open var currentViewController: UIViewController?
     
     private init() {}
     
