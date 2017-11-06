@@ -216,6 +216,10 @@ extension UIView: WKPropertiesInspectable {
     /// This method apply a `CGPath` to `layer.shadowPath` with the same corner of `layer.cornerRadius`.
     /// It will work only if the new path created is different from the old one.
     func updateShadowIfNeeded() {
+        guard layer.shadowOpacity > 0 else {
+            return
+        }
+        
         let newPath = UIBezierPath(roundedRect: layer.bounds, cornerRadius: layer.cornerRadius).cgPath
         if let path = layer.shadowPath, path == newPath {
             return
