@@ -29,13 +29,26 @@ open class WKTableViewController<P>: UITableViewController, WKBaseViewController
         return String(describing: self)
     }
     
+    /// This method is called in `viewDidLoad()`, right after `presenter.viewDidLoad()`. If this viewController has
+    /// been presented by a `WKNavigator`, `userInfo` property may be not nil if some data have been passed before.
+    /// Override this method to access userInfo and do additional stuff in viewController subclass.
+    ///
+    /// - Parameter userInfo: An dictionary that is passed in WKNavigator method.
+    ///
+    /// - Important: This method is called only if e userInfo dict is provided from WKNavigator
+    public func initialize(with userInfo: [String : Any]) {
+        // default does nothing
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         guard presenter != nil else { fatalError("presenter is nil. Did you instantiate a WKViewControllerPresenter in your sublcass and assigned to presenter property before calling super.viewDidLoad()?") }
         
         presenter.viewDidLoad()
-        initialize(with: userInfo)
-        userInfo = nil // clean user info
+        if let userInfo = userInfo {
+            initialize(with: userInfo)
+            self.userInfo = nil // clean user info
+        }
     }
     
     open override func viewWillAppear(_ animated: Bool) {
