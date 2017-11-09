@@ -40,7 +40,7 @@ open class WKViewController<P>: UIViewController, WKBaseViewController where P: 
     /// - Parameter userInfo: An dictionary that is passed in WKNavigator method.
     ///
     /// - Important: This method is called only if e userInfo dict is provided from WKNavigator
-    public func initialize(with userInfo: [String : Any]) {
+    open func initialize(with userInfo: [String : Any]) {
         // default does nothing
     }
     
