@@ -26,6 +26,13 @@ public protocol WKBaseViewController: class {
     /// in which the subclass of `WKViewController` is created.
     static var identifier: String? { get }
     
+    /// This method is called in `viewDidLoad()`, right after `presenter.viewDidLoad()`. If this viewController has
+    /// been presented by a `WKNavigator`, `userInfo` property may be not nil if some data have been passed before.
+    /// Override this method to access userInfo and do additional stuff in viewController subclass.
+    ///
+    /// - Parameter userInfo: An optional dictionary that is passed in WKNavigator method.
+    func initialize(with userInfo: [String : Any]?)
+    
 }
 
 public extension WKBaseViewController where Self : UIViewController  {
@@ -65,6 +72,15 @@ public extension WKBaseViewController where Self : UIViewController  {
         }
         
         return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier) as! Self
+    }
+    
+    /// This method is called in `viewDidLoad()`, right after `presenter.viewDidLoad()`. If this viewController has
+    /// been presented by a `WKNavigator`, `userInfo` property may be not nil if some data have been passed before.
+    /// Override this method to access userInfo and do additional stuff in viewController subclass.
+    ///
+    /// - Parameter userInfo: An optional dictionary that is passed in WKNavigator method.
+    public func initialize(with userInfo: [String : Any]?) {
+        
     }
     
 }

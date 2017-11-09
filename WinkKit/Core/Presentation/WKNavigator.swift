@@ -19,8 +19,10 @@ import UIKit
 ///            If you decide to use Navigator class, you should always use WinkKit view controllers.
 open class WKNavigator {
     
+    /// The shared instance.
     public static let shared = WKNavigator()
     
+    /// Current displaying viewController.
     internal(set) open var currentViewController: UIViewController?
     
     private init() {}
@@ -29,7 +31,14 @@ open class WKNavigator {
     
     /// Show a view controller with a push of navigation controller if exists, otherwise
     /// the view controller is presented modally.
-    public func show<P>(viewController: WKViewController<P>, animated: Bool) {
+    ///
+    /// - Parameters
+    ///     - viewController: The `WKViewController` that will be presented.
+    ///     - userInfo: Optional dictionary used to pass data to the destination view controller.
+    ///                 This property is saved in `userInfo` of destination `WKViewController`, accessible in the `initialize(with:)` method.
+    ///     - animated: If true presentation will be animated.
+    public func show<P>(viewController: WKViewController<P>, userInfo: [String : Any]? = nil, animated: Bool) {
+        viewController.userInfo = userInfo
         if let nVc = currentViewController?.navigationController {
             nVc.pushViewController(viewController, animated: animated)
         } else if let vc = currentViewController {
@@ -38,14 +47,16 @@ open class WKNavigator {
     }
     
     /// Present a view controller modally
-    public func present<P>(viewController: WKViewController<P>, animated: Bool, completion: (()->Void)?) {
+    public func present<P>(viewController: WKViewController<P>, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        viewController.userInfo = userInfo
         if let vc = currentViewController {
             vc.present(viewController, animated: animated, completion: completion)
         }
     }
     
     /// Push a view controller if a navigation controller exists.
-    public func push<P>(viewController: WKViewController<P>, animated: Bool) {
+    public func push<P>(viewController: WKViewController<P>, userInfo: [String : Any]? = nil, animated: Bool) {
+        viewController.userInfo = userInfo
         if let nVc = currentViewController?.navigationController {
             nVc.pushViewController(viewController, animated: animated)
         }
@@ -55,7 +66,8 @@ open class WKNavigator {
     
     /// Show a tablwView controller with a push of navigation controller if exists, otherwise
     /// the view controller is presented modally.
-    public func show<P>(viewController: WKTableViewController<P>, animated: Bool) {
+    public func show<P>(viewController: WKTableViewController<P>, userInfo: [String : Any]? = nil, animated: Bool) {
+        viewController.userInfo = userInfo
         if let nVc = currentViewController?.navigationController {
             nVc.pushViewController(viewController, animated: animated)
         } else if let vc = currentViewController {
@@ -64,14 +76,16 @@ open class WKNavigator {
     }
     
     /// Present a tablwView controller modally
-    public func present<P>(viewController: WKTableViewController<P>, animated: Bool, completion: (()->Void)?) {
+    public func present<P>(viewController: WKTableViewController<P>, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        viewController.userInfo = userInfo
         if let vc = currentViewController {
             vc.present(viewController, animated: animated, completion: completion)
         }
     }
     
     /// Push a tablwView controller if a navigation controller exists.
-    public func push<P>(viewController: WKTableViewController<P>, animated: Bool) {
+    public func push<P>(viewController: WKTableViewController<P>, userInfo: [String : Any]? = nil, animated: Bool) {
+        viewController.userInfo = userInfo
         if let nVc = currentViewController?.navigationController {
             nVc.pushViewController(viewController, animated: animated)
         }
@@ -81,7 +95,8 @@ open class WKNavigator {
     
     /// Show a collectionView controller with a push of navigation controller if exists, otherwise
     /// the view controller is presented modally.
-    public func show<P>(viewController: WKCollectionViewController<P>, animated: Bool) {
+    public func show<P>(viewController: WKCollectionViewController<P>, userInfo: [String : Any]? = nil, animated: Bool) {
+        viewController.userInfo = userInfo
         if let nVc = currentViewController?.navigationController {
             nVc.pushViewController(viewController, animated: animated)
         } else if let vc = currentViewController {
@@ -90,14 +105,16 @@ open class WKNavigator {
     }
     
     /// Present a collectionView controller modally
-    public func present<P>(viewController: WKCollectionViewController<P>, animated: Bool, completion: (()->Void)?) {
+    public func present<P>(viewController: WKCollectionViewController<P>, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        viewController.userInfo = userInfo
         if let vc = currentViewController {
             vc.present(viewController, animated: animated, completion: completion)
         }
     }
     
     /// Push a collectionView controller if a navigation controller exists.
-    public func push<P>(viewController: WKCollectionViewController<P>, animated: Bool) {
+    public func push<P>(viewController: WKCollectionViewController<P>, userInfo: [String : Any]? = nil, animated: Bool) {
+        viewController.userInfo = userInfo
         if let nVc = currentViewController?.navigationController {
             nVc.pushViewController(viewController, animated: animated)
         }
@@ -110,49 +127,49 @@ extension WKNavigator {
     /// Instantiate and present a `WKViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func present<P>(ViewController: WKViewController<P>.Type, bundle: Bundle? = nil, animated: Bool, completion: (()->Void)?) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.present(viewController: vc, animated: animated, completion: completion)
+    public func present<P>(viewControllerType: WKViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.present(viewController: vc, userInfo: userInfo, animated: animated, completion: completion)
     }
     
     /// Instantiate and push or present a `WKViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func present<P>(ViewController: WKViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool, completion: (()->Void)?) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.present(viewController: vc, animated: animated, completion: completion)
+    public func present<P>(viewControllerType: WKViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.present(viewController: vc, userInfo: userInfo, animated: animated, completion: completion)
     }
     
     /// Instantiate and push or present a `WKViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func show<P>(ViewController: WKViewController<P>.Type, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.show(viewController: vc, animated: animated)
+    public func show<P>(viewControllerType: WKViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.show(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and present a `WKViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func show<P>(ViewController: WKViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.show(viewController: vc, animated: animated)
+    public func show<P>(viewControllerType: WKViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.show(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and push a `WKViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func push<P>(ViewController: WKViewController<P>.Type, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.push(viewController: vc, animated: animated)
+    public func push<P>(viewControllerType: WKViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.push(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and push a `WKViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func push<P>(ViewController: WKViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.push(viewController: vc, animated: animated)
+    public func push<P>(viewControllerType: WKViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.push(viewController: vc, userInfo: userInfo, animated: animated)
     }
 }
 
@@ -163,49 +180,49 @@ extension WKNavigator {
     /// Instantiate and present a `WKTableViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func present<P>(ViewController: WKTableViewController<P>.Type, bundle: Bundle? = nil, animated: Bool, completion: (()->Void)?) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.present(viewController: vc, animated: animated, completion: completion)
+    public func present<P>(viewControllerType: WKTableViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.present(viewController: vc, userInfo: userInfo, animated: animated, completion: completion)
     }
     
     /// Instantiate and push or present a `WKTableViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func present<P>(ViewController: WKTableViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool, completion: (()->Void)?) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.present(viewController: vc, animated: animated, completion: completion)
+    public func present<P>(viewControllerType: WKTableViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.present(viewController: vc, userInfo: userInfo, animated: animated, completion: completion)
     }
     
     /// Instantiate and push or present a `WKTableViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func show<P>(ViewController: WKTableViewController<P>.Type, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.show(viewController: vc, animated: animated)
+    public func show<P>(viewControllerType: WKTableViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.show(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and present a `WKTableViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func show<P>(ViewController: WKTableViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.show(viewController: vc, animated: animated)
+    public func show<P>(viewControllerType: WKTableViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.show(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and push a `WKTableViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func push<P>(ViewController: WKTableViewController<P>.Type, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.push(viewController: vc, animated: animated)
+    public func push<P>(viewControllerType: WKTableViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.push(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and push a `WKTableViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func push<P>(ViewController: WKTableViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.push(viewController: vc, animated: animated)
+    public func push<P>(viewControllerType: WKTableViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.push(viewController: vc, userInfo: userInfo, animated: animated)
     }
 }
 
@@ -216,48 +233,48 @@ extension WKNavigator {
     /// Instantiate and present a `WKCollectionViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func present<P>(ViewController: WKCollectionViewController<P>.Type, bundle: Bundle? = nil, animated: Bool, completion: (()->Void)?) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.present(viewController: vc, animated: animated, completion: completion)
+    public func present<P>(viewControllerType: WKCollectionViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.present(viewController: vc, userInfo: userInfo, animated: animated, completion: completion)
     }
     
     /// Instantiate and push or present a `WKCollectionViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func present<P>(ViewController: WKCollectionViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool, completion: (()->Void)?) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.present(viewController: vc, animated: animated, completion: completion)
+    public func present<P>(viewControllerType: WKCollectionViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool, completion: (()->Void)?) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.present(viewController: vc, userInfo: userInfo, animated: animated, completion: completion)
     }
     
     /// Instantiate and push or present a `WKCollectionViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func show<P>(ViewController: WKCollectionViewController<P>.Type, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.show(viewController: vc, animated: animated)
+    public func show<P>(viewControllerType: WKCollectionViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.show(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and present a `WKCollectionViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func show<P>(ViewController: WKCollectionViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.show(viewController: vc, animated: animated)
+    public func show<P>(viewControllerType: WKCollectionViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.show(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and push a `WKCollectionViewController` by using its `identifier`. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func push<P>(ViewController: WKCollectionViewController<P>.Type, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(bundle: bundle)
-        self.push(viewController: vc, animated: animated)
+    public func push<P>(viewControllerType: WKCollectionViewController<P>.Type, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(bundle: bundle)
+        self.push(viewController: vc, userInfo: userInfo, animated: animated)
     }
     
     /// Instantiate and push a `WKCollectionViewController` by using its `identifier` and specifing a storybaord. You can specify a `Bundle`, deafult value is nil.
     ///
     /// - Warning: Make sure to ovrride `identifier` class var in the view controller you are presenting!
-    public func push<P>(ViewController: WKCollectionViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, animated: Bool) {
-        let vc = ViewController.instantiate(fromStoryboard: storyboardName, bundle: bundle)
-        self.push(viewController: vc, animated: animated)
+    public func push<P>(viewControllerType: WKCollectionViewController<P>.Type, fromStoryboard storyboardName: String, bundle: Bundle? = nil, userInfo: [String : Any]? = nil, animated: Bool) {
+        let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
+        self.push(viewController: vc, userInfo: userInfo, animated: animated)
     }
 }

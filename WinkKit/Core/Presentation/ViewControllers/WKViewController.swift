@@ -18,6 +18,9 @@ open class WKViewController<P>: UIViewController, WKBaseViewController where P: 
     
     open var presenter: P!
     
+    /// A dictionary that can contain passing data between view controllers.
+    var userInfo: [String : Any]?
+    
     /// If your project has a storyboard that contains an instance of the subclass of this view controller,
     /// you can override this property to indicate the name of that storyboard to allow auto-instantiation feature
     open class var storyboardName: String? {
@@ -35,6 +38,8 @@ open class WKViewController<P>: UIViewController, WKBaseViewController where P: 
         guard presenter != nil else { fatalError("presenter is nil. Did you instantiate a WKViewControllerPresenter in your sublcass and assigned to presenter property before calling super.viewDidLoad()?") }
         
         presenter.viewDidLoad()
+        initialize(with: userInfo)
+        userInfo = nil // clean user info
     }
     
     open override func viewWillAppear(_ animated: Bool) {
