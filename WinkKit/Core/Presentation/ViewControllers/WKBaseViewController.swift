@@ -8,15 +8,10 @@
 
 import Foundation
 
-/// All `WKViewController`, `WKTableViewController`, `WKCollectionViewController` conform to this protocol
-/// to achieve some new features.
-public protocol WKBaseViewController: class {
+/// All `WKViewController`, `WKTableViewController`, `WKCollectionViewController`, `WKNavigationController` conform to this protocol
+/// to achieve the static instantation feature.
+public protocol WKInstantiableViewController: class {
     
-    associatedtype P = WKViewControllerPresenter
-    
-    /// The `WKViewControllerPresenter` owned by this class.
-    var presenter: P! { get set }
-        
     /// The storyboard name in which the sbuclassed `WKViewController` is created (if the viewController is
     /// defined into a `UIStoryboard` instead of a xib). You must override this property
     /// if this viewController exists in a storyboard to call `instantiate(budle:) -> WKViewController?`.
@@ -25,10 +20,20 @@ public protocol WKBaseViewController: class {
     /// Override this variable with the identifier that you will assign in the `UIStoryboard`
     /// in which the subclass of `WKViewController` is created.
     static var identifier: String? { get }
+}
+
+/// All `WKViewController`, `WKTableViewController`, `WKCollectionViewController` conform to this protocol
+/// to follow MVP pattern.
+public protocol WKBaseViewController: WKInstantiableViewController {
+    
+    associatedtype P = WKViewControllerPresenter
+    
+    /// The `WKViewControllerPresenter` owned by this class.
+    var presenter: P! { get set }
     
 }
 
-public extension WKBaseViewController where Self : UIViewController  {
+public extension WKInstantiableViewController where Self : UIViewController  {
     
     /// You can call this function to instantiate the `WKViewController` from code if the
     /// `viewController` is in a `UIStoryboard`; This method will automatically create a `UIStoryboard`

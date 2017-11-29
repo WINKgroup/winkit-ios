@@ -12,10 +12,8 @@ import UIKit
 /// This provides some useful methods like the static instantiation.
 open class WKTableViewController<P>: UITableViewController, WKBaseViewController where P: WKViewControllerPresenter {
     
+    /// The presenter that will handle all logic of this viewController.
     open var presenter: P!
-    
-    /// A dictionary that can contain passing data between view controllers.
-    var userInfo: [String : Any]?
     
     /// If your project has a storyboard that contains an instance of the subclass of this view controller,
     /// you can override this property to indicate the name of that storyboard to allow auto-instantiation feature
@@ -29,26 +27,11 @@ open class WKTableViewController<P>: UITableViewController, WKBaseViewController
         return String(describing: self)
     }
     
-    /// This method is called in `viewDidLoad()`, right after `presenter.viewDidLoad()`. If this viewController has
-    /// been presented by a `WKNavigator`, `userInfo` property may be not nil if some data have been passed before.
-    /// Override this method to access userInfo and do additional stuff in viewController subclass.
-    ///
-    /// - Parameter userInfo: An dictionary that is passed in WKNavigator method.
-    ///
-    /// - Important: This method is called only if e userInfo dict is provided from WKNavigator
-    open func initialize(with userInfo: [String : Any]) {
-        // default does nothing
-    }
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         guard presenter != nil else { fatalError("presenter is nil. Did you instantiate a WKViewControllerPresenter in your sublcass and assigned to presenter property before calling super.viewDidLoad()?") }
         
         presenter.viewDidLoad()
-        if let userInfo = userInfo {
-            initialize(with: userInfo)
-            self.userInfo = nil // clean user info
-        }
     }
     
     open override func viewWillAppear(_ animated: Bool) {

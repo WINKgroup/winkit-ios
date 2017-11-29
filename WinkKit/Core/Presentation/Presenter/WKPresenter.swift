@@ -12,3 +12,8 @@ import Foundation
 public protocol WKPresenter {
     
 }
+
+/// When you don't need a presenter, use this one.
+public class VoidPresenter: WKViewControllerPresenter {
+    
+}

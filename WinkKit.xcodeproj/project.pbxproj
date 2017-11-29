@@ -43,6 +43,7 @@
 		1FE5486E1EBD34DF0010A630 /* GoogleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5486C1EBD34DF0010A630 /* GoogleLocation.swift */; };
 		1FE5486F1EBD34DF0010A630 /* WKLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5486D1EBD34DF0010A630 /* WKLocationHelper.swift */; };
 		1FE91E761EBB50790056D27D /* WinkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE91E741EBB50790056D27D /* WinkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FFB42BD1FCEBA4300241678 /* WKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFB42BC1FCEBA4300241678 /* WKNavigationController.swift */; };
 		DA20D2C02BD25BB317D6CE6D /* Pods_WinkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEA6254621A5F8DA231ED15 /* Pods_WinkKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		1FE91E711EBB50790056D27D /* WinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91E741EBB50790056D27D /* WinkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinkKit.h; sourceTree = "<group>"; };
 		1FE91E751EBB50790056D27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FFB42BC1FCEBA4300241678 /* WKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationController.swift; sourceTree = "<group>"; };
 		5FEA6254621A5F8DA231ED15 /* Pods_WinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		649E202947E1503ED24A04D8 /* Pods-WinkKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinkKit/Pods-WinkKit.debug.xcconfig"; sourceTree = "<group>"; };
 		9E53501F73833329F5AAE7CB /* Pods-WinkKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinkKit/Pods-WinkKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				1F780EBE1EC0B51E003A326D /* WKTableViewController.swift */,
 				1F780EBF1EC0B51E003A326D /* WKViewController.swift */,
 				1F5A5AFF1F36467E005F7F18 /* WKBaseViewController.swift */,
+				1FFB42BC1FCEBA4300241678 /* WKNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				1F1560D01F59858F00C95450 /* Queue.swift in Sources */,
 				1F780EC81EC0B51E003A326D /* WKButton.swift in Sources */,
 				1F5A5AFE1F364523005F7F18 /* WKViewControllerPresenter.swift in Sources */,
+				1FFB42BD1FCEBA4300241678 /* WKNavigationController.swift in Sources */,
 				1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */,
 				1FE5486F1EBD34DF0010A630 /* WKLocationHelper.swift in Sources */,
 				1F1560D21F598A9D00C95450 /* UIAlertController.swift in Sources */,
