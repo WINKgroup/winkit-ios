@@ -229,7 +229,7 @@ extension WKNavigator {
 
 extension WKNavigator {
     
-    // - MARK: Instantiation and presentation methods of view controller
+    // - MARK: Instantiation and presentation methods of tableView controller
     
     /// Instantiate and present modally a `WKTableViewController` by specifing its type.
     ///
@@ -335,7 +335,7 @@ extension WKNavigator {
 
 extension WKNavigator {
     
-    // - MARK: Instantiation and presentation methods of view controller
+    // - MARK: Instantiation and presentation methods of collectionView controller
     
     /// Instantiate and present modally a `WKCollectionViewController` by specifing its type.
     ///
@@ -441,6 +441,7 @@ extension WKNavigator {
 
 extension WKNavigator {
     
+    // - MARK: Instantiation and presentation methods of navigationController
     
     /// This method will instantiate and present modally a navigationController from a storyboard.
     ///
