@@ -1,24 +1,528 @@
 {
   "warnings": [
     {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/RxSwift.swift",
-      "line": 12,
-      "symbol": "Variable.description",
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Domain/WKBaseInteractor.swift",
+      "line": 11,
+      "symbol": "WKBaseInteractor",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Domain/WKBaseInteractor.swift",
+      "line": 13,
+      "symbol": "WKBaseInteractor.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/NetworkService/WKService.swift",
+      "line": 17,
+      "symbol": "WKService.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 16,
+      "symbol": "WKViewControllerPresenter.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 18,
+      "symbol": "WKViewControllerPresenter.viewWillAppear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 20,
+      "symbol": "WKViewControllerPresenter.viewDidAppear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 22,
+      "symbol": "WKViewControllerPresenter.viewWillDisappear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 24,
+      "symbol": "WKViewControllerPresenter.viewDidDisappear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 31,
+      "symbol": "WKViewControllerPresenter.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 33,
+      "symbol": "WKViewControllerPresenter.viewWillAppear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 35,
+      "symbol": "WKViewControllerPresenter.viewDidAppear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 37,
+      "symbol": "WKViewControllerPresenter.viewWillDisappear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
+      "line": 39,
+      "symbol": "WKViewControllerPresenter.viewDidDisappear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKCollectionViewController.swift",
+      "line": 30,
+      "symbol": "WKCollectionViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKCollectionViewController.swift",
+      "line": 37,
+      "symbol": "WKCollectionViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKCollectionViewController.swift",
+      "line": 42,
+      "symbol": "WKCollectionViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKCollectionViewController.swift",
+      "line": 48,
+      "symbol": "WKCollectionViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKCollectionViewController.swift",
+      "line": 53,
+      "symbol": "WKCollectionViewController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKNavigationController.swift",
+      "line": 28,
+      "symbol": "WKNavigationController.childViewControllerForStatusBarStyle",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/RxSwift.swift",
-      "line": 17,
-      "symbol": "Reactive.items(cellType:vmType:)",
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKTableViewController.swift",
+      "line": 30,
+      "symbol": "WKTableViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/RxSwift.swift",
-      "line": 30,
-      "symbol": "Reactive.items(cellType:vmType:)",
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKTableViewController.swift",
+      "line": 37,
+      "symbol": "WKTableViewController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKTableViewController.swift",
+      "line": 42,
+      "symbol": "WKTableViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKTableViewController.swift",
+      "line": 48,
+      "symbol": "WKTableViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKTableViewController.swift",
+      "line": 53,
+      "symbol": "WKTableViewController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKViewController.swift",
+      "line": 34,
+      "symbol": "WKViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKViewController.swift",
+      "line": 41,
+      "symbol": "WKViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKViewController.swift",
+      "line": 46,
+      "symbol": "WKViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKViewController.swift",
+      "line": 52,
+      "symbol": "WKViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/ViewControllers/WKViewController.swift",
+      "line": 57,
+      "symbol": "WKViewController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKButton.swift",
+      "line": 19,
+      "symbol": "WKButton.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKCollectionView/WKCollectionView.swift",
+      "line": 58,
+      "symbol": "WKCollectionView.removePullToRefresh()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKCollectionView/WKCollectionViewCell.swift",
+      "line": 11,
+      "symbol": "WKCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKImageView.swift",
+      "line": 12,
+      "symbol": "WKImageView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKImageView.swift",
+      "line": 16,
+      "symbol": "WKImageView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKLabel.swift",
+      "line": 19,
+      "symbol": "WKLabel.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/SpinnerTableViewCell.swift",
+      "line": 11,
+      "symbol": "SpinnerTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/SpinnerTableViewCell.swift",
+      "line": 17,
+      "symbol": "SpinnerTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/SpinnerTableViewCell.swift",
+      "line": 21,
+      "symbol": "SpinnerTableViewCell.init(style:reuseIdentifier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/SpinnerTableViewCell.swift",
+      "line": 26,
+      "symbol": "SpinnerTableViewCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/SpinnerTableViewCell.swift",
+      "line": 36,
+      "symbol": "SpinnerTableViewCell.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/WKTableViewCell.swift",
+      "line": 11,
+      "symbol": "WKTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTableView/WKTableViewInfiniteDataSourceDelegate.swift",
+      "line": 39,
+      "symbol": "WKTableViewInfiniteDataSourceDelegate.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKTextView.swift",
+      "line": 19,
+      "symbol": "WKTextView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 37,
+      "symbol": "WKPropertiesInspectable.cornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 38,
+      "symbol": "WKPropertiesInspectable.borderWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 39,
+      "symbol": "WKPropertiesInspectable.borderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 40,
+      "symbol": "WKPropertiesInspectable.isRounded",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 42,
+      "symbol": "WKPropertiesInspectable.shadowOffset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 43,
+      "symbol": "WKPropertiesInspectable.shadowColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 44,
+      "symbol": "WKPropertiesInspectable.shadowRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 45,
+      "symbol": "WKPropertiesInspectable.shadowOpacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Views/WKView.swift",
+      "line": 250,
+      "symbol": "WKView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/WKNavigator.swift",
+      "line": 50,
+      "symbol": "WKNavigator.present(viewController:animated:configuration:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/Logger.swift",
+      "line": 9,
+      "symbol": "Log",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/Logger.swift",
+      "line": 11,
+      "symbol": "Log.info(tag:items:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/Logger.swift",
+      "line": 15,
+      "symbol": "Log.warning(tag:items:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/Logger.swift",
+      "line": 21,
+      "symbol": "Log.error(tag:items:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/Logger.swift",
+      "line": 27,
+      "symbol": "Log.debug(tag:items:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 347,
+      "symbol": "OrderedSet.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 351,
+      "symbol": "OrderedSet.isEmpty",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 355,
+      "symbol": "OrderedSet.first",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 360,
+      "symbol": "OrderedSet.index(after:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 366,
+      "symbol": "OrderedSet.startIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 370,
+      "symbol": "OrderedSet.endIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 405,
+      "symbol": "OrderedSetGenerator",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 409,
+      "symbol": "OrderedSetGenerator.init(set:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 422,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 429,
+      "symbol": "+=(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 433,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 440,
+      "symbol": "-=(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Utils/OrderedSet.swift",
+      "line": 446,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/UIColor.swift",
+      "line": 16,
+      "symbol": "UIColorInputError.missingHashMarkAsPrefix",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/UIColor.swift",
+      "line": 17,
+      "symbol": "UIColorInputError.unableToScanHexValue",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/UIColor.swift",
+      "line": 18,
+      "symbol": "UIColorInputError.mismatchedHexStringLength",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Extensions/UIColor.swift",
+      "line": 19,
+      "symbol": "UIColorInputError.unableToOutputHexStringForWideDisplayColor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
@@ -159,440 +663,6 @@
       "line": 16,
       "symbol": "Resource.notFound",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 17,
-      "symbol": "WKCollectionViewController.viewModel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 19,
-      "symbol": "WKCollectionViewController.disposeBag",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 21,
-      "symbol": "WKCollectionViewController.storyboardName",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 25,
-      "symbol": "WKCollectionViewController.identifier",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 29,
-      "symbol": "WKCollectionViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 36,
-      "symbol": "WKCollectionViewController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 41,
-      "symbol": "WKCollectionViewController.viewDidAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 46,
-      "symbol": "WKCollectionViewController.viewWillDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKCollectionViewController.swift",
-      "line": 51,
-      "symbol": "WKCollectionViewController.viewDidDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 17,
-      "symbol": "WKTableViewController.viewModel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 19,
-      "symbol": "WKTableViewController.disposeBag",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 21,
-      "symbol": "WKTableViewController.storyboardName",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 25,
-      "symbol": "WKTableViewController.identifier",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 29,
-      "symbol": "WKTableViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 36,
-      "symbol": "WKTableViewController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 41,
-      "symbol": "WKTableViewController.viewDidAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 46,
-      "symbol": "WKTableViewController.viewWillDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKTableViewController.swift",
-      "line": 51,
-      "symbol": "WKTableViewController.viewDidDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 21,
-      "symbol": "WKViewController.viewModel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 23,
-      "symbol": "WKViewController.disposeBag",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 25,
-      "symbol": "WKViewController.storyboardName",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 29,
-      "symbol": "WKViewController.identifier",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 33,
-      "symbol": "WKViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 40,
-      "symbol": "WKViewController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 45,
-      "symbol": "WKViewController.viewDidAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 50,
-      "symbol": "WKViewController.viewWillDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewControllers/WKViewController.swift",
-      "line": 55,
-      "symbol": "WKViewController.viewDidDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 16,
-      "symbol": "WKViewControllerViewModel.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 18,
-      "symbol": "WKViewControllerViewModel.viewWillAppear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 20,
-      "symbol": "WKViewControllerViewModel.viewDidAppear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 22,
-      "symbol": "WKViewControllerViewModel.viewWillDisappear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 24,
-      "symbol": "WKViewControllerViewModel.viewDidDisappear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 31,
-      "symbol": "WKViewControllerViewModel.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 33,
-      "symbol": "WKViewControllerViewModel.viewWillAppear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 35,
-      "symbol": "WKViewControllerViewModel.viewDidAppear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 37,
-      "symbol": "WKViewControllerViewModel.viewWillDisappear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/ViewModel/WKViewControllerViewModel.swift",
-      "line": 39,
-      "symbol": "WKViewControllerViewModel.viewDidDisappear()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKButton.swift",
-      "line": 19,
-      "symbol": "WKButton.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKCollectionView/WKCollectionView.swift",
-      "line": 30,
-      "symbol": "WKCollectionView.isInfiniteScrollEnabled",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKCollectionView/WKCollectionView.swift",
-      "line": 64,
-      "symbol": "WKCollectionView.removePullToRefresh()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKCollectionView/WKCollectionViewCell.swift",
-      "line": 11,
-      "symbol": "WKCollectionViewCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKImageView.swift",
-      "line": 12,
-      "symbol": "WKImageView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKImageView.swift",
-      "line": 16,
-      "symbol": "WKImageView.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/SpinnerTableViewCell.swift",
-      "line": 11,
-      "symbol": "SpinnerTableViewCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/SpinnerTableViewCell.swift",
-      "line": 17,
-      "symbol": "SpinnerTableViewCell.setSelected(_:animated:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/SpinnerTableViewCell.swift",
-      "line": 21,
-      "symbol": "SpinnerTableViewCell.init(style:reuseIdentifier:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/SpinnerTableViewCell.swift",
-      "line": 26,
-      "symbol": "SpinnerTableViewCell.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/SpinnerTableViewCell.swift",
-      "line": 36,
-      "symbol": "SpinnerTableViewCell.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/WKTableView.swift",
-      "line": 33,
-      "symbol": "WKTableView.isInfiniteScrollEnabled",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/WKTableViewCell.swift",
-      "line": 11,
-      "symbol": "WKTableViewCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/WKTableViewInfiniteDataSourceDelegate.swift",
-      "line": 39,
-      "symbol": "WKTableViewInfiniteDataSourceDelegate.tableView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKTableView/WKTableViewInfiniteDataSourceDelegate.swift",
-      "line": 73,
-      "symbol": "WKTableViewInfiniteDataSourceDelegate.scrollViewDidScroll(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 37,
-      "symbol": "WKPropertiesInspectable.cornerRadius",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 38,
-      "symbol": "WKPropertiesInspectable.borderWidth",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 39,
-      "symbol": "WKPropertiesInspectable.borderColor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 40,
-      "symbol": "WKPropertiesInspectable.isRounded",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 42,
-      "symbol": "WKPropertiesInspectable.shadowOffset",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 43,
-      "symbol": "WKPropertiesInspectable.shadowColor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 44,
-      "symbol": "WKPropertiesInspectable.shadowRadius",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 45,
-      "symbol": "WKPropertiesInspectable.shadowOpacity",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 249,
-      "symbol": "WKView.clipsToBounds",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/UI/Views/WKView.swift",
-      "line": 255,
-      "symbol": "WKView.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
