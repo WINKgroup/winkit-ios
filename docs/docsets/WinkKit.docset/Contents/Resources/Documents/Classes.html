@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">WinkKit Docs</a> (69% documented)</p>
+        <p><a href="index.html">WinkKit Docs</a> (72% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -60,6 +60,9 @@
                 <a href="Classes/WKCollectionViewController.html">WKCollectionViewController</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/WKCollectionViewDataSource.html">WKCollectionViewDataSource</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/WKImageView.html">WKImageView</a>
               </li>
               <li class="nav-group-task">
@@ -88,6 +91,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKTableViewController.html">WKTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKTableViewDataSource.html">WKTableViewDataSource</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKTableViewInfiniteDataSourceDelegate.html">WKTableViewInfiniteDataSourceDelegate</a>
@@ -437,6 +443,83 @@ This provides some useful methods like the static instantiation.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7WinkKit21WKTableViewDataSourceC"></a>
+                    <a name="//apple_ref/swift/Class/WKTableViewDataSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit21WKTableViewDataSourceC">WKTableViewDataSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A concrete <code>UITableViewDataSource</code> that has some common method already implemented.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This data source handles only 1 section.
+
+</div>
+
+                        <a href="Classes/WKTableViewDataSource.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@WinkKit@objc(cs)WKTableViewInfiniteDataSourceDelegate"></a>
+                    <a name="//apple_ref/swift/Class/WKTableViewInfiniteDataSourceDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@WinkKit@objc(cs)WKTableViewInfiniteDataSourceDelegate">WKTableViewInfiniteDataSourceDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A concrete &lsquo;UITableViewDataSource&rsquo; &amp; <code>UITableViewDelegate</code> that helps you to implement infinite scrolling.
+Since it&rsquo;s a concrete class, you should override before assignin to
+a <code>tableView</code> to implement your behaviour.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Don&rsquo;t forget to retain this object,
+since the <code>delegate</code> property of a <code>tableView</code> is weak.
+
+</div>
+
+                        <a href="Classes/WKTableViewInfiniteDataSourceDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewInfiniteDataSourceDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@WinkKit@objc(cs)WKView"></a>
                     <a name="//apple_ref/swift/Class/WKView" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@WinkKit@objc(cs)WKView">WKView</a>
@@ -752,6 +835,43 @@ The picker will also handle for you the permission for the localization usage.</
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC"></a>
+                    <a name="//apple_ref/swift/Class/WKCollectionViewDataSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC">WKCollectionViewDataSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A concrete <code>UICollectionViewDataSource</code> that has some common method already implemented.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This data source handles only 1 section.
+
+</div>
+
+                        <a href="Classes/WKCollectionViewDataSource.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:7WinkKit13VoidPresenterC"></a>
                     <a name="//apple_ref/swift/Class/VoidPresenter" class="dashAnchor"></a>
                     <a class="token" href="#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
@@ -968,46 +1088,6 @@ that create <code>DataRequest</code> and use <code>enqueue(_:)</code> method to 
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@WinkKit@objc(cs)WKTableViewInfiniteDataSourceDelegate"></a>
-                    <a name="//apple_ref/swift/Class/WKTableViewInfiniteDataSourceDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@WinkKit@objc(cs)WKTableViewInfiniteDataSourceDelegate">WKTableViewInfiniteDataSourceDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A concrete &lsquo;UITableViewDataSource&rsquo; &amp; <code>UITableViewDelegate</code> that helps you to implement infinite scrolling.
-Since it&rsquo;s a concrete class, you should override before assignin to
-a <code>tableView</code> to implement your behaviour.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    Don&rsquo;t forget to retain this object,
-since the <code>delegate</code> property of a <code>tableView</code> is weak.
-
-</div>
-
-                        <a href="Classes/WKTableViewInfiniteDataSourceDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewInfiniteDataSourceDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@WinkKit@objc(cs)WKMediaPickerHelper"></a>
                     <a name="//apple_ref/swift/Class/WKMediaPickerHelper" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@WinkKit@objc(cs)WKMediaPickerHelper">WKMediaPickerHelper</a>
@@ -1063,7 +1143,7 @@ Simply instantiate the picker and call the method <code>pick(mediaTypes:from:in:
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-11-29)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

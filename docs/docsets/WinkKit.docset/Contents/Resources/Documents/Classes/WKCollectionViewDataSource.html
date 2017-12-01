@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WKMediaPickerHelper Class Reference</title>
+    <title>WKCollectionViewDataSource Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/WKMediaPickerHelper" class="dashAnchor"></a>
-    <a title="WKMediaPickerHelper Class Reference"></a>
+    <a name="//apple_ref/swift/Class/WKCollectionViewDataSource" class="dashAnchor"></a>
+    <a title="WKCollectionViewDataSource Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">WinkKit Docs</a> (72% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">WinkKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        WKMediaPickerHelper Class Reference
+        WKCollectionViewDataSource Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -261,39 +261,19 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>WKMediaPickerHelper</h1>
+            <h1>WKCollectionViewDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKMediaPickerHelper</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                 </div>
               </div>
-            <p>This class is used to make the picking of a media (image/video) simpler.
-Simply instantiate the picker and call the method <code>pick(mediaTypes:from:in:completion)</code>.</p>
+            <p>A concrete <code>UICollectionViewDataSource</code> that has some common method already implemented.</p>
 <div class="aside aside-important">
     <p class="aside-title">Important</p>
-    Don&rsquo;t forget to retain the picker, by adding it as an instance variable, otherwise
-         the completion won&rsquo;t be called.
+    This data source handles only 1 section.
 
 </div>
-
-<p>A tipical usage could be:</p>
-<pre class="highlight plaintext"><code>picker.pick(mediaTypes: [.image, .video], from: .photoLibrary, in: self) { result in
-    switch result {
-    case .pickedImage(let media):
-        print(media.name)
-
-    case .pickedVideo(let media):
-        print(media.name)
-
-    case .fileSizeExceeded(let mediaType, let maxSize):
-        print("Max size exceeded: \(maxSize)")
-
-    default:
-        break
-    }
-}
-</code></pre>
 
           </section>
           <section class="section task-group-section">
@@ -309,9 +289,9 @@ Simply instantiate the picker and call the method <code>pick(mediaTypes:from:in:
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7WinkKit19WKMediaPickerHelperC12imageMaxBytes5Int64VSgv"></a>
-                    <a name="//apple_ref/swift/Property/imageMaxByte" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit19WKMediaPickerHelperC12imageMaxBytes5Int64VSgv">imageMaxByte</a>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC5itemsSayxGv"></a>
+                    <a name="//apple_ref/swift/Property/items" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC5itemsSayxGv">items</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -319,15 +299,14 @@ Simply instantiate the picker and call the method <code>pick(mediaTypes:from:in:
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The max byte number for the compressed image, for example if it&rsquo;s 4194303
-the max size of image will be 4MB; if <code>nil</code>, no max size will be applied.</p>
+                        <p>The array of item that managed by this dataSource.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">imageMaxByte</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">internal(set)</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">T</span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -337,9 +316,9 @@ the max size of image will be 4MB; if <code>nil</code>, no max size will be appl
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7WinkKit19WKMediaPickerHelperC12videoMaxBytes5Int64VSgv"></a>
-                    <a name="//apple_ref/swift/Property/videoMaxByte" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit19WKMediaPickerHelperC12videoMaxBytes5Int64VSgv">videoMaxByte</a>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC010collectionD0SQySo012UICollectionD0CGXwv"></a>
+                    <a name="//apple_ref/swift/Property/collectionView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC010collectionD0SQySo012UICollectionD0CGXwv">collectionView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -347,69 +326,14 @@ the max size of image will be 4MB; if <code>nil</code>, no max size will be appl
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The max byte number for the compressed video, for example if it&rsquo;s 134217727,
-the max size of video will be 128MB; if <code>nil</code>, no max size will be applied.</p>
+                        <p>The collection view that owns this dataSource.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">videoMaxByte</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7WinkKit19WKMediaPickerHelperC12videoQualitySC07UIImaged10ControllerG4TypeOv"></a>
-                    <a name="//apple_ref/swift/Property/videoQuality" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit19WKMediaPickerHelperC12videoQualitySC07UIImaged10ControllerG4TypeOv">videoQuality</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The video quality. Default is <code>.typeIFrame1280x720</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">videoQuality</span><span class="p">:</span> <span class="kt">UIImagePickerControllerQualityType</span> <span class="o">=</span> <span class="o">.</span><span class="n">typeIFrame1280x720</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7WinkKit19WKMediaPickerHelperC13allowsEditingSbv"></a>
-                    <a name="//apple_ref/swift/Property/allowsEditing" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit19WKMediaPickerHelperC13allowsEditingSbv">allowsEditing</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Tells the picker if the editing of the media is possible. Default is false.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">allowsEditing</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">internal(set)</span> <span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -430,9 +354,9 @@ the max size of video will be 128MB; if <code>nil</code>, no max size will be ap
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7WinkKit19WKMediaPickerHelperCACs5Int64VSg12imageMaxByte_AF05videohI0Sb13allowsEditingSC07UIImageD21ControllerQualityTypeO0jO0tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(imageMaxByte:videoMaxByte:allowsEditing:videoQuality:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit19WKMediaPickerHelperCACs5Int64VSg12imageMaxByte_AF05videohI0Sb13allowsEditingSC07UIImageD21ControllerQualityTypeO0jO0tcfc">init(imageMaxByte:videoMaxByte:allowsEditing:videoQuality:)</a>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceCACyxGSo012UICollectionD0C010collectionD0_SayAA0cD4CellCyqd__GmG0hD5CellstcAA11WKPresenterRd__lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(collectionView:collectionViewCells:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceCACyxGSo012UICollectionD0C010collectionD0_SayAA0cD4CellCyqd__GmG0hD5CellstcAA11WKPresenterRd__lufc">init(collectionView:collectionViewCells:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -440,14 +364,15 @@ the max size of video will be 128MB; if <code>nil</code>, no max size will be ap
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Create the dataSource and attach it to the given collection view. Collection view will register the
+array of given cells too.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKMediaPickerHelper</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="nv">collectionViewCells</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/WKCollectionViewCell.html">WKCollectionViewCell</a></span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;.</span><span class="k">Type</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -468,9 +393,9 @@ the max size of video will be 128MB; if <code>nil</code>, no max size will be ap
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7WinkKit19WKMediaPickerHelperC4pickys3SetVyAA0C4TypeOG10mediaTypes_SC07UIImaged16ControllerSourceH0O4fromSo06UIViewL0C2inyAA14WKPickerResultOc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/pick(mediaTypes:from:in:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit19WKMediaPickerHelperC4pickys3SetVyAA0C4TypeOG10mediaTypes_SC07UIImaged16ControllerSourceH0O4fromSo06UIViewL0C2inyAA14WKPickerResultOc10completiontF">pick(mediaTypes:from:in:completion:)</a>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC010collectionD0SiSo012UICollectionD0C_Si22numberOfItemsInSectiontF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC010collectionD0SiSo012UICollectionD0C_Si22numberOfItemsInSectiontF">collectionView(_:numberOfItemsInSection:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -478,14 +403,216 @@ the max size of video will be 128MB; if <code>nil</code>, no max size will be ap
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Pick the media. You can specify different options of picking.</p>
+                        <p>Asks your data source object for the number of items in the specified section.
+Default returns items count.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">pick</span><span class="p">(</span><span class="nv">mediaTypes</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt"><a href="../Enums/WKMediaType.html">WKMediaType</a></span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="o">.</span><span class="n">video</span><span class="p">],</span> <span class="n">from</span> <span class="nv">sourceType</span><span class="p">:</span> <span class="kt">UIImagePickerControllerSourceType</span><span class="p">,</span> <span class="k">in</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7WinkKit16WKPickerCallbacka">WKPickerCallback</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The number of rows in section.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC010collectionD0So012UICollectionD4CellCSo0hD0C_10Foundation9IndexPathV13cellForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC010collectionD0So012UICollectionD4CellCSo0hD0C_10Foundation9IndexPathV13cellForItemAttF">collectionView(_:cellForItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks your data source object for the cell that corresponds to the specified item in the collection view.
+Your implementation of this method is responsible for creating, configuring, and returning the appropriate cell for the given item. You do this by calling the dequeueReusableCell(withReuseIdentifier:for:) method of the collection view and passing the reuse identifier that corresponds to the cell type you want. That method always returns a valid cell object. Upon receiving the cell, you should set any properties that correspond to the data of the corresponding item, perform any additional needed configuration, and return the cell.
+   You do not need to set the location of the cell inside the collection view’s bounds. The collection view sets the location of each cell automatically using the layout attributes provided by its layout object.
+   If isPrefetchingEnabled on the collection view is set to true then this method is called in advance of the cell appearing. Use the collectionView(_:willDisplay:forItemAt:) delegate method to make any changes to the appearance of the cell to reflect its visual state such as selection.
+   This method must always return a valid view object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A configured cell object. A fatal error is thrown if this method is not overriden.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC3addyxF"></a>
+                    <a name="//apple_ref/swift/Method/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC3addyxF">add(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add an item into data source and update the collection view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC6removeySi2at_tF"></a>
+                    <a name="//apple_ref/swift/Method/remove(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC6removeySi2at_tF">remove(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove item at index from data source and update the collection view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC7replaceyx_Si2attF"></a>
+                    <a name="//apple_ref/swift/Method/replace(_:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC7replaceyx_Si2attF">replace(_:at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Replce the item in data source at specified index with new one.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">replace</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC7replaceySayx4item_Si5indextG5items_tF"></a>
+                    <a name="//apple_ref/swift/Method/replace(items:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC7replaceySayx4item_Si5indextG5items_tF">replace(items:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Replace multiple items at the specified indexes and update collection view`.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">replace</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="p">[(</span><span class="nv">item</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC5clearyyF"></a>
+                    <a name="//apple_ref/swift/Method/clear()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC5clearyyF">clear()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Empty the data source and reload the collection view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceC10replaceAllySayxGF"></a>
+                    <a name="//apple_ref/swift/Method/replaceAll(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceC10replaceAllySayxGF">replaceAll(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clear and set new items to data source and call <code>reladData()</code> on collection view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">replaceAll</span><span class="p">(</span><span class="n">_</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -495,20 +622,13 @@ the max size of video will be 128MB; if <code>nil</code>, no max size will be ap
               </ul>
             </div>
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/UIImagePickerControllerDelegate"></a>
-                <a name="//apple_ref/swift/Section/UIImagePickerControllerDelegate" class="dashAnchor"></a>
-                <a href="#/UIImagePickerControllerDelegate">
-                  <h3 class="section-name">UIImagePickerControllerDelegate</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@WinkKit@objc(cs)WKMediaPickerHelper(im)imagePickerController:didFinishPickingMediaWithInfo:"></a>
-                    <a name="//apple_ref/swift/Method/imagePickerController(_:didFinishPickingMediaWithInfo:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@WinkKit@objc(cs)WKMediaPickerHelper(im)imagePickerController:didFinishPickingMediaWithInfo:">imagePickerController(_:didFinishPickingMediaWithInfo:)</a>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceCAAs9EquatableRzlE6removeyxF"></a>
+                    <a name="//apple_ref/swift/Method/remove(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceCAAs9EquatableRzlE6removeyxF">remove(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -516,41 +636,14 @@ the max size of video will be 128MB; if <code>nil</code>, no max size will be ap
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Remove the item from the data source.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKMediaPickerHelper</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@WinkKit@objc(cs)WKMediaPickerHelper(im)imagePickerControllerDidCancel:"></a>
-                    <a name="//apple_ref/swift/Method/imagePickerControllerDidCancel(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@WinkKit@objc(cs)WKMediaPickerHelper(im)imagePickerControllerDidCancel:">imagePickerControllerDidCancel(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKMediaPickerHelper</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
