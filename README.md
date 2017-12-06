@@ -10,15 +10,28 @@ You need [Xcode 9](https://developer.apple.com/xcode/), Swift 4 and [CocoaPods](
 
 ### Installing
 
-Just paste the CocoaPods dependency in your `podfile`
+Just paste the CocoaPods dependency in your  `podfile`. Due to a cocoapods bug, ensure to paste the **post_install** function too.
 
 ```ruby
 # Podfile
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
+
+    # https://github.com/WINKgroup/WinkKit
     pod 'WinkKit'
+    
 end
+
+# This post install is needed because of a Cocoapods bug; it is needed to render WinkKit properties in InterfaceBuilder correctly.
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+        end
+    end
+end
+
 ```
 
 ## Understanding Structure
