@@ -6,7 +6,7 @@ PODS:
     - Runes (>= 4.0.0)
   - Curry (3.0.0)
   - DateTools (2.0.0)
-  - Runes (4.0.1)
+  - Runes (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
@@ -14,7 +14,6 @@ DEPENDENCIES:
   - Argo
   - Curry
   - DateTools
-  - Runes
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -22,8 +21,8 @@ SPEC CHECKSUMS:
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
+  Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
 
-PODFILE CHECKSUM: bcae37d5b5abf71b266e5d425a4971faefcf175a
+PODFILE CHECKSUM: abbb9c1edcd062ce4a73cbe0401d447783334bf5
 
 COCOAPODS: 1.3.1

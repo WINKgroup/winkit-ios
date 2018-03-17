@@ -26,7 +26,7 @@ public protocol WKInstantiableViewController: class {
 /// to follow MVP pattern.
 public protocol WKBaseViewController: WKInstantiableViewController {
     
-    associatedtype P = WKViewControllerPresenter
+    associatedtype P = WKGenericViewControllerPresenter
     
     /// The `WKViewControllerPresenter` owned by this class.
     var presenter: P! { get set }

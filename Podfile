@@ -8,7 +8,6 @@ target 'WinkKit' do
   pod 'AlamofireImage', '~> 3.2.0'
   pod 'Argo'
   pod 'Curry'
-  pod 'Runes'
   pod 'DateTools'
   # Pods for WinkKit
 

@@ -12,10 +12,11 @@ import Alamofire
 /// This class is intended to be subclassed. A tipical implementation could be a PostService class
 /// for a social network app. PostService will have methods like `createPost(_:completion:)`, `fetchPosts(completion:)`
 /// that create `DataRequest` and use `enqueue(_:)` method to start the request.
+/// When a service get destroyed, every request enqueued with `enqueue(_:)` method is cancelled.
 open class WKService {
-
+    
     public init() {}
-
+    
     /// All `DataRequest` managed by this service. It doesn't contains finished requests.
     private(set) public var requests = [DataRequest]()
     

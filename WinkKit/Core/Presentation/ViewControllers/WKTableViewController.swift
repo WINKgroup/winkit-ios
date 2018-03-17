@@ -10,7 +10,7 @@ import UIKit
 
 /// The base TableViewController that will be subclassed in your project instead of subclassing `UITableViewController`.
 /// This provides some useful methods like the static instantiation.
-open class WKTableViewController<P>: UITableViewController, WKBaseViewController where P: WKViewControllerPresenter {
+open class WKTableViewController<P>: UITableViewController, WKBaseViewController where P: WKGenericViewControllerPresenter {
     
     /// The presenter that will handle all logic of this viewController.
     open var presenter: P!
@@ -27,9 +27,25 @@ open class WKTableViewController<P>: UITableViewController, WKBaseViewController
         return String(describing: self)
     }
     
+    // - MARK: Initializers
+    
+    /// Initialize view controller and assign the presenter.
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        initPresenter()
+    }
+    
+    /// Initialize view controller and assign the presenter.
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initPresenter()
+    }
+    
+    // - MARK: View Controller life-cycle
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
-        guard presenter != nil else { fatalError("presenter is nil. Did you instantiate a WKViewControllerPresenter in your sublcass and assigned to presenter property before calling super.viewDidLoad()?") }
+        guard presenter != nil else { fatalError("presenter is nil. it could be possible that you created a custom init for this view controller and you didn't call `initPresenter()`.") }
         
         presenter.viewDidLoad()
     }
@@ -41,7 +57,6 @@ open class WKTableViewController<P>: UITableViewController, WKBaseViewController
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        WKNavigator.shared.currentViewController = self
         presenter.viewDidAppear()
     }
     
@@ -53,6 +68,24 @@ open class WKTableViewController<P>: UITableViewController, WKBaseViewController
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         presenter.viewDidDisappear()
+    }
+    
+    deinit {
+        presenter.viewDidDestroy()
+    }
+    
+    // - MARK: Public methods.
+    
+    /// A method called when the view controller is initialized. This method cannot be overriden,
+    /// but if you provide your own `init` (which doesn't override existing ones) you must call it.
+    public func initPresenter() {
+        if P.self == VoidPresenter.self {
+            presenter = VoidPresenter() as! P
+        } else if let view = self as? P.View {
+            presenter = P.init(view: view, ())
+        } else {
+            fatalError("\(type(of: self)) doesn't conform to \(type(of: P.View.self))")
+        }
     }
     
 }

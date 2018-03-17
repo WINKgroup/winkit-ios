@@ -11,7 +11,7 @@ import UIKit
 open class WKTableViewCell<P: WKPresenter>: UITableViewCell {
     
     /// The reuse identifier accessible before the object instantiation.
-    /// You can override this var, default value is `String(describing: self)`.
+    /// You can override this var, default value is `String(describing: self)`, which is the class name.
     open class var reuseIdentifier: String {
         return String(describing: self)
     }

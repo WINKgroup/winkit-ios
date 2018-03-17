@@ -22,6 +22,17 @@ public extension UITableView {
     public func register<P>(cell: WKTableViewCell<P>.Type) {
         register(UINib(nibName: String(describing: cell), bundle: nil), forCellReuseIdentifier: cell.reuseIdentifier)
     }
+    
+    
+    /// Dequeue a specialized `WKTableViewCell` based on given type.
+    ///
+    /// - Parameters:
+    ///   - type: The type of the cell that will be dequeued.
+    ///   - indexPath: The index path
+    /// - Returns: The cell already casted.
+    public func dequeueReusableCell<C, P>(ofType type: C.Type, for indexPath: IndexPath) -> C where C: WKTableViewCell<P> {
+        return dequeueReusableCell(withIdentifier: type.reuseIdentifier, for: indexPath) as! C
+    }
 
 }
 

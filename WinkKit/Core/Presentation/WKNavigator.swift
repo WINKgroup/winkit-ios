@@ -23,7 +23,9 @@ open class WKNavigator {
     public static let shared = WKNavigator()
     
     /// Current displaying viewController.
-    internal(set) open var currentViewController: UIViewController?
+    open var currentViewController: UIViewController? {
+        return UIApplication.shared.keyWindow?.topMostViewController
+    }
     
     private init() {}
     

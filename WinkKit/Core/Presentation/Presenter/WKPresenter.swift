@@ -8,12 +8,22 @@
 
 import Foundation
 
-/// Every `WKViewController`, `WKTableViewController`, `WKCollectionViewController` needs a `WKPresenter` to properly works.
-public protocol WKPresenter {
-    
+/// The base presenter protocol.
+public protocol WKPresenter: class {
+
 }
 
-/// When you don't need a presenter, use this one.
-public class VoidPresenter: WKViewControllerPresenter {
+/// En empty view used to be the `VoidPresenter` view.
+public class VoidView: PresentableView {}
+
+/// When you don't need a presenter in a view controller, use this one.
+public final class VoidPresenter: WKGenericViewControllerPresenter {
     
+    public typealias View = VoidView
+    
+    public weak var view: VoidView?
+    
+    public required init() {
+        view = VoidView()
+    }
 }
