@@ -232,11 +232,7 @@ class ItemPresenter: WKPresenter {
 	
 	// the item that will be showed in this cell
 	private var item: Item!
-	
-    required init() {
-        // Required empty initializer, put here other init stuff
-    }
-    
+	 
     init(with item: Item) {
     	self.item = item
     }

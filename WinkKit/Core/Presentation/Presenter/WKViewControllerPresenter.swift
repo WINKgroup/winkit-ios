@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-public protocol PresentableView: class {
-    
-}
-
 /// The base `WKPresenter` that is already bound with ViewController lifecycle.
 /// Al methods have default implementation that does nothing, so you can implement
 /// only methods you want.
 public protocol WKGenericViewControllerPresenter: WKPresenter {
+    
+    /// Required an empty initializer. At this time `view` property is still nil. You can perform additional
+    /// initialization here.
+    init()
     
     /// Called by the `WinkKit` framework after `view` property assignin. Here the view is guaranted to be not nil. Defualt does nothing.
     func presenterInitialized()
