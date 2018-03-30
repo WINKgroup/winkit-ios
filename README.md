@@ -7,7 +7,7 @@ WinkKit
 
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/WinkKit.svg?style=flat)](http://cocoapods.org/pods/WinkKit)
 [![License](https://img.shields.io/cocoapods/l/WinkKit.svg?style=flat)](http://cocoapods.org/pods/WinkKit)
-[![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](http://cocoapods.org/pods/WinkKit)
+[![Platforms](https://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/pods/WinkKit)
 [![Swift Version](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift)
 
 
@@ -16,9 +16,11 @@ An iOS framework that contains a set of classes that follow MVP pattern and solv
 ## Table of Contents
 1. [Getting Started](#Getting_Started)
 2. [Understanding Structure](#Understanding_Structure)
-3. [UIView Extension](#UI_Extension)
+3. [Using enhanced Views](#UI_Extension)
 4. [Using ViewControllers and Presenters](#Using_ViewControllers)
 5. [Using Table Views and Collection Views](#Using_TabColViews)
+6. [Utils and more](#Utils_And_More)
+
 ## Getting Started <a name="Getting_Started"></a>
 
 ### Prerequisites
@@ -51,6 +53,8 @@ end
 
 ```
 
+**N.B.**: If you have compilation fails related to `AlamofireImage` target in generated Pod project, set Swift version to 3.2 for that target.
+
 ### Add project/file templates to Xcode (Optional but recommended)
 
 WinkKit has been designed to help creating app with MVP pattern (you'll understand better later); to follow this pattern, it's needed to create for each view several files.
@@ -64,6 +68,9 @@ Now in Xcode, under **File > New > File** (or CMD+N) you can create view control
 <img src="readme-res/template_files.png" width="50%">
 </p>
 
+## API Documentation
+
+### Check the classes reference [here](./docs/index.html).
 
 ## Understanding Structure <a name="Understanding_Structure"></a>
 
@@ -115,7 +122,7 @@ It's the layer that handles all data stuff, such as http calls, cache uploading/
 
 # Presentation
 
-## UIView Extension <a name="UI_Extension"></a>
+## Using enhanced Views <a name="UI_Extension"></a>
 
 WinkKit provides common view classes that have more `@IBDesignable` in InterfaceBuilder.
 
@@ -140,7 +147,7 @@ Then you can customize the button from Attributes inspector:
 
 In a WinkKit app every view controller should extends the `WKViewController<P>` (or `WKTableViewController<P>` or `WKCollectionViewContrller<P>`, they have all same behaviours).
 
-A `WKViewController` wants a subclass of `WKGenericViewControllerPresenter` (which is a protocol that extends the base presenter protocol `WKPresenter`) because the view controller life-cycle is binded to this kind of presenter. A typical implementation of home page is
+A `WKViewController` wants a subclass of `WKGenericViewControllerPresenter` (which is a protocol that extends the base presenter protocol `WKPresenter`) because the view controller life-cycle is bound to this kind of presenter. A typical implementation of home page is
 
 ```swift
 // HomeViewController.swift
@@ -151,7 +158,7 @@ class HomeViewController: WKViewController<HomePresenter> {
 
 // Since the view controller is handled by HomePresenter, it must be conform to LoginView.
 extension HomeViewController: LoginView {
-	// implements all LoginView methods/properties
+	// implements all HomeView methods/properties
 }
 
 
@@ -174,6 +181,7 @@ class HomePresenter: WKGenericViewControllerPresenter {
 }
 
 ```
+**Notice that you don't need to call any method to bind the view controller and the presenter, everything is automatically done by the framework!** 🎉🎉🎉
 
 HomePresenter and HomeViewController are two different files. You can use the file template to create quickly this structure 😉.
 
@@ -181,8 +189,125 @@ HomePresenter and HomeViewController are two different files. You can use the fi
 ## Using Table Views and Collection Views <a name="Using_TabColViews"></a>
 
 WinkKit provides both `WKTableView`, `WKCollectionView` and `WKTableViewCell`, `WKCollectionViewCell`.
-Let's talk about table view and collection views, which work similar 
+Let's talk about `WKTableView` and `WKTableViewCell` (collection view has same logic).
 
+**N.B.**: To have a better structure, all cell must have a xib: do **not** create cell in the storyboard directly.
+
+The `WKTableView` provides two methods to register and dequeue a `WKTableViewCell` quickly by doing:
+
+```swift
+tableView.register(cell: ItemTableViewCell.self) // register the cell with a xib that has same name of the class
+
+tableView.dequeueReusableCell(ofType: ItemTableViewCell.self, for: indexPath) // dequeue a cell, already casted
+
+```
+
+Cell acts like view controller: they have a presenter (in this case the plain `WKPresenter`) and they must conform to the view that the presenter handles. For this reason creating a cell is like creating a view controller:
+
+```swift
+// ItemTableViewCell.swift
+
+class ItemTableViewCell: WKTableViewCell<ItemPresenter> {
+	// do only UI stuff here
+}
+
+extension ItemTableViewCell: ItemView {
+  	// implements all ItemView methods/properties  
+}
+
+// ItemPresenter.swift
+
+/// The protocol that the cell handled by presenter must conforms to.
+protocol ItemView: PresentableView {
+    
+}
+
+/// The presenter that will handle all logic of the view.
+class ItemPresenter: WKPresenter {
+    
+    typealias View = ItemView
+    
+    // The view associated to this presenter. Keep weak to avoid retain-cycle
+    weak var view: ItemView?
+	
+	// the item that will be showed in this cell
+	private var item: Item!
+	
+    required init() {
+        // Required empty initializer, put here other init stuff
+    }
+    
+    init(with item: Item) {
+    	self.item = item
+    }
+    
+    // do all logic here
+}
+
+```
+You can use template to quickly create all of those class/protocols 😁.
+
+Unlike view controllers, a cell must be configured after dequeued in the data source by doing something like:
+
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	let cell = tableView.dequeueReusableCell(ofType: ItemTableViewCell.self, for: indexPath)
+  	let presenter = ItemPresenter() // create a presenter
+  	cell.configure(with: presenter) // configure the cell with the presenter
+  	return cell
+}
+
+```
+
+### Collection View and Table View data source
+
+As a best practice, it's better to decouple data sources from view controller. Avoid making a view controller as a data source to have all stuff better separated and re-usable. To communicate from data source to view controller, is it possible to use closures or delegation pattern. A typical implementation of a simple table view data source could be like:
+
+```swift
+class ItemDataSource: NSObject, UITableViewDataSource {
+    
+    private var items = [Any]()
+    
+    init(tableView: WKTableView) {
+    	// register cell here so when you need this data source you don't have to repeat this line of code
+    	tableView.register(cell: ItemTableViewCell.self)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(ofType: ItemTableViewCell.self, for: indexPath)
+        let presenter = ItemPresenter(with: items[indexPath.row])
+        cell.configure(with: presenter)
+        
+        return cell
+    }
+    
+}
+
+```
+
+Then in your view controller use the data source as instance variable.
+
+**Tips**: `WinkKit` provides few ready data source classes that have common methods, like inserting/deleting/reloading items or handle infinite scroll. Check `WKTableViewDataSource`, `WKCollectionViewDataSource` and `WKTableViewInfiniteDataSourceDelegate`. 
+
+## Utils and more <a name="#Utils_And_More"></a>
+
+There are other classes and extensions that can be used to achieve some behaviour:
+
+- Classes:
+	- `Logger`: contains methods to log info and to avoid print debug info in release mode;
+	- `OrderedSet`: it's like a `Set` but elements are ordered;
+	- `Queue`: a simple queue class
+- Extensions:
+	- `UIAlertController`: contains method to show quickly an alert
+	- `Date`: contains an `init` to create a date from a string and a format and some methods to get day, hour of month
+	- `Collection`: constains a subscript to access values even if the index is wrong (it returns an optional)
+	- `CALayer`: contains method to add border to a layer
+	- ``UIColor`: allow color creation with a hex string
+	- `UIWindow`: contains method to get the current top most view controller.
 
 ## Authors
 
