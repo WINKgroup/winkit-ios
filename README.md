@@ -58,7 +58,7 @@ end
 ### Add project/file templates to Xcode (Optional but recommended)
 
 WinkKit has been designed to help creating app with MVP pattern (you'll understand better later); to follow this pattern, it's needed to create for each view several files.
-WinkKit contains a set of Xcode templates to make file creation faster; download [Template File](./Xcode%20Templates/Template%20Files/Wink%20Kit.zip), extract and copy "Wink Kit" folder to 
+WinkKit contains a set of Xcode templates to make file creation faster; download <a href="./Xcode%20Templates/Template%20Files/Wink%20Kit.zip"  target="_blank" download>Template File</a>, extract and copy "Wink Kit" folder to 
 
 	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates
 	
