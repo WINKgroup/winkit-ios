@@ -58,7 +58,7 @@ end
 ### Add project/file templates to Xcode (Optional but recommended)
 
 WinkKit has been designed to help creating app with MVP pattern (you'll understand better later); to follow this pattern, it's needed to create for each view several files.
-WinkKit contains a set of Xcode templates to make file creation faster; download [Template File](./Xcode%20Templates/Template%20Files) and copy "WinkKit" folder to 
+WinkKit contains a set of Xcode templates to make file creation faster; download [Template File](./Xcode%20Templates/Template%20Files/Wink%20Kit.zip), extract and copy "Wink Kit" folder to 
 
 	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates
 	
@@ -293,7 +293,7 @@ Then in your view controller use the data source as instance variable.
 
 **Tips**: `WinkKit` provides few ready data source classes that have common methods, like inserting/deleting/reloading items or handle infinite scroll. Check `WKTableViewDataSource`, `WKCollectionViewDataSource` and `WKTableViewInfiniteDataSourceDelegate`. 
 
-## Utils and more <a name="#Utils_And_More"></a>
+## Utils and more <a name="Utils_And_More"></a>
 
 There are other classes and extensions that can be used to achieve some behaviour:
 
@@ -306,7 +306,7 @@ There are other classes and extensions that can be used to achieve some behaviou
 	- `Date`: contains an `init` to create a date from a string and a format and some methods to get day, hour of month
 	- `Collection`: constains a subscript to access values even if the index is wrong (it returns an optional)
 	- `CALayer`: contains method to add border to a layer
-	- ``UIColor`: allow color creation with a hex string
+	- `UIColor`: allow color creation with a hex string
 	- `UIWindow`: contains method to get the current top most view controller.
 
 ## Authors
