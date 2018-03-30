@@ -14,7 +14,7 @@
     <a title="WKCollectionViewDataSource Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">WinkKit Docs</a> (72% documented)</p>
+        <p><a href="../index.html">WinkKit Docs</a> (79% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -43,10 +43,10 @@
                 <a href="../Classes/SpinnerTableViewCell.html">SpinnerTableViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
+                <a href="../Classes/VoidPresenter.html">VoidPresenter</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/WKBaseInteractor.html">WKBaseInteractor</a>
+                <a href="../Classes.html#/s:7WinkKit8VoidViewC">VoidView</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKButton.html">WKButton</a>
@@ -80,6 +80,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKService.html">WKService</a>
@@ -166,6 +172,9 @@
               <li class="nav-group-task">
                 <a href="../Extensions/UIView.html">UIView</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -192,10 +201,19 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols.html#/s:7WinkKit7WKErrorP">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
@@ -204,13 +222,13 @@
                 <a href="../Protocols/WKMedia.html">WKMedia</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a>
+                <a href="../Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKPresenter.html">WKPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a>
               </li>
             </ul>
           </li>
@@ -354,9 +372,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7WinkKit26WKCollectionViewDataSourceCACyxGSo012UICollectionD0C010collectionD0_SayAA0cD4CellCyqd__GmG0hD5CellstcAA11WKPresenterRd__lufc"></a>
-                    <a name="//apple_ref/swift/Method/init(collectionView:collectionViewCells:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceCACyxGSo012UICollectionD0C010collectionD0_SayAA0cD4CellCyqd__GmG0hD5CellstcAA11WKPresenterRd__lufc">init(collectionView:collectionViewCells:)</a>
+                    <a name="/s:7WinkKit26WKCollectionViewDataSourceCACyxGSo012UICollectionD0C010collectionD0_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(collectionView:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewDataSourceCACyxGSo012UICollectionD0C010collectionD0_tcfc">init(collectionView:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -364,15 +382,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create the dataSource and attach it to the given collection view. Collection view will register the
-array of given cells too.</p>
+                        <p>Create the dataSource and attach it to the given collection view.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="nv">collectionViewCells</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/WKCollectionViewCell.html">WKCollectionViewCell</a></span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;.</span><span class="k">Type</span><span class="p">])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -655,7 +672,7 @@ Your implementation of this method is responsible for creating, configuring, and
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-03-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

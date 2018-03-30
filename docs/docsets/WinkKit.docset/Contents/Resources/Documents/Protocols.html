@@ -13,7 +13,7 @@
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">WinkKit Docs</a> (72% documented)</p>
+        <p><a href="index.html">WinkKit Docs</a> (79% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -42,10 +42,10 @@
                 <a href="Classes/SpinnerTableViewCell.html">SpinnerTableViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
+                <a href="Classes/VoidPresenter.html">VoidPresenter</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/WKBaseInteractor.html">WKBaseInteractor</a>
+                <a href="Classes.html#/s:7WinkKit8VoidViewC">VoidView</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKButton.html">WKButton</a>
@@ -79,6 +79,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKService.html">WKService</a>
@@ -165,6 +171,9 @@
               <li class="nav-group-task">
                 <a href="Extensions/UIView.html">UIView</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIWindow.html">UIWindow</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -191,10 +200,19 @@
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/WKBaseViewController.html">WKBaseViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols.html#/s:7WinkKit7WKErrorP">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
@@ -203,13 +221,13 @@
                 <a href="Protocols/WKMedia.html">WKMedia</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a>
+                <a href="Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WKPresenter.html">WKPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a>
               </li>
             </ul>
           </li>
@@ -443,9 +461,9 @@ in the <code>UIView</code> extension exactly like the following example:</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7WinkKit25WKViewControllerPresenterP"></a>
-                    <a name="//apple_ref/swift/Protocol/WKViewControllerPresenter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit25WKViewControllerPresenterP">WKViewControllerPresenter</a>
+                    <a name="/s:7WinkKit17WKNetworkObserverP"></a>
+                    <a name="//apple_ref/swift/Protocol/WKNetworkObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit17WKNetworkObserverP">WKNetworkObserver</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -453,17 +471,97 @@ in the <code>UIView</code> extension exactly like the following example:</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The base <code><a href="Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a></code> that is already bound with ViewController lifecycle.
-Al methods have default implementation that does nothing, so you can implement
-only methods you want.</p>
+                        <p>The object that will observe network changing. Tipically a presenter.
+<code><a href="Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a></code> already conforms to this protocol.</p>
 
-                        <a href="Protocols/WKViewControllerPresenter.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/WKNetworkObserver.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKViewControllerPresenter</span><span class="p">:</span> <span class="kt"><a href="Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKNetworkObserver</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit15PresentableViewP"></a>
+                    <a name="//apple_ref/swift/Protocol/PresentableView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit15PresentableViewP">PresentableView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit32WKGenericViewControllerPresenterP"></a>
+                    <a name="//apple_ref/swift/Protocol/WKGenericViewControllerPresenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit32WKGenericViewControllerPresenterP">WKGenericViewControllerPresenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The base <code><a href="Protocols/WKPresenter.html">WKPresenter</a></code> that is already bound with ViewController lifecycle.
+Al methods have default implementation that does nothing, so you can implement
+only methods you want.</p>
+
+                        <a href="Protocols/WKGenericViewControllerPresenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKGenericViewControllerPresenter</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKPresenter.html">WKPresenter</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit21NetworkObservableViewP"></a>
+                    <a name="//apple_ref/swift/Protocol/NetworkObservableView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit21NetworkObservableViewP">NetworkObservableView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code><a href="Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a></code> that is used when a view should update its own state on network changes.</p>
+
+                        <a href="Protocols/NetworkObservableView.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">NetworkObservableView</span><span class="p">:</span> <span class="kt"><a href="Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a></span></code></pre>
 
                         </div>
                       </div>
@@ -487,14 +585,15 @@ only methods you want.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Every <code><a href="Classes/WKViewController.html">WKViewController</a></code>, <code><a href="Classes/WKTableViewController.html">WKTableViewController</a></code>, <code><a href="Classes/WKCollectionViewController.html">WKCollectionViewController</a></code> needs a <code>WKPresenter</code> to properly works.</p>
+                        <p>The base presenter protocol.</p>
 
+                        <a href="Protocols/WKPresenter.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKPresenter</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKPresenter</span><span class="p">:</span> <span class="kd">class</span></code></pre>
 
                         </div>
                       </div>
@@ -506,7 +605,7 @@ only methods you want.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-03-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

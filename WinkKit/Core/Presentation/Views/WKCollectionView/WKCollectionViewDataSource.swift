@@ -23,15 +23,11 @@ open class WKCollectionViewDataSource<T>: NSObject, UICollectionViewDataSource {
     
     // - MARK: Initializers
     
-    /// Create the dataSource and attach it to the given collection view. Collection view will register the
-    /// array of given cells too.
-    public init<P>(collectionView: UICollectionView, collectionViewCells: [WKCollectionViewCell<P>.Type]) {
+    /// Create the dataSource and attach it to the given collection view.
+    public init(collectionView: UICollectionView) {
+        self.collectionView = collectionView
         super.init()
         collectionView.dataSource = self
-        collectionViewCells.forEach({ cell in
-            collectionView.register(cell: cell)
-        })
-        self.collectionView = collectionView
     }
     
     // - MARK: Methods

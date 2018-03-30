@@ -20,12 +20,17 @@ open class WKTableViewCell<P: WKPresenter>: UITableViewCell {
     open var presenter: P?
 
     /// The method to be called to configure the cell with the `WKPresenter`.
-    /// You should override this method to configure the cell to follow the MVP design pattern correctly.
+    /// You must call this method to configure the cell and the presenter, for example in tableView(_:cellForRowAt:).
     /// If you override this method, you **MUST** call super.
     ///
     /// - Parameter presenter: the `WKPresenter` that will be owned by the cell.
     open func configure(with presenter: P) {
         self.presenter = presenter
+        if let view = self as? P.View {
+            presenter.view = view
+        } else{
+            fatalError("\(type(of: self)) doesn't conform to \(type(of: P.View.self))")
+        }
     }
     
 }

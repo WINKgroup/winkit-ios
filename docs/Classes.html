@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">WinkKit Docs</a> (72% documented)</p>
+        <p><a href="index.html">WinkKit Docs</a> (79% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -42,10 +42,10 @@
                 <a href="Classes/SpinnerTableViewCell.html">SpinnerTableViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
+                <a href="Classes/VoidPresenter.html">VoidPresenter</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/WKBaseInteractor.html">WKBaseInteractor</a>
+                <a href="Classes.html#/s:7WinkKit8VoidViewC">VoidView</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKButton.html">WKButton</a>
@@ -79,6 +79,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKService.html">WKService</a>
@@ -165,6 +171,9 @@
               <li class="nav-group-task">
                 <a href="Extensions/UIView.html">UIView</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIWindow.html">UIWindow</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -191,10 +200,19 @@
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/WKBaseViewController.html">WKBaseViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols.html#/s:7WinkKit7WKErrorP">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
@@ -203,13 +221,13 @@
                 <a href="Protocols/WKMedia.html">WKMedia</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a>
+                <a href="Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WKPresenter.html">WKPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a>
               </li>
             </ul>
           </li>
@@ -281,7 +299,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The base ViewController that will be subclassed in your project instead of subclassing <code>UIViewController</code>.
-This provides some useful methods like the static instantiation.</p>
+This provides some useful methods like the static instantiation.
+A view controller must have a presenter, that manages logic of app. If there is no logic,
+The generic type parameter P could be of type <code><a href="Classes/VoidPresenter.html">VoidPresenter</a></code>.</p>
 <div class="aside aside-important">
     <p class="aside-title">Important</p>
     Please, if your subclassed <code>WKViewController</code> is from a <code>UIStoryboard</code> and you want
@@ -296,7 +316,7 @@ This provides some useful methods like the static instantiation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -320,9 +340,17 @@ This provides some useful methods like the static instantiation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Contains methods to log messages.</p>
 
                         <a href="Classes/Log.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Log</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -371,30 +399,6 @@ This provides some useful methods like the static instantiation.</p>
                         <p>Undocumented</p>
 
                         <a href="Classes/WKImageView.html" class="slightly-smaller">See more</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7WinkKit16WKBaseInteractorC"></a>
-                    <a name="//apple_ref/swift/Class/WKBaseInteractor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7WinkKit16WKBaseInteractorC">WKBaseInteractor</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="Classes/WKBaseInteractor.html" class="slightly-smaller">See more</a>
                       </div>
                     </section>
                   </div>
@@ -480,9 +484,9 @@ This provides some useful methods like the static instantiation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@WinkKit@objc(cs)WKTableViewInfiniteDataSourceDelegate"></a>
+                    <a name="/s:7WinkKit37WKTableViewInfiniteDataSourceDelegateC"></a>
                     <a name="//apple_ref/swift/Class/WKTableViewInfiniteDataSourceDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@WinkKit@objc(cs)WKTableViewInfiniteDataSourceDelegate">WKTableViewInfiniteDataSourceDelegate</a>
+                    <a class="token" href="#/s:7WinkKit37WKTableViewInfiniteDataSourceDelegateC">WKTableViewInfiniteDataSourceDelegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -506,7 +510,7 @@ since the <code>delegate</code> property of a <code>tableView</code> is weak.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewInfiniteDataSourceDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewInfiniteDataSourceDelegate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/WKTableViewDataSource.html">WKTableViewDataSource</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span></code></pre>
 
                         </div>
                       </div>
@@ -574,7 +578,7 @@ This provides some useful methods like the static instantiation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -656,6 +660,38 @@ Properties map the Google address components. </p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7WinkKit27WKNetworkReachabilityHelperC"></a>
+                    <a name="//apple_ref/swift/Class/WKNetworkReachabilityHelper" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit27WKNetworkReachabilityHelperC">WKNetworkReachabilityHelper</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper class that allows to listen to network changes. It uses Alamofire&rsquo;s <code>NetworkReachabilityManager</code>.</p>
+
+                        <a href="Classes/WKNetworkReachabilityHelper.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKNetworkReachabilityHelper</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@WinkKit@objc(cs)WKCollectionView"></a>
                     <a name="//apple_ref/swift/Class/WKCollectionView" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@WinkKit@objc(cs)WKCollectionView">WKCollectionView</a>
@@ -713,6 +749,39 @@ like pull to refresh.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKButton</span><span class="p">:</span> <span class="kt">UIButton</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKNetworkObservableViewControllerPresenterC"></a>
+                    <a name="//apple_ref/swift/Class/WKNetworkObservableViewControllerPresenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKNetworkObservableViewControllerPresenterC">WKNetworkObservableViewControllerPresenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A concrete <code><a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></code> that uses the <code><a href="Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a></code> to observe
+network changes.</p>
+
+                        <a href="Classes/WKNetworkObservableViewControllerPresenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKNetworkObservableViewControllerPresenter</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/WKNetworkObserver.html">WKNetworkObserver</a></span></code></pre>
 
                         </div>
                       </div>
@@ -872,6 +941,33 @@ The picker will also handle for you the permission for the localization usage.</
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7WinkKit8VoidViewC"></a>
+                    <a name="//apple_ref/swift/Class/VoidView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8VoidViewC">VoidView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>En empty view used to be the <code><a href="Classes/VoidPresenter.html">VoidPresenter</a></code> view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">VoidView</span><span class="p">:</span> <span class="kt"><a href="Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:7WinkKit13VoidPresenterC"></a>
                     <a name="//apple_ref/swift/Class/VoidPresenter" class="dashAnchor"></a>
                     <a class="token" href="#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
@@ -882,14 +978,15 @@ The picker will also handle for you the permission for the localization usage.</
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>When you don&rsquo;t need a presenter, use this one.</p>
+                        <p>When you don&rsquo;t need a presenter in a view controller, use this one.</p>
 
+                        <a href="Classes/VoidPresenter.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">VoidPresenter</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">VoidPresenter</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -922,7 +1019,7 @@ This provides some useful methods like the static instantiation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKTableViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -949,7 +1046,8 @@ This provides some useful methods like the static instantiation.</p>
                         <p>A <code>WKService</code> is the class that performs http calls. It must use <code>Alamofire</code> to do it.
 This class is intended to be subclassed. A tipical implementation could be a PostService class
 for a social network app. PostService will have methods like <code>createPost(_:completion:)</code>, <code>fetchPosts(completion:)</code>
-that create <code>DataRequest</code> and use <code>enqueue(_:)</code> method to start the request.</p>
+that create <code>DataRequest</code> and use <code>enqueue(_:)</code> method to start the request.
+When a service get destroyed, every request enqueued with <code>enqueue(_:)</code> method is cancelled.</p>
 
                         <a href="Classes/WKService.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1143,7 +1241,7 @@ Simply instantiate the picker and call the method <code>pick(mediaTypes:from:in:
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-03-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

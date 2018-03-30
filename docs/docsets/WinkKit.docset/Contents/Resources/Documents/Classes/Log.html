@@ -14,7 +14,7 @@
     <a title="Log Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">WinkKit Docs</a> (72% documented)</p>
+        <p><a href="../index.html">WinkKit Docs</a> (79% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -43,10 +43,10 @@
                 <a href="../Classes/SpinnerTableViewCell.html">SpinnerTableViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
+                <a href="../Classes/VoidPresenter.html">VoidPresenter</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/WKBaseInteractor.html">WKBaseInteractor</a>
+                <a href="../Classes.html#/s:7WinkKit8VoidViewC">VoidView</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKButton.html">WKButton</a>
@@ -80,6 +80,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKService.html">WKService</a>
@@ -166,6 +172,9 @@
               <li class="nav-group-task">
                 <a href="../Extensions/UIView.html">UIView</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -192,10 +201,19 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols.html#/s:7WinkKit7WKErrorP">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
@@ -204,13 +222,13 @@
                 <a href="../Protocols/WKMedia.html">WKMedia</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a>
+                <a href="../Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKPresenter.html">WKPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a>
               </li>
             </ul>
           </li>
@@ -262,7 +280,13 @@
         <section>
           <section class="section">
             <h1>Log</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Log</span></code></pre>
+
+                </div>
+              </div>
+            <p>Contains methods to log messages.</p>
 
           </section>
           <section class="section task-group-section">
@@ -281,8 +305,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Print message with <q>INFO</q> prefixed. This method logs messages even for Release apps.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">info</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -300,8 +332,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Print message with <q>WARNING</q> prefixed. This method logs messages only for Debug apps.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">warning</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -319,8 +359,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Print message with <q>ERROR</q> prefixed. This method logs messages only for Debug apps.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -338,8 +386,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Print message with <q>DEBUG</q> prefixed. This method logs messages only for Debug apps.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debug</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -349,7 +405,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-03-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

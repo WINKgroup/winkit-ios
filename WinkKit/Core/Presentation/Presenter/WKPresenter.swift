@@ -10,7 +10,17 @@ import Foundation
 
 /// The base presenter protocol.
 public protocol WKPresenter: class {
-
+    /// Every presenter can manage a view, which must conform to `PresentableView`
+    associatedtype View = PresentableView
+    
+    /// The view managed by this presenter.
+    ///
+    /// - Important: To avoid retain-cycle, you must declare this var weak/unowned in conformed class.
+    var view: View? { get set }
+    
+    /// Required an empty initializer. At this time `view` property is still nil. You can perform additional
+    /// initialization here.
+    init()
 }
 
 /// En empty view used to be the `VoidPresenter` view.

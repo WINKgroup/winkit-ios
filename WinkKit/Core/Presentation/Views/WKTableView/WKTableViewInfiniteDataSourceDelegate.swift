@@ -15,7 +15,7 @@ import UIKit
 /// - Important: Don't forget to retain this object,
 /// since the `delegate` property of a `tableView` is weak.
 ///
-open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
+open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, UITableViewDelegate {
     
     // MARK: - Initializers
     
@@ -24,19 +24,13 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     /// - Parameter tableView: The table view that will own this dataSource and delegate. You don't need
     ///                       to set the delegate and the dataSource of the table view with this object,
     ///                       it is done automatically in this init.
-    public init(tableView: UITableView) {
-        self.tableView = tableView
+    public override init(tableView: WKTableView) {
+        super.init(tableView: tableView)
         self.tableView.register(SpinnerTableViewCell.self, forCellReuseIdentifier: SpinnerTableViewCell.reuseIdentifier)
-        
-        super.init()
-        
-        self.tableView.dataSource = self
         self.tableView.delegate = self
     }
     
     // MARK: - Properties
-    
-    public weak var tableView: UITableView!
     
     /// The color of the `UIActivityIndicatorView` that will be displayed
     /// at the bottom of the section when new page will be requested.
@@ -63,8 +57,8 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     
     
     /// If `true`, the loading view is visible. You cannot change the value of this variable;
-    /// It is by default set to `false`, when `tableView(_:readyForNextPageInSection:completion:)` is called,
-    /// this property is set to `true`, and when the `completion` parameter is called,
+    /// It is by default set to `false`; when `tableView(_:readyForNextPageInSection:completion:)` is called
+    /// this property is set to `true`; finally when the `completion` parameter is called
     /// this property become again false.
     ///
     /// - Important: While this property is `true`, `tableView(_:readyForNextPageInSection:completion:)` won't be called.
@@ -113,17 +107,17 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     }
     
     /// You can't override this method, it is intended for internal purpose; instead, override `tableView(_:normalCellForRowAt:)`.
-    public final func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public final override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == loaderSection && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 && isLoading {
-            return self.tableView(tableView, loadingCellForRowAt: indexPath)
+            return self.tableView(self.tableView, loadingCellForRowAt: indexPath)
         }
         
-        return self.tableView(tableView, normalCellForRowAt: indexPath)
+        return self.tableView(self.tableView, normalCellForRowAt: indexPath)
     }
     
     /// You can't override this method, it is intended for internal purpose; instead, override `tableView(_:numberOfNormalRowsInSection:)`.
-    public final func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = self.tableView(tableView, numberOfNormalRowsInSection: section)
+    public final override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count = self.tableView(self.tableView, numberOfNormalRowsInSection: section)
         count = section == loaderSection && isLoading ? count + 1 : count
         return count
     }
@@ -138,7 +132,7 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     ///
     /// - Important: You have to call the `completion` closure to end the loading and hide the `UIActivityIndicator`.
     ///              The completion will call for you `tableView.reladData()` and will perform other stuff to make everything working good.
-    open func tableView(_ tableView: UITableView, readyForNextPageInSection section: Int, completion: @escaping (_ isLastPage: Bool)->Void) {
+    open func tableView(_ tableView: WKTableView, readyForNextPageInSection section: Int, completion: @escaping (_ isLastPage: Bool) -> Void) {
         
     }
     
@@ -159,7 +153,7 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     ///
     /// - Important: This is the `tableView(_:cellForRowAt:)` version of the `WKTableViewInfiniteDataSourceDelegate`,
     ///              so you should override this method instead of the original one.
-    open func tableView(_ tableView: UITableView, normalCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: WKTableView, normalCellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
@@ -171,7 +165,7 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     ///     - indexPath: An index path locating a row in tableView.
     ///
     /// - Note: This method provide a default loading cell, override this to show a custom cell loading.
-    open func tableView(_ tableView: UITableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: WKTableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SpinnerTableViewCell.reuseIdentifier, for: indexPath) as! SpinnerTableViewCell
         cell.configure(withColor: spinnerColor)
         return cell
@@ -182,9 +176,15 @@ open class WKTableViewInfiniteDataSourceDelegate: NSObject, UITableViewDataSourc
     /// - Parameters:
     ///     - tableView: The table-view object requesting this information.
     ///     - section: An index number identifying a section in tableView.
-    open func tableView(_ tableView: UITableView, numberOfNormalRowsInSection section: Int) -> Int {
-        return 0
+    open func tableView(_ tableView: WKTableView, numberOfNormalRowsInSection section: Int) -> Int {
+        return items.count
     }
     
+    // - MARK: Overridden properties/methods
+    
+    override open func removeAllItems(animation: UITableViewRowAnimation = .automatic) {
+        super.removeAllItems(animation: animation)
+        clearPages()
+    }
     
 }

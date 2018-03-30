@@ -13,7 +13,7 @@
     <a title="WinkKit  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">WinkKit Docs</a> (72% documented)</p>
+        <p><a href="index.html">WinkKit Docs</a> (79% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -42,10 +42,10 @@
                 <a href="Classes/SpinnerTableViewCell.html">SpinnerTableViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
+                <a href="Classes/VoidPresenter.html">VoidPresenter</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/WKBaseInteractor.html">WKBaseInteractor</a>
+                <a href="Classes.html#/s:7WinkKit8VoidViewC">VoidView</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKButton.html">WKButton</a>
@@ -79,6 +79,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WKService.html">WKService</a>
@@ -165,6 +171,9 @@
               <li class="nav-group-task">
                 <a href="Extensions/UIView.html">UIView</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIWindow.html">UIWindow</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -191,10 +200,19 @@
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/WKBaseViewController.html">WKBaseViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols.html#/s:7WinkKit7WKErrorP">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
@@ -203,13 +221,13 @@
                 <a href="Protocols/WKMedia.html">WKMedia</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a>
+                <a href="Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WKPresenter.html">WKPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a>
               </li>
             </ul>
           </li>
@@ -261,28 +279,61 @@
         <section>
           <section class="section">
             
-            <h1 id='winkkit' class='heading'>WinkKit</h1>
+            <p align="center">
+<img src="readme-res/winkkit_logo.png" width="33%">
+</p>
+<h1 id='winkkit' class='heading'>WinkKit</h1>
 
-<p>An iOS framework that contains a set of classes that solve some common problem written in Swift, used for Wink&rsquo;s application. Follow this guide to know how to structure a Wink iOS project.</p>
+<p><a href="http://cocoapods.org/pods/WinkKit"><img src="https://img.shields.io/cocoapods/v/WinkKit.svg?style=flat" alt="CocoaPods Version"></a>
+<a href="http://cocoapods.org/pods/WinkKit"><img src="https://img.shields.io/cocoapods/l/WinkKit.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/WinkKit"><img src="https://img.shields.io/badge/platform-iOS-lightgrey.svg" alt="Platforms"></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift-4.0-orange.svg?style=flat" alt="Swift Version"></a></p>
+
+<p>An iOS framework that contains a set of classes that follow MVP pattern and solve some common problem written in Swift, used for Wink&rsquo;s application. Follow this guide to know how to structure a Wink iOS project.</p>
 <h2 id='getting-started' class='heading'>Getting Started</h2>
 <h3 id='prerequisites' class='heading'>Prerequisites</h3>
 
 <p>You need <a href="https://developer.apple.com/xcode/">Xcode 9</a>, Swift 4 and <a href="https://guides.cocoapods.org/using/getting-started.html">CocoaPods</a> installed.</p>
 <h3 id='installing' class='heading'>Installing</h3>
 
-<p>Just paste the CocoaPods dependency in your <code>podfile</code></p>
+<p>Just paste the CocoaPods dependency in your  <code>podfile</code>. Due to a cocoapods bug, ensure to paste the <strong>post_install</strong> function too.</p>
 <pre class="highlight ruby"><code><span class="c1"># Podfile</span>
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'YOUR_TARGET_NAME'</span> <span class="k">do</span>
+
+    <span class="c1"># https://github.com/WINKgroup/WinkKit</span>
     <span class="n">pod</span> <span class="s1">'WinkKit'</span>
+
 <span class="k">end</span>
+
+<span class="c1"># This post install is needed because of a Cocoapods bug; it is needed to render WinkKit properties in InterfaceBuilder correctly.</span>
+<span class="n">post_install</span> <span class="k">do</span> <span class="o">|</span><span class="n">installer</span><span class="o">|</span>
+    <span class="n">installer</span><span class="p">.</span><span class="nf">pods_project</span><span class="p">.</span><span class="nf">targets</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">target</span><span class="o">|</span>
+        <span class="n">target</span><span class="p">.</span><span class="nf">build_configurations</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+            <span class="n">config</span><span class="p">.</span><span class="nf">build_settings</span><span class="p">[</span><span class="s1">'CONFIGURATION_BUILD_DIR'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'$PODS_CONFIGURATION_BUILD_DIR'</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
 </code></pre>
+<h3 id='add-project-file-templates-to-xcode-optional-but-recommended' class='heading'>Add project/file templates to Xcode (Optional but recommended)</h3>
+
+<p>WinkKit has been designed to help creating app with MVP pattern (you&rsquo;ll understand better later); to follow this pattern, it&rsquo;s needed to create for each view several files.
+WinkKit contains a set of Xcode templates to make file creation faster; download <a href="./Xcode%20Templates/Template%20Files">Template File</a> and copy <q>WinkKit</q> folder to </p>
+<pre class="highlight plaintext"><code>/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates
+</code></pre>
+
+<p>Now in Xcode, under <strong>File &gt; New &gt; File</strong> (or CMD+N) you can create view controllers, table view cells and collection view cells that conform to MVP like following.</p>
+
+<p align="center">
+<img src="readme-res/template_files.png" width="50%">
+</p>
 <h2 id='understanding-structure' class='heading'>Understanding Structure</h2>
 
 <p>Before talking about classes of framework we&rsquo;ll take a look on architecture structure. </p>
 
-<p>It is a kind of VIPER pattern; look at this <a href="https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52">iOS Architectures overview</a> to understand differences between MVC, MVP, MVVM, VIPER.</p>
+<p>It is a MVP pattern; look at this <a href="https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52">iOS Architectures overview</a> to understand differences between MVC, MVP, MVVM, VIPER.</p>
 
 <p>A Wink iOS project <strong>should</strong> be structured in the following way, expecially if the project will grow a lot:</p>
 
@@ -312,7 +363,6 @@
 </ul></li>
 </ul></li>
 <li><strong>Core</strong>: A group that contains base classes re-usable all around project. It&rsquo;s a good practice to define this classes to avoid code duplication that could increase the maintanance difficulty.\</li>
-<li><strong>Models</strong>: Contains all model classes that are used <strong>only</strong> in the presentation layer.</li>
 <li><strong>Resources</strong>: All resources go here, included .xcassets, custom fonts&hellip;</li>
 </ul>
 
@@ -329,22 +379,14 @@
 
 <ul>
 <li><strong>ResponseSerialization</strong>: Contains the <code>DataResponse</code> extension of Alamofire: it provides a common response for http calls that return an object instead of a json; json parsing is done in this extension (see source file for detail). Notice that this extension uses <a href="https://github.com/thoughtbot/Argo">Argo</a> for json parsing.</li>
-<li><strong>Resource</strong>: and enum that maps the response of https calls.</li>
+<li><strong>Resource</strong>: an enum that maps the response of https calls.</li>
 <li><strong>Error</strong>: the class/struct that maps http errors (both client and server)</li>
 <li><strong>Routers</strong>: Routers are responsible to know api&rsquo;s endpoints and to create a <code>urlRequest</code> that are used by <strong>Services</strong> to perform http calls.</li>
 <li><strong>Services</strong>: Services perform http calls, using the request created by routers.</li>
-<li><strong>Models</strong>: Simple classes/structs that maps the server json response.</li>
 </ul></li>
 </ul>
 
 <p><br></p>
-<h3 id='domain' class='heading'>Domain</h3>
-
-<p>It&rsquo;s layer in which there is business logic; it&rsquo;s a kind of bridge that connect <strong>Presentation</strong> and <strong>Data</strong> layers without without couple them. No <code>UIKit</code> classes in this layer!</p>
-
-<p><img src="readme-res/domain_layer.png" width=50% /></p>
-
-<p>Here you&rsquo;ll put interactors that contain all business logic; presenters use this interactor to communicate with <strong>data</strong> layer.</p>
 <h2 id='authors' class='heading'>Authors</h2>
 
 <p><strong>Rico Crescenzio</strong> - <a href="https://www.linkedin.com/in/quirico-crescenzio-810263b9/">Linkedin</a></p>
@@ -355,7 +397,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-03-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

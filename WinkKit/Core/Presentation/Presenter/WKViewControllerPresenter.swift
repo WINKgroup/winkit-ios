@@ -18,18 +18,6 @@ public protocol PresentableView: class {
 /// only methods you want.
 public protocol WKGenericViewControllerPresenter: WKPresenter {
     
-    /// Every presenter can manage a view, which must conform to `PresentableView`
-    associatedtype View = PresentableView
-    
-    /// The view managed by this presenter.
-    ///
-    /// - Important: To avoid retain-cycle, you must declare this var weak/unowned in conformed class.
-    var view: View? { get set }
-    
-    /// Required an empty initializer. At this time `view` property is still nil. You can perform additional
-    /// initialization here.
-    init()
-    
     /// Called by the `WinkKit` framework after `view` property assignin. Here the view is guaranted to be not nil. Defualt does nothing.
     func presenterInitialized()
     

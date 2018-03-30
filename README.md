@@ -1,8 +1,24 @@
-# WinkKit
+<p align="center">
+<img src="readme-res/winkkit_logo.png" width="33%">
+</p>
 
-An iOS framework that contains a set of classes that solve some common problem written in Swift, used for Wink's application. Follow this guide to know how to structure a Wink iOS project.
+WinkKit
+========
 
-## Getting Started
+[![CocoaPods Version](https://img.shields.io/cocoapods/v/WinkKit.svg?style=flat)](http://cocoapods.org/pods/WinkKit)
+[![License](https://img.shields.io/cocoapods/l/WinkKit.svg?style=flat)](http://cocoapods.org/pods/WinkKit)
+[![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](http://cocoapods.org/pods/WinkKit)
+[![Swift Version](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift)
+
+
+An iOS framework that contains a set of classes that follow MVP pattern and solve some common problem written in Swift, used for Wink's application. Follow this guide to know how to structure a Wink iOS project.
+
+## Table of Contents
+1. [Getting Started](#Getting_Started)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+
+## Getting Started <a name="Getting_Started"></a>
 
 ### Prerequisites
 
@@ -34,11 +50,25 @@ end
 
 ```
 
+### Add project/file templates to Xcode (Optional but recommended)
+
+WinkKit has been designed to help creating app with MVP pattern (you'll understand better later); to follow this pattern, it's needed to create for each view several files.
+WinkKit contains a set of Xcode templates to make file creation faster; download [Template File](./Xcode%20Templates/Template%20Files) and copy "WinkKit" folder to 
+
+	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates
+	
+Now in Xcode, under **File > New > File** (or CMD+N) you can create view controllers, table view cells and collection view cells that conform to MVP like following.
+
+<p align="center">
+<img src="readme-res/template_files.png" width="50%">
+</p>
+
+
 ## Understanding Structure
 
 Before talking about classes of framework we'll take a look on architecture structure. 
 
-It is a kind of VIPER pattern; look at this [iOS Architectures overview](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52) to understand differences between MVC, MVP, MVVM, VIPER.
+It is a MVP pattern; look at this [iOS Architectures overview](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52) to understand differences between MVC, MVP, MVVM, VIPER.
 
 A Wink iOS project **should** be structured in the following way, expecially if the project will grow a lot:
 
@@ -63,7 +93,6 @@ It's the layer that contains all iOS Framework dedicated classes, like `UIKit` f
 		* **LoginPresenter**: A simple presenter; LoginPresenter keep the state of LoginViewController; a presenter is the class that contains logic, the ViewController does **not** contain logic. **Presenter doesn't contains UIKit classes!**, this is needed to keep presenters easy testable.
 		* **LoginViewController**: In classic MVC pattern, (Massive View Controller in iOS world 😫) all logic was here, mixed with the view handling; in this framework a ViewController **owns** a presenter and delegates it for the logic. The view controller doesn't have a method `func performLogin(email: String, password: String)` for example; instead, the presenter does. The view controller will only receive user input and tell the presenter that something happened. The presenter will do work and tell the view controller that the view should change.
 * **Core**: A group that contains base classes re-usable all around project. It's a good practice to define this classes to avoid code duplication that could increase the maintanance difficulty.\
-* **Models**: Contains all model classes that are used **only** in the presentation layer.
 * **Resources**: All resources go here, included .xcassets, custom fonts...
 
 <br>
@@ -76,20 +105,12 @@ It's the layer that handles all data stuff, such as http calls, cache uploading/
 * **Cache**: A group that contains classes like SessionManager and all other stuff that saves data locally.
 * **Networking**: The group that contains the Http Client, which must be implemented with **Alamofire**. WinkKit provides [Alamofire](https://github.com/Alamofire/Alamofire) and [Alamofire Image](https://github.com/Alamofire/AlamofireImage) in the framework itself, so you don't need to add anything in the Podfile.
 	* **ResponseSerialization**: Contains the `DataResponse` extension of Alamofire: it provides a common response for http calls that return an object instead of a json; json parsing is done in this extension (see source file for detail). Notice that this extension uses [Argo](https://github.com/thoughtbot/Argo) for json parsing. 
-	* **Resource**: and enum that maps the response of https calls.
+	* **Resource**: an enum that maps the response of https calls.
 	* **Error**: the class/struct that maps http errors (both client and server) 
 	* **Routers**: Routers are responsible to know api's endpoints and to create a `urlRequest` that are used by **Services** to perform http calls.
 	* **Services**: Services perform http calls, using the request created by routers.
-	* **Models**: Simple classes/structs that maps the server json response. 
 
 <br>
-
-### Domain
-It's layer in which there is business logic; it's a kind of bridge that connect **Presentation** and **Data** layers without without couple them. No `UIKit` classes in this layer!
-
-<img src="readme-res/domain_layer.png" width=50% />
-
-Here you'll put interactors that contain all business logic; presenters use this interactor to communicate with **data** layer.
 
 ## Authors
 

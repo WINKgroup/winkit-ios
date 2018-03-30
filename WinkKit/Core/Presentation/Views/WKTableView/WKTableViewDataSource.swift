@@ -19,19 +19,15 @@ open class WKTableViewDataSource<T>: NSObject, UITableViewDataSource {
     internal(set) open var items = [T]()
     
     /// The table view that owns this dataSource.
-    internal(set) public unowned var tableView: UITableView
+    internal(set) public unowned var tableView: WKTableView
     
     // - MARK: Initializers
     
-    /// Create the dataSource and attach it to the given tableView. Table view will register the
-    /// array of given cells too.
-    public init<P>(tableView: WKTableView, tableViewCells: [WKTableViewCell<P>.Type]) {
+    /// Create the dataSource and attach it to the given tableView.
+    public init(tableView: WKTableView) {
         self.tableView = tableView
         super.init()
         tableView.dataSource = self
-        tableViewCells.forEach({ cell in
-            tableView.register(cell: cell)
-        })
     }
     
     // - MARK: Methods
@@ -121,7 +117,7 @@ open class WKTableViewDataSource<T>: NSObject, UITableViewDataSource {
     /// Empty the data source and reload the table view.
     ///
     /// - Parameter animation: The animation of deleting. Default is `automatic`.
-    open func clear(animation: UITableViewRowAnimation = .automatic) {
+    open func removeAllItems(animation: UITableViewRowAnimation = .automatic) {
         let indexPaths = items.enumerated().map { (arg: (offset: Int, element: T)) in
             return IndexPath(row: arg.offset, section: 0)
         }

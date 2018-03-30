@@ -14,7 +14,7 @@
     <a title="WKCollectionViewController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">WinkKit Docs</a> (72% documented)</p>
+        <p><a href="../index.html">WinkKit Docs</a> (79% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -43,10 +43,10 @@
                 <a href="../Classes/SpinnerTableViewCell.html">SpinnerTableViewCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes.html#/s:7WinkKit13VoidPresenterC">VoidPresenter</a>
+                <a href="../Classes/VoidPresenter.html">VoidPresenter</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/WKBaseInteractor.html">WKBaseInteractor</a>
+                <a href="../Classes.html#/s:7WinkKit8VoidViewC">VoidView</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKButton.html">WKButton</a>
@@ -80,6 +80,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WKService.html">WKService</a>
@@ -166,6 +172,9 @@
               <li class="nav-group-task">
                 <a href="../Extensions/UIView.html">UIView</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -192,10 +201,19 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:7WinkKit15PresentableViewP">PresentableView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols.html#/s:7WinkKit7WKErrorP">WKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
@@ -204,13 +222,13 @@
                 <a href="../Protocols/WKMedia.html">WKMedia</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:7WinkKit11WKPresenterP">WKPresenter</a>
+                <a href="../Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKPresenter.html">WKPresenter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a>
               </li>
             </ul>
           </li>
@@ -264,7 +282,7 @@
             <h1>WKCollectionViewController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                 </div>
               </div>
@@ -358,6 +376,82 @@ the identifier of the view controller is the view controller class name.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewControllerCACyxGSSSg7nibName_So6BundleCSg6bundletcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(nibName:bundle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewControllerCACyxGSSSg7nibName_So6BundleCSg6bundletcfc">init(nibName:bundle:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize view controller and assign the presenter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">nibName</span> <span class="nv">nibNameOrNil</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="n">bundle</span> <span class="nv">nibBundleOrNil</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewControllerCACyxGSgSo7NSCoderC5coder_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewControllerCACyxGSgSo7NSCoderC5coder_tcfc">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize view controller and assign the presenter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/View%20Controller%20life-cycle"></a>
+                <a name="//apple_ref/swift/Section/View Controller life-cycle" class="dashAnchor"></a>
+                <a href="#/View%20Controller%20life-cycle">
+                  <h3 class="section-name">View Controller life-cycle</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -378,7 +472,7 @@ the identifier of the view controller is the view controller class name.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -405,7 +499,7 @@ the identifier of the view controller is the view controller class name.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -432,7 +526,7 @@ the identifier of the view controller is the view controller class name.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -459,7 +553,7 @@ the identifier of the view controller is the view controller class name.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
 
                         </div>
                       </div>
@@ -486,7 +580,46 @@ the identifier of the view controller is the view controller class name.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKViewControllerPresenter.html">WKViewControllerPresenter</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewController</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UICollectionViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a></span> <span class="k">where</span> <span class="kt">P</span><span class="p">:</span> <span class="kt"><a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20methods."></a>
+                <a name="//apple_ref/swift/Section/Public methods." class="dashAnchor"></a>
+                <a href="#/Public%20methods.">
+                  <h3 class="section-name">Public methods.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit26WKCollectionViewControllerC13initPresenteryyF"></a>
+                    <a name="//apple_ref/swift/Method/initPresenter()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit26WKCollectionViewControllerC13initPresenteryyF">initPresenter()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method called when the view controller is initialized. This method cannot be overriden,
+but if you provide your own <code>init</code> (which doesn&rsquo;t override existing ones) you must call it.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">initPresenter</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -498,7 +631,7 @@ the identifier of the view controller is the view controller class name.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2017-12-02)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-03-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
