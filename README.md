@@ -15,9 +15,10 @@ An iOS framework that contains a set of classes that follow MVP pattern and solv
 
 ## Table of Contents
 1. [Getting Started](#Getting_Started)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-
+2. [Understanding Structure](#Understanding_Structure)
+3. [UIView Extension](#UI_Extension)
+4. [Using ViewControllers and Presenters](#Using_ViewControllers)
+5. [Using Table Views and Collection Views](#Using_TabColViews)
 ## Getting Started <a name="Getting_Started"></a>
 
 ### Prerequisites
@@ -64,7 +65,7 @@ Now in Xcode, under **File > New > File** (or CMD+N) you can create view control
 </p>
 
 
-## Understanding Structure
+## Understanding Structure <a name="Understanding_Structure"></a>
 
 Before talking about classes of framework we'll take a look on architecture structure. 
 
@@ -111,6 +112,77 @@ It's the layer that handles all data stuff, such as http calls, cache uploading/
 	* **Services**: Services perform http calls, using the request created by routers.
 
 <br>
+
+# Presentation
+
+## UIView Extension <a name="UI_Extension"></a>
+
+WinkKit provides common view classes that have more `@IBDesignable` in InterfaceBuilder.
+
+- WKView
+- WKImageView
+- WKButton
+- WKLabel
+- WKTextView
+
+Every class extends the `UIKit` one; for example `WKView` extends `UIView`. To use these classes in InterfaceBuilder, drag the object from the Object library and make it extends the desired WinkKit view.
+For example to use a `WKButton`, drag a Button from Object library, then go to Identity Inspector and set the custom class:
+
+<img src="readme-res/button_identity_inspector.png" width="40%">
+
+**Make sure to leave WinkKit as module**
+
+Then you can customize the button from Attributes inspector:
+
+<img src="readme-res/button_attributes_inspector.png" width="40%">
+
+## Using ViewControllers and Presenters <a name="Using_ViewControllers"></a>
+
+In a WinkKit app every view controller should extends the `WKViewController<P>` (or `WKTableViewController<P>` or `WKCollectionViewContrller<P>`, they have all same behaviours).
+
+A `WKViewController` wants a subclass of `WKGenericViewControllerPresenter` (which is a protocol that extends the base presenter protocol `WKPresenter`) because the view controller life-cycle is binded to this kind of presenter. A typical implementation of home page is
+
+```swift
+// HomeViewController.swift
+
+class HomeViewController: WKViewController<HomePresenter> {
+	// do only UI stuff here
+}
+
+// Since the view controller is handled by HomePresenter, it must be conform to LoginView.
+extension HomeViewController: LoginView {
+	// implements all LoginView methods/properties
+}
+
+
+// HomePresenter.swift
+
+// Define what the view can do
+protocol LoginView: PresentableView {
+
+}
+
+class HomePresenter: WKGenericViewControllerPresenter {
+
+    typealias View = LoginView // need to tell the protocol which is the view handled
+    
+    weak var view: LoginView? // keep view weak to avoid retain-cycle since view controller holds a reference to this presenter
+    
+    required init() {} // framework wants empty init
+    
+    // do all logic here, such as use a Service to fetch data and tell the view to update
+}
+
+```
+
+HomePresenter and HomeViewController are two different files. You can use the file template to create quickly this structure 😉.
+
+
+## Using Table Views and Collection Views <a name="Using_TabColViews"></a>
+
+WinkKit provides both `WKTableView`, `WKCollectionView` and `WKTableViewCell`, `WKCollectionViewCell`.
+Let's talk about table view and collection views, which work similar 
+
 
 ## Authors
 
