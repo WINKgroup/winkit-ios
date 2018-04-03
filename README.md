@@ -311,4 +311,4 @@ There are other classes and extensions that can be used to achieve some behaviou
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSEss) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
