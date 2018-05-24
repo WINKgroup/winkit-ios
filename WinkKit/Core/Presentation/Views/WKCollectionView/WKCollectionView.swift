@@ -19,6 +19,17 @@ public extension UICollectionView {
         register(UINib(nibName: String(describing: cell), bundle: nil), forCellWithReuseIdentifier: cell.reuseIdentifier)
     }
     
+    /// Dequeue a reusable cell by simply passing the type. To be used, the collection view cell
+    /// must be of type `WKCollectionViewCell`.
+    ///
+    /// - Parameters:
+    ///   - type: The type of the cell
+    ///   - indexPath: The index path
+    /// - Returns: The dequeued cell already casted to correct type.
+    public func dequeueReusableCell<C, P>(ofType type: C.Type, for indexPath: IndexPath) -> C where C: WKCollectionViewCell<P> {
+        return dequeueReusableCell(withReuseIdentifier: type.reuseIdentifier, for: indexPath) as! C
+    }
+    
 }
 
 /// A `WKCollectionView` is basically a `collectionView` with some common behaviours already implemented,

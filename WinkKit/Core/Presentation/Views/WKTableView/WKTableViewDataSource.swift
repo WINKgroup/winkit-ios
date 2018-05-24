@@ -19,12 +19,12 @@ open class WKTableViewDataSource<T>: NSObject, UITableViewDataSource {
     internal(set) open var items = [T]()
     
     /// The table view that owns this dataSource.
-    internal(set) public unowned var tableView: WKTableView
+    internal(set) public unowned var tableView: UITableView
     
     // - MARK: Initializers
     
     /// Create the dataSource and attach it to the given tableView.
-    public init(tableView: WKTableView) {
+    public init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
         tableView.dataSource = self

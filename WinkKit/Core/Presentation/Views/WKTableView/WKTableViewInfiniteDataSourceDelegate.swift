@@ -24,7 +24,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     /// - Parameter tableView: The table view that will own this dataSource and delegate. You don't need
     ///                       to set the delegate and the dataSource of the table view with this object,
     ///                       it is done automatically in this init.
-    public override init(tableView: WKTableView) {
+    public override init(tableView: UITableView) {
         super.init(tableView: tableView)
         self.tableView.register(SpinnerTableViewCell.self, forCellReuseIdentifier: SpinnerTableViewCell.reuseIdentifier)
         self.tableView.delegate = self
@@ -132,7 +132,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///
     /// - Important: You have to call the `completion` closure to end the loading and hide the `UIActivityIndicator`.
     ///              The completion will call for you `tableView.reladData()` and will perform other stuff to make everything working good.
-    open func tableView(_ tableView: WKTableView, readyForNextPageInSection section: Int, completion: @escaping (_ isLastPage: Bool) -> Void) {
+    open func tableView(_ tableView: UITableView, readyForNextPageInSection section: Int, completion: @escaping (_ isLastPage: Bool) -> Void) {
         
     }
     
@@ -153,7 +153,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///
     /// - Important: This is the `tableView(_:cellForRowAt:)` version of the `WKTableViewInfiniteDataSourceDelegate`,
     ///              so you should override this method instead of the original one.
-    open func tableView(_ tableView: WKTableView, normalCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, normalCellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
@@ -165,7 +165,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///     - indexPath: An index path locating a row in tableView.
     ///
     /// - Note: This method provide a default loading cell, override this to show a custom cell loading.
-    open func tableView(_ tableView: WKTableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SpinnerTableViewCell.reuseIdentifier, for: indexPath) as! SpinnerTableViewCell
         cell.configure(withColor: spinnerColor)
         return cell
@@ -176,7 +176,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     /// - Parameters:
     ///     - tableView: The table-view object requesting this information.
     ///     - section: An index number identifying a section in tableView.
-    open func tableView(_ tableView: WKTableView, numberOfNormalRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfNormalRowsInSection section: Int) -> Int {
         return items.count
     }
     

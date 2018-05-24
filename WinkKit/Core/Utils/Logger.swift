@@ -10,7 +10,7 @@
 public final class Log {
     
     
-    /// Print message with "INFO" prefixed. This method logs messages even for Release apps.
+    /// Print message with "I" prefixed. This method logs messages even for Release apps.
     ///
     /// - Parameters:
     ///   - tag: A tag to identify the log
@@ -19,7 +19,7 @@ public final class Log {
         print("I: \(tag)" , items);
     }
     
-    /// Print message with "WARNING" prefixed. This method logs messages only for Debug apps.
+    /// Print message with "W" prefixed. This method logs messages only for Debug apps.
     ///
     /// - Parameters:
     ///   - tag: A tag to identify the log
@@ -30,7 +30,7 @@ public final class Log {
         #endif
     }
     
-    /// Print message with "ERROR" prefixed. This method logs messages only for Debug apps.
+    /// Print message with "E" prefixed. This method logs messages only for Debug apps.
     ///
     /// - Parameters:
     ///   - tag: A tag to identify the log
@@ -41,7 +41,7 @@ public final class Log {
         #endif
     }
         
-    /// Print message with "DEBUG" prefixed. This method logs messages only for Debug apps.
+    /// Print message with "D" prefixed. This method logs messages only for Debug apps.
     ///
     /// - Parameters:
     ///   - tag: A tag to identify the log
@@ -49,6 +49,19 @@ public final class Log {
     public static func debug(tag: Any, items: Any...) {
         #if DEBUG
         print("D: \(tag)", items);
+        #endif
+    }
+    
+    /// Print message with "D" prefixed. This method logs messages only for Debug apps.
+    /// Do not provide file and line to have the default ones.
+    ///
+    /// - Parameters:
+    ///   - file: The file where this method is called
+    ///   - line: The line where this method is called
+    ///   - items: Variadic paramenter that will be print.
+    public static func debug(file: String = #file, line: Int = #line, items: Any...) {
+        #if DEBUG
+        print("D: \(file): \(line)", items);
         #endif
     }
 }

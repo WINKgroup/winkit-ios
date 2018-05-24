@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UITableView Extension Reference</title>
+    <title>WKRouter Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/UITableView" class="dashAnchor"></a>
-    <a title="UITableView Extension Reference"></a>
+    <a name="//apple_ref/swift/Protocol/WKRouter" class="dashAnchor"></a>
+    <a title="WKRouter Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">WinkKit Docs</a> (78% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">WinkKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        UITableView Extension Reference
+        WKRouter Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -255,8 +255,51 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>UITableView</h1>
-            <p>Undocumented</p>
+            <h1>WKRouter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKRouter</span><span class="p">:</span> <span class="kt">URLRequestConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>A router is responsible to create the http request based on url, parameters, encoding&hellip;
+The created request should be used by a <code><a href="../Classes/WKService.html">WKService</a></code>.
+In your application module, create an extension to override the <code>baseURL</code> and <code>headers</code> attributes.
+A typical implementation of a router with enums, for a Post object in a social network app could be:</p>
+<pre class="highlight plaintext"><code>enum PostRouter: WKRouter {
+    // The route to get comments of post by the id of the post
+    case getComments(postId: String)
+
+    var method: HTTPMethod {
+        switch self {
+            case .getComments:
+                return .get
+        }
+    }
+
+    var path: String {
+        switch self {
+            case .getComments(let postId):
+                return "posts/\(postId)/comments"
+        }
+    }
+
+    var params: [String: Any]? {
+        switch self {
+            case .getComments:
+                return nil
+        }
+    }
+
+    var encoding: ParameterEncoding {
+        switch self {
+            case .getComments:
+                return JSONEncoding.default
+        }
+    }
+
+}
+</code></pre>
 
           </section>
           <section class="section task-group-section">
@@ -265,9 +308,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11UITableViewC7WinkKitE8registeryAC07WKTableB4CellCyxGm4cell_tAC11WKPresenterRzlF"></a>
-                    <a name="//apple_ref/swift/Method/register(cell:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11UITableViewC7WinkKitE8registeryAC07WKTableB4CellCyxGm4cell_tAC11WKPresenterRzlF">register(cell:)</a>
+                    <a name="/s:7WinkKit8WKRouterP6methodXev"></a>
+                    <a name="//apple_ref/swift/Property/method" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterP6methodXev">method</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -275,18 +318,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Registers a <code><a href="../Classes/WKTableViewCell.html">WKTableViewCell</a></code> object as cell if the cell view is into a xib.
-This method internally calls the <code>register(_:forCellReuseIdentifier:)</code> of the <code>UITableVIew</code>.
-Since it uses a <code>UINib</code>, the <code>nibName</code> <strong>must</strong> be the same of the class name!</p>
-<pre class="highlight plaintext"><code>    register(cell: MyCustomCell.self)
-</code></pre>
+                        <p>The http method of the creating request</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">register</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cell</span><span class="p">:</span> <span class="kt"><a href="../Classes/WKTableViewCell.html">WKTableViewCell</a></span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;.</span><span class="k">Type</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">HTTPMethod</span></code></pre>
 
                         </div>
                       </div>
@@ -296,9 +335,9 @@ Since it uses a <code>UINib</code>, the <code>nibName</code> <strong>must</stron
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11UITableViewC7WinkKitE19dequeueReusableCellxxm6ofType_10Foundation9IndexPathV3fortAC07WKTablebG0Cyq_GRbzAC11WKPresenterR_r0_lF"></a>
-                    <a name="//apple_ref/swift/Method/dequeueReusableCell(ofType:for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11UITableViewC7WinkKitE19dequeueReusableCellxxm6ofType_10Foundation9IndexPathV3fortAC07WKTablebG0Cyq_GRbzAC11WKPresenterR_r0_lF">dequeueReusableCell(ofType:for:)</a>
+                    <a name="/s:7WinkKit8WKRouterP4pathSSv"></a>
+                    <a name="//apple_ref/swift/Property/path" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterP4pathSSv">path</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -306,20 +345,220 @@ Since it uses a <code>UINib</code>, the <code>nibName</code> <strong>must</stron
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Dequeue a specialized <code><a href="../Classes/WKTableViewCell.html">WKTableViewCell</a></code> based on given type.</p>
+                        <p>The endpoint of the api, like <q>posts/likes</q>. This will be concatenated to the base url.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">dequeueReusableCell</span><span class="o">&lt;</span><span class="kt">C</span><span class="p">,</span> <span class="kt">P</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">C</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">C</span> <span class="k">where</span> <span class="kt">C</span><span class="p">:</span> <span class="kt"><a href="../Classes/WKTableViewCell.html">WKTableViewCell</a></span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The cell already casted.</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit8WKRouterP8encodingXev"></a>
+                    <a name="//apple_ref/swift/Property/encoding" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterP8encodingXev">encoding</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The encoding used for the request; should be <code>URLEncoding</code> or <code>JSONEncoding</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">encoding</span><span class="p">:</span> <span class="kt">ParameterEncoding</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit8WKRouterP6paramss10DictionaryVySSypGSgv"></a>
+                    <a name="//apple_ref/swift/Property/params" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterP6paramss10DictionaryVySSypGSgv">params</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The dict containing the parameter that will be encoded for this request or nil if no param.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">params</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit8WKRouterP7headersXev"></a>
+                    <a name="//apple_ref/swift/Property/headers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterP7headersXev">headers</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Headers associated to the request. By default this value is equals to <code><a href="../Protocols/WKRouter.html#/s:7WinkKit8WKRouterPAAE14defaultHeadersXev">defaultHeaders</a></code> var.
+You can re-implement this var to add other header like <q>Authorization</q> or <q>Accept-Language</q>.
+In your application module, you can create a <code>WKRouter</code> extension and do something like:</p>
+<pre class="highlight plaintext"><code>extension WKRouter {
+    var headers: HTTPHeaders {
+        var headers = defaultHeaders // get the default headers first
+        headers["Accept-Language"] = "it" // add the accept language header with it value
+        return headers
+    }
+}
+</code></pre>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit8WKRouterPAAE14defaultHeadersXev"></a>
+                    <a name="//apple_ref/swift/Property/defaultHeaders" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterPAAE14defaultHeadersXev">defaultHeaders</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default headers, contains content type based on <code><a href="../Protocols/WKRouter.html#/s:7WinkKit8WKRouterP8encodingXev">encoding</a></code> var.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">defaultHeaders</span><span class="p">:</span> <span class="kt">HTTPHeaders</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit8WKRouterPAAE7baseURL10Foundation0E0Vv"></a>
+                    <a name="//apple_ref/swift/Property/baseURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterPAAE7baseURL10Foundation0E0Vv">baseURL</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The base url of back-end, something like <q>https://www.backend.com/api/</q>.
+In your application module, you can create a <code>WKRouter</code> extension and do something like:</p>
+<pre class="highlight plaintext"><code>extension WKRouter {
+    var baseURL: URL {
+        return URL(string: "https://www.mybackend.com/api/v2/")!
+    }
+}
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit8WKRouterPAAE12asURLRequest10Foundation0E0VyKF"></a>
+                    <a name="//apple_ref/swift/Method/asURLRequest()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit8WKRouterPAAE12asURLRequest10Foundation0E0VyKF">asURLRequest()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WKRouter</span><span class="p">:</span> <span class="kt">URLRequestConvertible</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

@@ -1,17 +1,24 @@
 {
   "warnings": [
     {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/NetworkService/WKService.swift",
-      "line": 18,
-      "symbol": "WKService.init()",
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Networking/WKRouter.swift",
+      "line": 80,
+      "symbol": "WKRouter.headers",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Networking/WKRouter.swift",
+      "line": 120,
+      "symbol": "WKRouter.asURLRequest()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Presentation/Presenter/WKViewControllerPresenter.swift",
-      "line": 12,
-      "symbol": "PresentableView",
-      "symbol_kind": "source.lang.swift.decl.protocol",
+      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Core/Networking/WKService.swift",
+      "line": 18,
+      "symbol": "WKService.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -407,20 +414,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Helpers/WKLocationHelper/GoogleLocation.swift",
-      "line": 52,
-      "symbol": "AddressComponent.decode(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Helpers/WKLocationHelper/GoogleLocation.swift",
-      "line": 133,
-      "symbol": "GoogleLocation.decode(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Helpers/WKMediaPickerHelper/WKMedia.swift",
       "line": 13,
       "symbol": "WKMedia.previewImage",
@@ -530,20 +523,6 @@
       "line": 293,
       "symbol": "WKMediaPickerHelper.imagePickerControllerDidCancel(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Networking/Resource.swift",
-      "line": 15,
-      "symbol": "Resource.found",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rico/Desktop/Wink_proj/experiments/WinkKit/WinkKit/Networking/Resource.swift",
-      "line": 16,
-      "symbol": "Resource.notFound",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     }
   ],

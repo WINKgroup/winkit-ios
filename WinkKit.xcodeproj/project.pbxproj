@@ -18,8 +18,6 @@
 		1F3A685B1FD20DE500265126 /* WKTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A685A1FD20DE500265126 /* WKTableViewDataSource.swift */; };
 		1F3A685C1FD20EC900265126 /* WKCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A68581FD20DDD00265126 /* WKCollectionViewDataSource.swift */; };
 		1F3A685D1FD20ECA00265126 /* WKTableViewInfiniteDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA56651ED85AE000D4A71D /* WKTableViewInfiniteDataSourceDelegate.swift */; };
-		1F432DB91F598CB5006A2006 /* AlamofireResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F432DB71F598C94006A2006 /* AlamofireResponse.swift */; };
-		1F432DBA1F598CB7006A2006 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F432DB81F598C94006A2006 /* Resource.swift */; };
 		1F5452D61EC20418008FD8F8 /* WKPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5452D51EC20418008FD8F8 /* WKPresenter.swift */; };
 		1F5452EB1EC4A643008FD8F8 /* WKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5452EA1EC4A643008FD8F8 /* WKTableViewCell.swift */; };
 		1F5452ED1EC4A95A008FD8F8 /* WKTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5452EC1EC4A95A008FD8F8 /* WKTableView.swift */; };
@@ -43,8 +41,6 @@
 		1FA96984200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA96983200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift */; };
 		1FC50AA91EC8999C0021C350 /* WKCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC50AA81EC8999C0021C350 /* WKCollectionView.swift */; };
 		1FC50AAB1EC899DA0021C350 /* WKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC50AAA1EC899DA0021C350 /* WKCollectionViewCell.swift */; };
-		1FE5486E1EBD34DF0010A630 /* GoogleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5486C1EBD34DF0010A630 /* GoogleLocation.swift */; };
-		1FE5486F1EBD34DF0010A630 /* WKLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5486D1EBD34DF0010A630 /* WKLocationHelper.swift */; };
 		1FE91E761EBB50790056D27D /* WinkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE91E741EBB50790056D27D /* WinkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FFB42BD1FCEBA4300241678 /* WKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFB42BC1FCEBA4300241678 /* WKNavigationController.swift */; };
 		DA20D2C02BD25BB317D6CE6D /* Pods_WinkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEA6254621A5F8DA231ED15 /* Pods_WinkKit.framework */; };
@@ -61,8 +57,6 @@
 		1F39604F2025F31300C81BAB /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		1F3A68581FD20DDD00265126 /* WKCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		1F3A685A1FD20DE500265126 /* WKTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewDataSource.swift; sourceTree = "<group>"; };
-		1F432DB71F598C94006A2006 /* AlamofireResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireResponse.swift; sourceTree = "<group>"; };
-		1F432DB81F598C94006A2006 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		1F5452D51EC20418008FD8F8 /* WKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKPresenter.swift; sourceTree = "<group>"; };
 		1F5452EA1EC4A643008FD8F8 /* WKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewCell.swift; sourceTree = "<group>"; };
 		1F5452EC1EC4A95A008FD8F8 /* WKTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableView.swift; sourceTree = "<group>"; };
@@ -87,8 +81,6 @@
 		1FBA56651ED85AE000D4A71D /* WKTableViewInfiniteDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewInfiniteDataSourceDelegate.swift; sourceTree = "<group>"; };
 		1FC50AA81EC8999C0021C350 /* WKCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKCollectionView.swift; sourceTree = "<group>"; };
 		1FC50AAA1EC899DA0021C350 /* WKCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKCollectionViewCell.swift; sourceTree = "<group>"; };
-		1FE5486C1EBD34DF0010A630 /* GoogleLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLocation.swift; sourceTree = "<group>"; };
-		1FE5486D1EBD34DF0010A630 /* WKLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKLocationHelper.swift; sourceTree = "<group>"; };
 		1FE91E711EBB50790056D27D /* WinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91E741EBB50790056D27D /* WinkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinkKit.h; sourceTree = "<group>"; };
 		1FE91E751EBB50790056D27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,19 +112,10 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		1F1560D31F598AE700C95450 /* NetworkService */ = {
+		1F1560D31F598AE700C95450 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				1F1560D41F598AF600C95450 /* WKService.swift */,
-			);
-			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		1F432DB61F598C94006A2006 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				1F432DB71F598C94006A2006 /* AlamofireResponse.swift */,
-				1F432DB81F598C94006A2006 /* Resource.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -195,7 +178,7 @@
 		1F780EBA1EC0B51E003A326D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1F1560D31F598AE700C95450 /* NetworkService */,
+				1F1560D31F598AE700C95450 /* Networking */,
 				1F1560CE1F59857A00C95450 /* Utils */,
 				1F5A5AFC1F3644FB005F7F18 /* Presentation */,
 			);
@@ -251,18 +234,8 @@
 			children = (
 				1FA96982200CC29D006E6CFC /* WKNetworkReachabilityHelper */,
 				1F780EAD1EC094F6003A326D /* WKMediaPickerHelper */,
-				1FE5486B1EBD34DF0010A630 /* WKLocationHelper */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		1FE5486B1EBD34DF0010A630 /* WKLocationHelper */ = {
-			isa = PBXGroup;
-			children = (
-				1FE5486C1EBD34DF0010A630 /* GoogleLocation.swift */,
-				1FE5486D1EBD34DF0010A630 /* WKLocationHelper.swift */,
-			);
-			path = WKLocationHelper;
 			sourceTree = "<group>";
 		};
 		1FE91E671EBB50790056D27D = {
@@ -287,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				1F780EAA1EC086C1003A326D /* Extensions */,
-				1F432DB61F598C94006A2006 /* Networking */,
 				1FE548681EBD33750010A630 /* Helpers */,
 				1F780EBA1EC0B51E003A326D /* Core */,
 				1FE91E741EBB50790056D27D /* WinkKit.h */,
@@ -441,7 +413,6 @@
 				1F780EB31EC0AB91003A326D /* UIImage.swift in Sources */,
 				1F19347F1F5D4D87001A9B06 /* WKTextView.swift in Sources */,
 				1F3A685B1FD20DE500265126 /* WKTableViewDataSource.swift in Sources */,
-				1F432DB91F598CB5006A2006 /* AlamofireResponse.swift in Sources */,
 				1F780EB51EC0ACA4003A326D /* Collection.swift in Sources */,
 				1F3A685D1FD20ECA00265126 /* WKTableViewInfiniteDataSourceDelegate.swift in Sources */,
 				1F780ECA1EC0B51E003A326D /* WKView.swift in Sources */,
@@ -449,16 +420,13 @@
 				1F780EB11EC095F3003A326D /* WKMedia.swift in Sources */,
 				1F5452ED1EC4A95A008FD8F8 /* WKTableView.swift in Sources */,
 				1F780EAC1EC0873B003A326D /* Date.swift in Sources */,
-				1FE5486E1EBD34DF0010A630 /* GoogleLocation.swift in Sources */,
 				1FA96984200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift in Sources */,
-				1F432DBA1F598CB7006A2006 /* Resource.swift in Sources */,
 				1FC50AA91EC8999C0021C350 /* WKCollectionView.swift in Sources */,
 				1F1560D01F59858F00C95450 /* Queue.swift in Sources */,
 				1F780EC81EC0B51E003A326D /* WKButton.swift in Sources */,
 				1F5A5AFE1F364523005F7F18 /* WKViewControllerPresenter.swift in Sources */,
 				1FFB42BD1FCEBA4300241678 /* WKNavigationController.swift in Sources */,
 				1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */,
-				1FE5486F1EBD34DF0010A630 /* WKLocationHelper.swift in Sources */,
 				1F1560D21F598A9D00C95450 /* UIAlertController.swift in Sources */,
 				1FA16D511FA8D23D008602DC /* UIColor.swift in Sources */,
 				1F3A685C1FD20EC900265126 /* WKCollectionViewDataSource.swift in Sources */,

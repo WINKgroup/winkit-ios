@@ -27,9 +27,37 @@ An iOS framework that contains a set of classes that follow MVP pattern and solv
 
 You need [Xcode 9](https://developer.apple.com/xcode/), Swift 4 and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) installed.
 
-### Installing
+### Add project/file templates to Xcode (Optional but recommended)
 
-Just paste the CocoaPods dependency in your  `podfile`. Due to a cocoapods bug, ensure to paste the **post_install** function too.
+WinkKit has been designed to help creating app with MVP pattern (you'll understand better later); to follow this pattern, it's needed to create for each view several files.
+WinkKit contains a set of Xcode templates to make project and file creation faster; download the <a href="https://github.com/WINKgroup/Wink-Kit-Helper/blob/master/Release/Wink%20Project%20Helper.app.zip" download target="_blank" download>Wink Project Helper</a> macOS app to install all templates.
+
+After template install, in Xcode, under **File > New > File** (or CMD+N) you can create view controllers, table view cells and collection view cells that conform to MVP like following.
+
+<p align="center">
+<img src="readme-res/template_files.png" width="50%">
+</p>
+
+You can even create a whole project, see next point.
+
+## Installing
+
+### Create project with template
+
+If you're starting from scratch, and you successfully installed the Wink Kit templates, you can create new project directly from Xcode, under **File > New > Project**
+
+<p align="center">
+<img src="readme-res/template_project.png" width="50%">
+</p>
+
+This template creates for you the basic structure of a Wink app (that will be explained later), the `Podfile` already configured with `WinkKit` framework, a `.gitignore` and other boilerplate files/code.
+
+Now run `pod install` in the root project folder, and re-open the project from the workspace file. That's all. 🎉
+
+
+### Manual
+
+Just paste the CocoaPods dependency in your `Podfile`. Due to a cocoapods bug, ensure to paste the **post_install** function too.
 
 ```ruby
 # Podfile
@@ -54,19 +82,6 @@ end
 ```
 
 **N.B.**: If you have compilation fails related to `AlamofireImage` target in generated Pod project, set Swift version to 3.2 for that target.
-
-### Add project/file templates to Xcode (Optional but recommended)
-
-WinkKit has been designed to help creating app with MVP pattern (you'll understand better later); to follow this pattern, it's needed to create for each view several files.
-WinkKit contains a set of Xcode templates to make file creation faster; download <a href="./Xcode%20Templates/Template%20Files/Wink%20Kit.zip" download target="_blank" download>Template File</a>, extract and copy "Wink Kit" folder to 
-
-	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates
-	
-Now in Xcode, under **File > New > File** (or CMD+N) you can create view controllers, table view cells and collection view cells that conform to MVP like following.
-
-<p align="center">
-<img src="readme-res/template_files.png" width="50%">
-</p>
 
 ## API Documentation
 
