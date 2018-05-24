@@ -98,7 +98,7 @@ A Wink iOS project **should** be structured in the following way, expecially if 
 
 ![Arch diagram](./readme-res/arch_diagram.jpg)
 
-This kind of architecture is try to follow the **Responsability Distribution** concept: each layer exists without other ones and every component has different responsability; this improves the maintanance and the testability. The whole Xcode proj structure that maps this architecture is something like this:
+ The whole Xcode proj structure that maps this architecture is something like this:
 
 <img src="readme-res/xcode_structure.png" width=50% />
 
@@ -115,7 +115,7 @@ It's the layer that contains all iOS Framework dedicated classes, like `UIKit` f
 	* **Login**: En example of a Use Case. It will contain all related ViewControllers, Presenter (if a use case contains more than one), DataSources etc.
 		* **LoginPresenter**: A simple presenter; LoginPresenter keep the state of LoginViewController; a presenter is the class that contains logic, the ViewController does **not** contain logic. **Presenter doesn't contains UIKit classes!**, this is needed to keep presenters easy testable.
 		* **LoginViewController**: In classic MVC pattern, (Massive View Controller in iOS world 😫) all logic was here, mixed with the view handling; in this framework a ViewController **owns** a presenter and delegates it for the logic. The view controller doesn't have a method `func performLogin(email: String, password: String)` for example; instead, the presenter does. The view controller will only receive user input and tell the presenter that something happened. The presenter will do work and tell the view controller that the view should change.
-* **Core**: A group that contains base classes re-usable all around project. It's a good practice to define this classes to avoid code duplication that could increase the maintanance difficulty.\
+* **Core**: A group that contains base classes re-usable all around project. It's a good practice to define this classes to avoid code duplication that could increase the maintanance difficulty.
 * **Resources**: All resources go here, included .xcassets, custom fonts...
 
 <br>
