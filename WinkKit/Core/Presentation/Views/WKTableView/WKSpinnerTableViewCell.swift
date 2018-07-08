@@ -1,5 +1,5 @@
 //
-//  SpinnerTableViewCell.swift
+//  WKSpinnerTableViewCell.swift
 //  WinkKit
 //
 //  Created by Rico Crescenzio on 30/05/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class SpinnerTableViewCell: UITableViewCell {
+public class WKSpinnerTableViewCell: UITableViewCell {
 
-    static let reuseIdentifier = "SpinnerTableViewCell"
+    static let reuseIdentifier = "WKSpinnerTableViewCell"
     
     var activityIndicatorView: UIActivityIndicatorView!
 

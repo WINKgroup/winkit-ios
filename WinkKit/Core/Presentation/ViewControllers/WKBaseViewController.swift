@@ -10,7 +10,7 @@ import Foundation
 
 /// All `WKViewController`, `WKTableViewController`, `WKCollectionViewController`, `WKNavigationController` conform to this protocol
 /// to achieve the static instantation feature.
-public protocol WKInstantiableViewController: class {
+public protocol WKInstantiableViewController: AnyObject {
     
     /// The storyboard name in which the sbuclassed `WKViewController` is created (if the viewController is
     /// defined into a `UIStoryboard` instead of a xib). You must override this property

@@ -74,6 +74,9 @@ end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
+            if target.name === 'AlamofireImage'
+                config.build_settings['SWIFT_VERSION'] = '3.3' # set swift 3.3 on AlamofireImage
+            end
             config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
         end
     end
@@ -81,7 +84,7 @@ end
 
 ```
 
-**N.B.**: If you have compilation fails related to `AlamofireImage` target in generated Pod project, set Swift version to 3.2 for that target.
+**N.B.**: AlamofireImage compiles only with Swift 3.3.
 
 ## API Documentation
 

@@ -10,7 +10,7 @@ import Alamofire
 
 /// The object that will observe network changing. Tipically a presenter.
 /// `WKNetworkObservableViewControllerPresenter` already conforms to this protocol.
-public protocol WKNetworkObserver: class {
+public protocol WKNetworkObserver: AnyObject {
     
     /// Called when the network status did change.
     ///

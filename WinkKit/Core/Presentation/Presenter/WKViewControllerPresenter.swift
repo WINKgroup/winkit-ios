@@ -79,8 +79,8 @@ public extension WKGenericViewControllerPresenter {
     
 }
 
-/// A `PresentableView` that is used when a view should update its own state on network changes.
-public protocol NetworkObservableView: PresentableView {
+/// A `WKPresentableView` that is used when a view should update its own state on network changes.
+public protocol NetworkObservableView: WKPresentableView {
     
     /// Called by presenter when network become available.
     func networkDidBecomeAvailable()

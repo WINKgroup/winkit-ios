@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 /// All view handled by a presenter must conform to this protocol.
-public protocol PresentableView: class {
+public protocol WKPresentableView: AnyObject {
     
 }
 
 /// The base presenter protocol.
-public protocol WKPresenter: class {
-    /// Every presenter can manage a view, which must conform to `PresentableView`
+public protocol WKPresenter: AnyObject {
+    /// Every presenter can manage a view, which must conform to `WKPresentableView`
     associatedtype View = PresentableView
     
     /// The view managed by this presenter.
@@ -26,7 +27,9 @@ public protocol WKPresenter: class {
 }
 
 /// En empty view used to be the `VoidPresenter` view.
-public class VoidView: PresentableView {}
+public class VoidView: WKPresentableView {
+    public required init() {}
+}
 
 /// When you don't need a presenter in a view controller, use this one.
 public final class VoidPresenter: WKGenericViewControllerPresenter {

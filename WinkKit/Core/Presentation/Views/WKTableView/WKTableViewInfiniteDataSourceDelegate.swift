@@ -26,7 +26,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///                       it is done automatically in this init.
     public override init(tableView: UITableView) {
         super.init(tableView: tableView)
-        self.tableView.register(SpinnerTableViewCell.self, forCellReuseIdentifier: SpinnerTableViewCell.reuseIdentifier)
+        self.tableView.register(WKSpinnerTableViewCell.self, forCellReuseIdentifier: WKSpinnerTableViewCell.reuseIdentifier)
         self.tableView.delegate = self
     }
     
@@ -154,7 +154,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     /// - Important: This is the `tableView(_:cellForRowAt:)` version of the `WKTableViewInfiniteDataSourceDelegate`,
     ///              so you should override this method instead of the original one.
     open func tableView(_ tableView: UITableView, normalCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        fatalError("Must override")
     }
     
     /// Asks the data source for a cell (that display the loading status of the table view)
@@ -166,7 +166,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///
     /// - Note: This method provide a default loading cell, override this to show a custom cell loading.
     open func tableView(_ tableView: UITableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SpinnerTableViewCell.reuseIdentifier, for: indexPath) as! SpinnerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: WKSpinnerTableViewCell.reuseIdentifier, for: indexPath) as! WKSpinnerTableViewCell
         cell.configure(withColor: spinnerColor)
         return cell
     }
@@ -184,6 +184,11 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     
     override open func removeAllItems(animation: UITableViewRowAnimation = .automatic) {
         super.removeAllItems(animation: animation)
+        clearPages()
+    }
+    
+    override open func replaceAll(_ items: [T]) {
+        super.replaceAll(items)
         clearPages()
     }
     
