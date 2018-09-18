@@ -101,10 +101,6 @@ A Wink iOS project **should** be structured in the following way, expecially if 
 
 ![Arch diagram](./readme-res/arch_diagram.jpg)
 
- The whole Xcode proj structure that maps this architecture is something like this:
-
-<img src="readme-res/xcode_structure.png" width=50% />
-
 <br>
 
 ### Presentation
@@ -322,10 +318,6 @@ There are other classes and extensions that can be used to achieve some behaviou
 	- `CALayer`: contains method to add border to a layer
 	- `UIColor`: allow color creation with a hex string
 	- `UIWindow`: contains method to get the current top most view controller.
-
-## Authors
-
-**Rico Crescenzio** - [Linkedin](https://www.linkedin.com/in/quirico-crescenzio-810263b9/)
 
 ## License
 
