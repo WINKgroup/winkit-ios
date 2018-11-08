@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1369C91FAC7A6E008A9006 /* WKNavigator.swift */; };
-		1F1560D21F598A9D00C95450 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1560D11F598A9C00C95450 /* UIAlertController.swift */; };
 		1F1560D51F598AF600C95450 /* WKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1560D41F598AF600C95450 /* WKService.swift */; };
-		1F1714221EDD74A500166C1E /* WKSpinnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1714201EDD74A500166C1E /* WKSpinnerTableViewCell.swift */; };
+		1F1714221EDD74A500166C1E /* WKSpinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1714201EDD74A500166C1E /* WKSpinnerCell.swift */; };
 		1F19347D1F5D4D57001A9B06 /* WKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19347C1F5D4D57001A9B06 /* WKLabel.swift */; };
 		1F19347F1F5D4D87001A9B06 /* WKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19347E1F5D4D86001A9B06 /* WKTextView.swift */; };
+		1F1BFDEC2101ED2D00A09432 /* WKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1BFDEB2101ED2D00A09432 /* WKTextField.swift */; };
+		1F1BFDF02101F33200A09432 /* WKCollectionViewInfiniteDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1BFDEF2101F33200A09432 /* WKCollectionViewInfiniteDataSourceDelegate.swift */; };
 		1F3960502025F31300C81BAB /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39604F2025F31300C81BAB /* UIWindow.swift */; };
 		1F3A685B1FD20DE500265126 /* WKTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A685A1FD20DE500265126 /* WKTableViewDataSource.swift */; };
 		1F3A685C1FD20EC900265126 /* WKCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A68581FD20DDD00265126 /* WKCollectionViewDataSource.swift */; };
@@ -23,10 +24,7 @@
 		1F5A5AFE1F364523005F7F18 /* WKViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A5AFD1F364523005F7F18 /* WKViewControllerPresenter.swift */; };
 		1F5A5B001F36467E005F7F18 /* WKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A5AFF1F36467E005F7F18 /* WKBaseViewController.swift */; };
 		1F7382BF1FA540BD00B63166 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7382BE1FA540BD00B63166 /* Logger.swift */; };
-		1F780EAC1EC0873B003A326D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EAB1EC0873B003A326D /* Date.swift */; };
-		1F780EB31EC0AB91003A326D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EB21EC0AB91003A326D /* UIImage.swift */; };
 		1F780EB51EC0ACA4003A326D /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EB41EC0ACA4003A326D /* Collection.swift */; };
-		1F780EB91EC0AE00003A326D /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EB81EC0AE00003A326D /* CALayer.swift */; };
 		1F780EC51EC0B51E003A326D /* WKCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EBD1EC0B51E003A326D /* WKCollectionViewController.swift */; };
 		1F780EC61EC0B51E003A326D /* WKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EBE1EC0B51E003A326D /* WKTableViewController.swift */; };
 		1F780EC71EC0B51E003A326D /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780EBF1EC0B51E003A326D /* WKViewController.swift */; };
@@ -45,11 +43,12 @@
 
 /* Begin PBXFileReference section */
 		1F1369C91FAC7A6E008A9006 /* WKNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigator.swift; sourceTree = "<group>"; };
-		1F1560D11F598A9C00C95450 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		1F1560D41F598AF600C95450 /* WKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKService.swift; sourceTree = "<group>"; };
-		1F1714201EDD74A500166C1E /* WKSpinnerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKSpinnerTableViewCell.swift; sourceTree = "<group>"; };
+		1F1714201EDD74A500166C1E /* WKSpinnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKSpinnerCell.swift; sourceTree = "<group>"; };
 		1F19347C1F5D4D57001A9B06 /* WKLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKLabel.swift; sourceTree = "<group>"; };
 		1F19347E1F5D4D86001A9B06 /* WKTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKTextView.swift; sourceTree = "<group>"; };
+		1F1BFDEB2101ED2D00A09432 /* WKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKTextField.swift; sourceTree = "<group>"; };
+		1F1BFDEF2101F33200A09432 /* WKCollectionViewInfiniteDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCollectionViewInfiniteDataSourceDelegate.swift; sourceTree = "<group>"; };
 		1F39604F2025F31300C81BAB /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		1F3A68581FD20DDD00265126 /* WKCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		1F3A685A1FD20DE500265126 /* WKTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -59,10 +58,7 @@
 		1F5A5AFD1F364523005F7F18 /* WKViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewControllerPresenter.swift; sourceTree = "<group>"; };
 		1F5A5AFF1F36467E005F7F18 /* WKBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKBaseViewController.swift; sourceTree = "<group>"; };
 		1F7382BE1FA540BD00B63166 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		1F780EAB1EC0873B003A326D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		1F780EB21EC0AB91003A326D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		1F780EB41EC0ACA4003A326D /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		1F780EB81EC0AE00003A326D /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		1F780EBD1EC0B51E003A326D /* WKCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKCollectionViewController.swift; sourceTree = "<group>"; };
 		1F780EBE1EC0B51E003A326D /* WKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewController.swift; sourceTree = "<group>"; };
 		1F780EBF1EC0B51E003A326D /* WKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +124,6 @@
 				1F5452EC1EC4A95A008FD8F8 /* WKTableView.swift */,
 				1F5452EA1EC4A643008FD8F8 /* WKTableViewCell.swift */,
 				1FBA56651ED85AE000D4A71D /* WKTableViewInfiniteDataSourceDelegate.swift */,
-				1F1714201EDD74A500166C1E /* WKSpinnerTableViewCell.swift */,
 			);
 			path = WKTableView;
 			sourceTree = "<group>";
@@ -147,11 +142,7 @@
 		1F780EAA1EC086C1003A326D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1F1560D11F598A9C00C95450 /* UIAlertController.swift */,
-				1F780EAB1EC0873B003A326D /* Date.swift */,
-				1F780EB21EC0AB91003A326D /* UIImage.swift */,
 				1F780EB41EC0ACA4003A326D /* Collection.swift */,
-				1F780EB81EC0AE00003A326D /* CALayer.swift */,
 				1FA16D501FA8D23D008602DC /* UIColor.swift */,
 				1F39604F2025F31300C81BAB /* UIWindow.swift */,
 				1F793E1E20D906C7000AEB90 /* CGColor.swift */,
@@ -184,12 +175,14 @@
 		1F780EC01EC0B51E003A326D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F1714201EDD74A500166C1E /* WKSpinnerCell.swift */,
 				1FC50AA71EC8930F0021C350 /* WKCollectionView */,
 				1F5452E91EC4A643008FD8F8 /* WKTableView */,
 				1F780EC11EC0B51E003A326D /* WKButton.swift */,
 				1F780EC21EC0B51E003A326D /* WKImageView.swift */,
 				1F780EC31EC0B51E003A326D /* WKView.swift */,
 				1F19347C1F5D4D57001A9B06 /* WKLabel.swift */,
+				1F1BFDEB2101ED2D00A09432 /* WKTextField.swift */,
 				1F19347E1F5D4D86001A9B06 /* WKTextView.swift */,
 			);
 			path = Views;
@@ -209,6 +202,7 @@
 				1F3A68581FD20DDD00265126 /* WKCollectionViewDataSource.swift */,
 				1FC50AA81EC8999C0021C350 /* WKCollectionView.swift */,
 				1FC50AAA1EC899DA0021C350 /* WKCollectionViewCell.swift */,
+				1F1BFDEF2101F33200A09432 /* WKCollectionViewInfiniteDataSourceDelegate.swift */,
 			);
 			path = WKCollectionView;
 			sourceTree = "<group>";
@@ -291,7 +285,6 @@
 				1FE91E6D1EBB50790056D27D /* Frameworks */,
 				1FE91E6E1EBB50790056D27D /* Headers */,
 				1FE91E6F1EBB50790056D27D /* Resources */,
-				F7B708C9FA964EC6CD77872E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,21 +359,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7B708C9FA964EC6CD77872E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinkKit/Pods-WinkKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -389,11 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F780EC71EC0B51E003A326D /* WKViewController.swift in Sources */,
+				1F1BFDEC2101ED2D00A09432 /* WKTextField.swift in Sources */,
 				1F7382BF1FA540BD00B63166 /* Logger.swift in Sources */,
 				1F5A5B001F36467E005F7F18 /* WKBaseViewController.swift in Sources */,
 				1F5452EB1EC4A643008FD8F8 /* WKTableViewCell.swift in Sources */,
 				1F780EC91EC0B51E003A326D /* WKImageView.swift in Sources */,
-				1F780EB31EC0AB91003A326D /* UIImage.swift in Sources */,
 				1F19347F1F5D4D87001A9B06 /* WKTextView.swift in Sources */,
 				1F3A685B1FD20DE500265126 /* WKTableViewDataSource.swift in Sources */,
 				1F780EB51EC0ACA4003A326D /* Collection.swift in Sources */,
@@ -401,7 +379,6 @@
 				1F780ECA1EC0B51E003A326D /* WKView.swift in Sources */,
 				1F780EC51EC0B51E003A326D /* WKCollectionViewController.swift in Sources */,
 				1F5452ED1EC4A95A008FD8F8 /* WKTableView.swift in Sources */,
-				1F780EAC1EC0873B003A326D /* Date.swift in Sources */,
 				1FA96984200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift in Sources */,
 				1FC50AA91EC8999C0021C350 /* WKCollectionView.swift in Sources */,
 				1F780EC81EC0B51E003A326D /* WKButton.swift in Sources */,
@@ -409,17 +386,16 @@
 				1FFB42BD1FCEBA4300241678 /* WKNavigationController.swift in Sources */,
 				1F793E1F20D906C7000AEB90 /* CGColor.swift in Sources */,
 				1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */,
-				1F1560D21F598A9D00C95450 /* UIAlertController.swift in Sources */,
 				1FA16D511FA8D23D008602DC /* UIColor.swift in Sources */,
 				1F3A685C1FD20EC900265126 /* WKCollectionViewDataSource.swift in Sources */,
 				1F5452D61EC20418008FD8F8 /* WKPresenter.swift in Sources */,
 				1F3960502025F31300C81BAB /* UIWindow.swift in Sources */,
 				1F780EC61EC0B51E003A326D /* WKTableViewController.swift in Sources */,
+				1F1BFDF02101F33200A09432 /* WKCollectionViewInfiniteDataSourceDelegate.swift in Sources */,
 				1F1560D51F598AF600C95450 /* WKService.swift in Sources */,
 				1F19347D1F5D4D57001A9B06 /* WKLabel.swift in Sources */,
-				1F780EB91EC0AE00003A326D /* CALayer.swift in Sources */,
 				1FC50AAB1EC899DA0021C350 /* WKCollectionViewCell.swift in Sources */,
-				1F1714221EDD74A500166C1E /* WKSpinnerTableViewCell.swift in Sources */,
+				1F1714221EDD74A500166C1E /* WKSpinnerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

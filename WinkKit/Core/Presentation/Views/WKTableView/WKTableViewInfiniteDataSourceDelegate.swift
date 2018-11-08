@@ -39,21 +39,22 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     open var spinnerColor: UIColor? {
         return nil
     }
-    
-    /// The section of the `tableView` in which the `UIActivityIndicatorView` will be displayed.
-    /// This is used to tell the `tableView` in which section the infinite scroll will be
-    /// applied. Deafult is 0.
-    open var loaderSection: Int {
-        return 0
+  
+    private var loaderSection: Int {
+        return loadingSectionInTableView(tableView)
     }
     
+    private lazy var spinnerView: WKSpinnerView = {
+        return WKSpinnerView()
+    }()
+    
     /// The number of the current page. Start from 0.
-    public fileprivate(set) var currentPage: Int = 0
+    public private(set) var currentPage: Int = 0
     
     /// Inidicates if tableView has reached last page and no loader cell will be displayed when scroll to bottom.
     ///
     /// - Important: While this property is `true`, `tableView(_:readyForNextPageInSection:completion:)` won't be called.
-    public fileprivate(set) var hasReachedLastPage = false
+    public private(set) var hasReachedLastPage = false
     
     
     /// If `true`, the loading view is visible. You cannot change the value of this variable;
@@ -62,7 +63,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     /// this property become again false.
     ///
     /// - Important: While this property is `true`, `tableView(_:readyForNextPageInSection:completion:)` won't be called.
-    public fileprivate(set) var isLoading: Bool = false {
+    public private(set) var isLoading: Bool = false {
         didSet {
             let count = tableView(tableView, numberOfRowsInSection: loaderSection)
             if isLoading {
@@ -95,12 +96,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
                 $0.section == loaderSection && $0.row == tableView.numberOfRows(inSection: $0.section) - 1 &&
                     !isLoading && !hasReachedLastPage}) {
             isLoading = true
-            self.tableView(tableView, readyForNextPageInSection: indexPath.section) { [unowned self] isLastPage in
-                self.tableView.reloadData()
-                self.hasReachedLastPage = isLastPage
-                self.currentPage += 1
-                self.isLoading = false
-            }
+            self.tableView(tableView, readyForNextPageInSection: indexPath.section)
         }
         
         lastContentOffset = scrollView.contentOffset
@@ -132,7 +128,7 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///
     /// - Important: You have to call the `completion` closure to end the loading and hide the `UIActivityIndicator`.
     ///              The completion will call for you `tableView.reladData()` and will perform other stuff to make everything working good.
-    open func tableView(_ tableView: UITableView, readyForNextPageInSection section: Int, completion: @escaping (_ isLastPage: Bool) -> Void) {
+    open func tableView(_ tableView: UITableView, readyForNextPageInSection section: Int) {
         
     }
     
@@ -164,11 +160,25 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     ///     - tableView: A table-view object requesting the cell.
     ///     - indexPath: An index path locating a row in tableView.
     ///
-    /// - Note: This method provide a default loading cell, override this to show a custom cell loading.
-    open func tableView(_ tableView: UITableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    private func tableView(_ tableView: UITableView, loadingCellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WKSpinnerTableViewCell.reuseIdentifier, for: indexPath) as! WKSpinnerTableViewCell
-        cell.configure(withColor: spinnerColor)
+        let view = loadingViewForTableView(tableView)
+        view.startAnimating()
+        view.bounds.size.width = tableView.frame.width
+        cell.configure(with: view)
         return cell
+    }
+
+    
+    /// Asks the data source to return a view that will be used for loading.
+    /// Override this method to return a custom view.
+    ///
+    /// - Parameter tableView: A table-view object requesting the view.
+    /// - Returns: The loadable view.
+    open func loadingViewForTableView(_ tableView: UITableView) -> WKLoadableUIView {
+        let view = spinnerView
+        spinnerView.activityIndicatorView.color = spinnerColor
+        return view
     }
     
     /// Tells the data source to return the number of rows in a given section of a table view.
@@ -180,7 +190,15 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
         return items.count
     }
     
-    // - MARK: Overridden properties/methods
+    /// Tells the table view in which section should appear the loading view. Default is section 0.
+    ///
+    /// - Parameter tableView: The table view object requesting this information
+    /// - Returns: An index number identifying the section in which the loader will appear.
+    open func loadingSectionInTableView(_ tableView: UITableView) -> Int {
+        return 0
+    }
+    
+    // - MARK: Add/remove methods
     
     override open func removeAllItems(animation: UITableViewRowAnimation = .automatic) {
         super.removeAllItems(animation: animation)
@@ -190,6 +208,14 @@ open class WKTableViewInfiniteDataSourceDelegate<T>: WKTableViewDataSource<T>, U
     override open func replaceAll(_ items: [T]) {
         super.replaceAll(items)
         clearPages()
+    }
+    
+    open func appendNewContents(from items: [T], isLastPage: Bool) {
+        self.items.append(contentsOf: items)
+        tableView.reloadData()
+        hasReachedLastPage = isLastPage
+        currentPage += 1
+        isLoading = false
     }
     
 }

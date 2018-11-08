@@ -28,7 +28,7 @@ open class WKCollectionViewCell<P: WKPresenter>: UICollectionViewCell {
         self.presenter = presenter
         if let view = self as? P.View {
             presenter.view = view
-        } else{
+        } else {
             fatalError("\(type(of: self)) doesn't conform to \(type(of: P.View.self))")
         }
     }

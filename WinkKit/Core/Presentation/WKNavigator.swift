@@ -17,6 +17,7 @@ import UIKit
 ///
 /// - Warning: This class should be used only with WinkKit view controllers to avoid messing up everything.
 ///            If you decide to use Navigator class, you should always use WinkKit view controllers.
+@available(*, deprecated: 1.0, message: "Use Coordinator pattern instead.")
 open class WKNavigator {
     
     /// The shared instance.
@@ -121,9 +122,6 @@ open class WKNavigator {
             nVc.pushViewController(viewController, animated: animated)
         }
     }
-}
-
-extension WKNavigator {
     
     // - MARK: Instantiation and presentation methods of view controller
     
@@ -227,9 +225,6 @@ extension WKNavigator {
         let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
         self.push(viewController: vc, animated: animated, configuration: configuration)
     }
-}
-
-extension WKNavigator {
     
     // - MARK: Instantiation and presentation methods of tableView controller
     
@@ -333,9 +328,6 @@ extension WKNavigator {
         let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
         self.push(viewController: vc, animated: animated, configuration: configuration)
     }
-}
-
-extension WKNavigator {
     
     // - MARK: Instantiation and presentation methods of collectionView controller
     
@@ -439,9 +431,6 @@ extension WKNavigator {
         let vc = viewControllerType.instantiate(fromStoryboard: storyboardName, bundle: bundle)
         self.push(viewController: vc, animated: animated, configuration: configuration)
     }
-}
-
-extension WKNavigator {
     
     // - MARK: Instantiation and presentation methods of navigationController
     

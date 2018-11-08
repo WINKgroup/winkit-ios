@@ -80,7 +80,7 @@ open class WKCollectionViewController<P>: UICollectionViewController, WKBaseView
     /// but if you provide your own `init` (which doesn't override existing ones) you must call it.
     public func initPresenter() {
         if P.self == VoidPresenter.self {
-            presenter = VoidPresenter() as! P
+            presenter = (VoidPresenter() as! P)
         } else if let view = self as? P.View {
             presenter = P.init(view: view, ())
         } else {

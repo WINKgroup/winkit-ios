@@ -21,7 +21,7 @@ An iOS framework that contains a set of classes that follow MVP pattern and solv
 5. [Using Table Views and Collection Views](#Using_TabColViews)
 6. [Utils and more](#Utils_And_More)
 
-## Getting Started <a name="Getting_Started"></a>
+## Getting Started <a name="Getting_Started" />
 
 ### Prerequisites
 

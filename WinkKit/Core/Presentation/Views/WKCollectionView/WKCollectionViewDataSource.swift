@@ -63,7 +63,7 @@ open class WKCollectionViewDataSource<T>: NSObject, UICollectionViewDataSource {
     ///
     /// - Parameters:
     ///   - item: The new item that will be inserted in data source.
-    open func add(_ item: T) {
+    open func append(_ item: T) {
         items.append(item)
         collectionView.insertItems(at: [IndexPath(row: items.count - 1, section: 0)])
     }
@@ -103,13 +103,13 @@ open class WKCollectionViewDataSource<T>: NSObject, UICollectionViewDataSource {
             }
         }
         
-        collectionView.reloadItems(at: indexes.map({ IndexPath(row: $0, section: 0) }))
+        collectionView.reloadItems(at: indexes.map { IndexPath(row: $0, section: 0) })
         
     }
     
     
     /// Empty the data source and reload the collection view.
-    open func clear() {
+    open func removeAllItems() {
         let indexPaths = items.enumerated().map { (arg: (offset: Int, element: T)) in
             return IndexPath(row: arg.offset, section: 0)
         }

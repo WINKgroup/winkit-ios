@@ -28,7 +28,7 @@ public protocol WKPresenter: AnyObject {
 
 /// En empty view used to be the `VoidPresenter` view.
 public class VoidView: WKPresentableView {
-    public required init() {}
+    public init() {}
 }
 
 /// When you don't need a presenter in a view controller, use this one.
@@ -39,6 +39,7 @@ public final class VoidPresenter: WKGenericViewControllerPresenter {
     public weak var view: VoidView?
     
     public required init() {
-        view = VoidView()
+        let view = VoidView()
+        self.view = view
     }
 }

@@ -32,30 +32,12 @@ open class WKTableViewDataSource<T>: NSObject, UITableViewDataSource {
     
     // - MARK: Methods
     
-    /// Tells the data source to return the number of rows in a given section of a table view.
-    /// By default it returns item count.
-    ///
-    /// - Parameters:
-    ///   - tableView: The table-view object requesting this information.
-    ///   - section: An index number identifying a section in tableView.
-    /// - Returns: The number of rows in section.
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    
-    /// Asks the data source for a cell to insert in a particular location of the table view.
-    /// The returned UITableViewCell object is frequently one that the application reuses for performance reasons.
-    /// You should fetch a previously created cell object that is marked for reuse by sending a dequeueReusableCell(withIdentifier:) message to tableView.
-    /// Various attributes of a table cell are set automatically based on whether the cell is a separator and on information the data source provides,
-    /// such as for accessory views and editing controls.
-    ///
-    /// - Parameters:
-    ///   - tableView: A table-view object requesting the cell.
-    ///   - indexPath: An index path locating a row in tableView.
-    /// - Returns: An object inheriting from UITableViewCell that the table view can use for the specified row. A fatal error if this method is not overriden.
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("tableView(_:cellForItemAt:) not implemented")
+        fatalError("tableView(_:cellForRowAt:) not implemented")
     }
     
     
@@ -64,9 +46,23 @@ open class WKTableViewDataSource<T>: NSObject, UITableViewDataSource {
     /// - Parameters:
     ///   - item: The new item that will be inserted in data source.
     ///   - animation: The table view animation of inserting. Default is `automatic`.
-    open func add(_ item: T, animation: UITableViewRowAnimation = .automatic) {
+    open func append(_ item: T, animation: UITableViewRowAnimation = .automatic) {
         items.append(item)
         tableView.insertRows(at: [IndexPath(row: items.count - 1, section: 0)], with: animation)
+    }
+    
+    
+    /// Add an array of items into data source and update the table view by calling `insertRows(at:with:)`.
+    ///
+    /// - Parameters:
+    ///   - items: The array containing new items to append.
+    ///   - animation: The table view animation of inserting. Default is `automatic`.
+    open func append(contentsOf items: [T], animation: UITableViewRowAnimation = .automatic) {
+        let oldLastIndex = self.items.count
+        self.items.append(contentsOf: items)
+        let newLastIndex = self.items.count - 1
+        let indexPaths = (oldLastIndex...newLastIndex).map { IndexPath(row: $0, section: 0) }
+        tableView.insertRows(at: indexPaths, with: animation)
     }
     
     
@@ -110,7 +106,7 @@ open class WKTableViewDataSource<T>: NSObject, UITableViewDataSource {
             }
         }
         
-        tableView.reloadRows(at: indexes.map({ IndexPath(row: $0, section: 0) }), with: animation)
+        tableView.reloadRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: animation)
         
     }
     

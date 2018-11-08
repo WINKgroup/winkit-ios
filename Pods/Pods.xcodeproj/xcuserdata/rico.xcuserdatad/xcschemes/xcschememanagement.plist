@@ -14,27 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Argo.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Curry.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DateTools.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-WinkKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Runes.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

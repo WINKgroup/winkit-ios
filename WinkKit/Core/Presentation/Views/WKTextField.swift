@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// The `WKTextView` extends `UITextView` and has the same `@IBInspectable` properties of `WKView`.
+/// The `WKTextField` extends `UITextField` and has the same `@IBInspectable` properties of `WKView`.
 ///
 /// - SeeAlso: `WKView`
 ///
-open class WKTextView: UITextView {
+open class WKTextField: UITextField {
     
     // MARK: UIView Lifecycle
     
