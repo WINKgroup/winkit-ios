@@ -14,11 +14,27 @@ import Foundation
 ///
 open class WKTextField: UITextField {
     
+    // MARK: Initializers
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        addCornerRadiusObserver()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addCornerRadiusObserver()
+    }
+    
     // MARK: UIView Lifecycle
     
     open override func layoutSubviews() {
         super.layoutSubviews()
         roundLayerIfNeeded()
         updateShadowIfNeeded()
+    }
+    
+    deinit {
+        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
     }
 }

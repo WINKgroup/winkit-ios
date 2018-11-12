@@ -70,7 +70,7 @@ public protocol WKPropertiesInspectable: AnyObject {
 @IBDesignable
 extension UIView: WKPropertiesInspectable {
     
-    // MARK: IBInspectable Properies
+    // MARK: IBInspectable Properties
     
     /// Apply this properties to `layer.cornerRadius`.
     ///
@@ -125,9 +125,11 @@ extension UIView: WKPropertiesInspectable {
         }
     }
     
-    /// If true the view will always have rounded corner; if you want a circular view
+    /// If true the view will have rounded corner; if you want a circular view
     /// you just need make sure that `width == height`. If true, this property will
     /// override the `cornerRadius`. Default is false.
+    ///
+    /// - Important: If this property is true and you directly change the `layer.cornerRadius`, the property will be automatically set to `false`.
     @IBInspectable public var isRounded: Bool {
         get {
             return layerStyle[WKCustomLayerStyleKey.isRounded] as? Bool ?? false
@@ -443,6 +445,18 @@ extension UIView: WKPropertiesInspectable {
 /// wrap a `UIView` in this `WKView`.
 open class WKView: UIView {
     
+    // MARK: Initializers
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        addCornerRadiusObserver()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addCornerRadiusObserver()
+    }
+    
     // MARK: UIView Lifecycle
     
     open override func layoutSubviews() {
@@ -452,5 +466,31 @@ open class WKView: UIView {
         gradientLayer?.frame = bounds
     }
     
+    deinit {
+        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
+    }
+}
+
+private var cornerRadiusChangeContext: String = "WinkKit.cornerRadiusObserver"
+
+extension UIView {
+    
+    var cornerRadiusKeyPath: String {
+        return #keyPath(layer.cornerRadius)
+    }
+    
+    func addCornerRadiusObserver() {
+        addObserver(self, forKeyPath: cornerRadiusKeyPath, options: .new, context: &cornerRadiusChangeContext)
+    }
+    
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == &cornerRadiusChangeContext && keyPath == cornerRadiusKeyPath {
+            if layer.cornerRadius != bounds.width / 2 {
+                isRounded = false
+            }
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
     
 }

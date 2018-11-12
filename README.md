@@ -1,5 +1,5 @@
 <p align="center">
-<img src="readme-res/winkkit_logo.png" width="33%">
+<img src="readme-res/winkkit_logo.png" width="25%">
 </p>
 
 WinkKit

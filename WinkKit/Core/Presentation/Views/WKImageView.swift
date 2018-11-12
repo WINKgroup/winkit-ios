@@ -11,6 +11,29 @@ import UIKit
 @IBDesignable
 open class WKImageView: UIImageView {
 
+    // MARK: Initializers
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        addCornerRadiusObserver()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addCornerRadiusObserver()
+    }
+    
+    public override init(image: UIImage?) {
+        super.init(image: image)
+        addCornerRadiusObserver()
+    }
+    
+    public override init(image: UIImage?, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        addCornerRadiusObserver()
+    }
+
+    
     // MARK: UIView Lifecycle
     
     open override func layoutSubviews() {
@@ -52,6 +75,10 @@ open class WKImageView: UIImageView {
             // Lets forget about that we were drawing
             UIGraphicsEndImageContext()
         }
+    }
+    
+    deinit {
+        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
     }
     
 }

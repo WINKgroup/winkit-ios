@@ -26,7 +26,7 @@ public protocol WKInstantiableViewController: AnyObject {
 /// to follow MVP pattern.
 public protocol WKBaseViewController: WKInstantiableViewController {
     
-    associatedtype P = WKGenericViewControllerPresenter
+    associatedtype P: WKGenericViewControllerPresenter
     
     /// The `WKViewControllerPresenter` owned by this class.
     var presenter: P! { get set }
@@ -50,7 +50,7 @@ public extension WKInstantiableViewController where Self : UIViewController  {
             fatalError("Cannot invoke instantiate: you did not override `storyboardName` or `identifier` in \(self)")
         }
         
-        return UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier) as! Self
+        return UIStoryboard(name: storyboard, bundle: bundle).instantiateViewController(withIdentifier: identifier) as! Self
         
     }
     
@@ -69,7 +69,7 @@ public extension WKInstantiableViewController where Self : UIViewController  {
             fatalError("Cannot invoke instantiate: you did not override or `identifier` in \(self)")
         }
         
-        return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier) as! Self
+        return UIStoryboard(name: storyboardName, bundle: bundle).instantiateViewController(withIdentifier: identifier) as! Self
     }
 
     
