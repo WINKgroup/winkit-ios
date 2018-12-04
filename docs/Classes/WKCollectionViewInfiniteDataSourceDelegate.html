@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WKCollectionViewInfiniteDataSourceDelegate Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/WKCollectionViewInfiniteDataSourceDelegate" class="dashAnchor"></a>
+    <a title="WKCollectionViewInfiniteDataSourceDelegate Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">WinkKit Docs</a> (77% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">WinkKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        WKCollectionViewInfiniteDataSourceDelegate Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VoidPresenter.html">VoidPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VoidView.html">VoidView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKButton.html">WKButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKCollectionView.html">WKCollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKCollectionViewCell.html">WKCollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKCollectionViewController.html">WKCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKCollectionViewDataSource.html">WKCollectionViewDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKCollectionViewInfiniteDataSourceDelegate.html">WKCollectionViewInfiniteDataSourceDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKImageView.html">WKImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKLabel.html">WKLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKLog.html">WKLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNavigationController.html">WKNavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNavigator.html">WKNavigator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkObservableViewControllerPresenter.html">WKNetworkObservableViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKNetworkReachabilityHelper.html">WKNetworkReachabilityHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKService.html">WKService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKService/RequestChain.html">– RequestChain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKSpinnerView.html">WKSpinnerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTableView.html">WKTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTableViewCell.html">WKTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTableViewController.html">WKTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTableViewDataSource.html">WKTableViewDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTableViewInfiniteDataSourceDelegate.html">WKTableViewInfiniteDataSourceDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTextField.html">WKTextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKTextView.html">WKTextView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKView.html">WKView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WKViewController.html">WKViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/UIColorInputError.html">UIColorInputError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Collection.html">Collection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UICollectionView.html">UICollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkObservableView.html">NetworkObservableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKBaseViewController.html">WKBaseViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKGenericViewControllerPresenter.html">WKGenericViewControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKInstantiableViewController.html">WKInstantiableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKLoadableSpinnerView.html">WKLoadableSpinnerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKNetworkObserver.html">WKNetworkObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:7WinkKit17WKPresentableViewP">WKPresentableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKPresenter.html">WKPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WKPropertiesInspectable.html">WKPropertiesInspectable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/WKCustomLayerStyleKey.html">WKCustomLayerStyleKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7WinkKit16WKLoadableUIViewa">WKLoadableUIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7WinkKit22WKPullToRefreshClosurea">WKPullToRefreshClosure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>WKCollectionViewInfiniteDataSourceDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">WKCollectionViewInfiniteDataSourceDelegate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/WKCollectionViewDataSource.html">WKCollectionViewDataSource</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span></code></pre>
+
+                </div>
+              </div>
+            <p>A data source and delegate that handle pagination for collection view. It is build using the flow layout.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateCACyxGSo012UICollectionD0C010collectionD0_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(collectionView:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateCACyxGSo012UICollectionD0C010collectionD0_tcfc">init(collectionView:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC12spinnerColorSo7UIColorCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/spinnerColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC12spinnerColorSo7UIColorCSgvp">spinnerColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The color of the <code>UIActivityIndicatorView</code> that will be displayed
+at the bottom of the section when new page will be requested.
+If <code>nil</code> the <code>UIActivityIndicatorView</code> will be default of style <code>UIActivityIndicatorViewStyle.gray</code>.
+This property does nothing if you override <code>collectionView(_:loadingCellForItemAt:) -&gt; UICollectionViewCell</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">spinnerColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC11currentPageSivp"></a>
+                    <a name="//apple_ref/swift/Property/currentPage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC11currentPageSivp">currentPage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of the current page. Start from 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC18hasReachedLastPageSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasReachedLastPage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC18hasReachedLastPageSbvp">hasReachedLastPage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inidicates if collectionView has reached last page and no loader cell will be displayed when scroll to end.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    While this property is <code>true</code>, <code>collectionView(_:readyForNextPageInSection:completion:)</code> won&rsquo;t be called.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">hasReachedLastPage</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC9isLoadingSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isLoading" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC9isLoadingSbvp">isLoading</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If <code>true</code>, the loading view is visible. You cannot change the value of this variable;
+It is by default set to <code>false</code>; when <code>collectionView(_:readyForNextPageInSection:completion:)</code> is called
+this property is set to <code>true</code>; finally when the <code>completion</code> parameter is called
+this property become again false.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    While this property is <code>true</code>, <code>collectionView(_:readyForNextPageInSection:completion:)</code> won&rsquo;t be called.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">isLoading</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Methods"></a>
+                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
+                <a href="#/Methods">
+                  <h3 class="section-name">Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC10clearPagesyyF"></a>
+                    <a name="//apple_ref/swift/Method/clearPages()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC10clearPagesyyF">clearPages()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Call this method when you want to reset the page counter, for example if the collection view clear its elements.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearPages</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC06scrollD9DidScrollySo08UIScrollD0CF"></a>
+                    <a name="//apple_ref/swift/Method/scrollViewDidScroll(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC06scrollD9DidScrollySo08UIScrollD0CF">scrollViewDidScroll(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Here&rsquo;s the implemetation of reaching last element. You can override this to do your own stuff.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    If you override this method, you <strong>MUST</strong> call super or unexpected behavior can occures.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">scrollViewDidScroll</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Final%20methods"></a>
+                <a name="//apple_ref/swift/Section/Final methods" class="dashAnchor"></a>
+                <a href="#/Final%20methods">
+                  <h3 class="section-name">Final methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV13cellForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV13cellForItemAttF">collectionView(_:cellForItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>You can&rsquo;t override this method, it is intended for internal purpose; instead, override <code><a href="../Classes/WKCollectionViewInfiniteDataSourceDelegate.html#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV06normalK9ForItemAttF">collectionView(_:normalCellForItemAt:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SiSo012UICollectionD0C_Si22numberOfItemsInSectiontF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SiSo012UICollectionD0C_Si22numberOfItemsInSectiontF">collectionView(_:numberOfItemsInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>You can&rsquo;t override this method, it is intended for internal purpose; instead, override <code><a href="../Classes/WKCollectionViewInfiniteDataSourceDelegate.html#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SiSo012UICollectionD0C_Si28numberOfNormalItemsInSectiontF">collectionView(_:numberOfNormalItemsInSection:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SC6CGSizeVSo012UICollectionD0C_So0kD6LayoutC6layout10Foundation9IndexPathV13sizeForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:layout:sizeForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SC6CGSizeVSo012UICollectionD0C_So0kD6LayoutC6layout10Foundation9IndexPathV13sizeForItemAttF">collectionView(_:layout:sizeForItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>You can&rsquo;t override this methods, it is intended for internal purpose.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Infinite%20scroll%20methods"></a>
+                <a name="//apple_ref/swift/Section/Infinite scroll methods" class="dashAnchor"></a>
+                <a href="#/Infinite%20scroll%20methods">
+                  <h3 class="section-name">Infinite scroll methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0ySo012UICollectionD0C_Si25readyForNextPageInSectiontF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:readyForNextPageInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0ySo012UICollectionD0C_Si25readyForNextPageInSectiontF">collectionView(_:readyForNextPageInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate the collection view has reached the last item in and is ready for the next page.
+You should override this method and implement your logic. Default does nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">readyForNextPageInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The collectionView object telling is ready for next page.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index number identifying a section of collectionView.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SC6CGSizeVSo012UICollectionD0C_So0kD6LayoutC6layout10Foundation9IndexPathV19sizeForNormalItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:layout:sizeForNormalItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SC6CGSizeVSo012UICollectionD0C_So0kD6LayoutC6layout10Foundation9IndexPathV19sizeForNormalItemAttF">collectionView(_:layout:sizeForNormalItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForNormalItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SC6CGSizeVSo012UICollectionD0C_So0kD6LayoutC6layout10Foundation9IndexPathV20sizeForLoadingItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:layout:sizeForLoadingItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SC6CGSizeVSo012UICollectionD0C_So0kD6LayoutC6layout10Foundation9IndexPathV20sizeForLoadingItemAttF">collectionView(_:layout:sizeForLoadingItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForLoadingItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV06normalK9ForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:normalCellForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV06normalK9ForItemAttF">collectionView(_:normalCellForItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the data source for a cell to insert in a particular location of the collection view.
+The returned UICollectionViewCell object is frequently one that the application reuses for performance reasons.
+You should fetch a previously created cell object that is marked for reuse by sending
+a <code>dequeueReusableCell(withIdentifier:)</code> message to collectionView.
+Various attributes of a collection cell are set automatically based on whether the cell is
+a separator and on information the data source provides, such as for accessory views and editing controls.
+The default implementation return a simple <code>UICollectionViewCell</code>, so in your overridden method, you can skip
+the super call.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method is not called for the item that display the loading indicator.</p>
+
+</div>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>This is the <code><a href="../Classes/WKCollectionViewInfiniteDataSourceDelegate.html#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV13cellForItemAttF">collectionView(_:cellForItemAt:)</a></code> version of the <code>WKCollectionViewInfiniteDataSourceDelegate</code>,
+         so you should override this method instead of the original one.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">normalCellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A collection-view object requesting the cell.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index path locating a item in collectionView.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV07loadingK9ForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:loadingCellForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0So012UICollectionD4CellCSo0jD0C_10Foundation9IndexPathV07loadingK9ForItemAttF">collectionView(_:loadingCellForItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the data source for a cell (that display the loading status of the collection view)
+to insert in a particular location of the collection view.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method provide a default loading cell, override this to show a custom cell loading.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">loadingCellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A collection-view object requesting the cell.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index path locating a item in collectionView.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC07loadingd13ForCollectionD0AA017WKLoadableSpinnerD0_So6UIViewCXcSo012UICollectionD0CF"></a>
+                    <a name="//apple_ref/swift/Method/loadingViewForCollectionView(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC07loadingd13ForCollectionD0AA017WKLoadableSpinnerD0_So6UIViewCXcSo012UICollectionD0CF">loadingViewForCollectionView(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">loadingViewForCollectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:7WinkKit16WKLoadableUIViewa">WKLoadableUIView</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SiSo012UICollectionD0C_Si28numberOfNormalItemsInSectiontF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfNormalItemsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC010collectionD0SiSo012UICollectionD0C_Si28numberOfNormalItemsInSectiontF">collectionView(_:numberOfNormalItemsInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the data source to return the number of items in a given section of a collection view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfNormalItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The collection-view object requesting this information.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index number identifying a section in collectionView.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC025loaderSectionInCollectionD0SiSo012UICollectionD0CF"></a>
+                    <a name="//apple_ref/swift/Method/loaderSectionInCollectionView(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC025loaderSectionInCollectionD0SiSo012UICollectionD0CF">loaderSectionInCollectionView(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the collection view in which section should appear the loading view. Default is section 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">loaderSectionInCollectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The collection view object requesting this information</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An index number identifying the section in which the loader will appear.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Add/remove%20methods"></a>
+                <a name="//apple_ref/swift/Section/Add/remove methods" class="dashAnchor"></a>
+                <a href="#/Add/remove%20methods">
+                  <h3 class="section-name">Add/remove methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC14removeAllItemsyyF"></a>
+                    <a name="//apple_ref/swift/Method/removeAllItems()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC14removeAllItemsyyF">removeAllItems()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="kd">func</span> <span class="nf">removeAllItems</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC10replaceAllySayxGF"></a>
+                    <a name="//apple_ref/swift/Method/replaceAll(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC10replaceAllySayxGF">replaceAll(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="kd">func</span> <span class="nf">replaceAll</span><span class="p">(</span><span class="n">_</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC17appendNewContentsySayxG4from_Sb10isLastPagetF"></a>
+                    <a name="//apple_ref/swift/Method/appendNewContents(from:isLastPage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7WinkKit42WKCollectionViewInfiniteDataSourceDelegateC17appendNewContentsySayxG4from_Sb10isLastPagetF">appendNewContents(from:isLastPage:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the collection view to add new elements and hide the loading cell and increment page count.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">appendNewContents</span><span class="p">(</span><span class="n">from</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">],</span> <span class="nv">isLastPage</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>items</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Array of items to be added.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isLastPage</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If true, the collection view will not call <code>collectionView(_:readyForNextPageInSection:completion:)</code> when reaches last item.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/WINKgroup/WinkKit" target="_blank" rel="external">Rico Crescenzio</a>. All rights reserved. (Last updated: 2018-11-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

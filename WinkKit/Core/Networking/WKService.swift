@@ -15,6 +15,14 @@ import Alamofire
 /// When a service get destroyed, every request enqueued with `enqueue(_:)` method is cancelled.
 open class WKService {
     
+    /// The base url of the service.
+    public let baseUrl: URL
+    
+    /// The manager that will perform every http request. Default managaer is `SessionManager.default`.
+    open class var manager: SessionManager {
+        return SessionManager.default
+    }
+    
     /// Class that manages an array of requests that need to be executed sequencially.
     open class RequestChain {
     
@@ -71,13 +79,19 @@ open class WKService {
         }
     }
     
-    public init() {}
     
-    /// All `DataRequest` managed by this service. It doesn't contains finished requests.
+    /// Create an instance of the service with the given base url
+    ///
+    /// - Parameter baseUrl: The base url of the service.
+    public init(baseUrl: URL) {
+        self.baseUrl = baseUrl
+    }
+    
+    /// All `DataRequest` managed by this service. It doesn't contains completed requests.
     /// This array is filled when `enqueue(urlRequest:)` gets called.
     private(set) public var requests = [DataRequest]()
     
-    /// All `RequestChain` managed by this service. It doesn't contains finished requests.
+    /// All `RequestChain` managed by this service. It doesn't contains completed requests.
     /// This array is filled when `enqueueChain(urlRequests:)` gets called.
     private(set) public var requestChains = [RequestChain]()
     
@@ -87,8 +101,10 @@ open class WKService {
     /// - Parameter urlRequest: The `URLRequestConvertible` that will be enqueued nd stored.
     /// - Returns: The created `DataRequest` to add a response.
     @discardableResult
-    public func enqueue(urlRequest: URLRequestConvertible) -> DataRequest {
-        let request = SessionManager.default.request(urlRequest)
+    public func enqueue(urlRequest: WKRequest) -> DataRequest {
+        var urlRequest = urlRequest
+        urlRequest.baseUrl = baseUrl
+        let request = WKService.manager.request(urlRequest)
         requests.append(request)
         let index = requests.count - 1
         return request.response() { res in
@@ -101,14 +117,19 @@ open class WKService {
     ///
     /// - Parameter urlRequests: The array of url request convertible to be enqueued.
     /// - Returns: The `RequestChain` object created.
-    public func enqueueChain(urlRequests: [URLRequestConvertible]) -> RequestChain {
+    public func enqueueChain(urlRequests: [WKRequest]) -> RequestChain {
+        let urlRequests = urlRequests.map { (request: WKRequest) -> WKRequest in
+            var r = request
+            r.baseUrl = self.baseUrl
+            return r
+        }
         
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         let manager = SessionManager(configuration: configuration)
         manager.startRequestsImmediately = false
         
-        let chain = RequestChain(requests: urlRequests.map { SessionManager.default.request($0) })
+        let chain = RequestChain(requests: urlRequests.map { WKService.manager.request($0) })
         
         self.requestChains.append(chain)
         let index = requestChains.count - 1
@@ -123,7 +144,7 @@ open class WKService {
     /// Cancel all requests and chainRequests created by this `WKService`. It doesn't cancel
     /// all Alamofire's `SessionManager` requests.
     public func cancelAllRequests() {
-        requests.forEach({ $0.cancel() })
+        requests.forEach { $0.cancel() }
         requests.removeAll()
         
         requestChains.forEach { $0.cancelAllRequests() }

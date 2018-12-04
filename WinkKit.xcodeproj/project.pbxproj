@@ -39,6 +39,16 @@
 		1F8FB7FF2195D1B100C8F556 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB7FD2195D1B100C8F556 /* TestViewController.swift */; };
 		1F8FB8002195D1B100C8F556 /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB7FE2195D1B100C8F556 /* TestPresenter.swift */; };
 		1F8FB8022195D20800C8F556 /* ViewControllerAndPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB8012195D20800C8F556 /* ViewControllerAndPresenterTests.swift */; };
+		1F9B18B221B52C20009BC109 /* WinkKit+Alamofire DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18B121B52C20009BC109 /* WinkKit+Alamofire DataRequest.swift */; };
+		1F9B18B421B539DD009BC109 /* WKApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18B321B539DD009BC109 /* WKApiRoute.swift */; };
+		1F9B18B621B54045009BC109 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18B521B54045009BC109 /* MimeType.swift */; };
+		1F9B18C221B6C411009BC109 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18C121B6C411009BC109 /* NetworkingTests.swift */; };
+		1F9B18C421B6C426009BC109 /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18C321B6C426009BC109 /* TestService.swift */; };
+		1F9B18C621B6C5E8009BC109 /* TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18C521B6C5E8009BC109 /* TestModels.swift */; };
+		1F9B18C721B6CB30009BC109 /* WKStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18BE21B6B7C3009BC109 /* WKStatusCode.swift */; };
+		1F9B18CA21B6DC07009BC109 /* WKApiBodyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18C921B6DC07009BC109 /* WKApiBodyError.swift */; };
+		1F9B18CC21B6DC2C009BC109 /* WKResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18CB21B6DC2C009BC109 /* WKResult.swift */; };
+		1F9B18D221B72AFF009BC109 /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18D121B72AFF009BC109 /* CommandLineArguments.swift */; };
 		1FA16D511FA8D23D008602DC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA16D501FA8D23D008602DC /* UIColor.swift */; };
 		1FA96984200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA96983200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift */; };
 		1FC50AA91EC8999C0021C350 /* WKCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC50AA81EC8999C0021C350 /* WKCollectionView.swift */; };
@@ -105,6 +115,16 @@
 		1F8FB7FD2195D1B100C8F556 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1F8FB7FE2195D1B100C8F556 /* TestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPresenter.swift; sourceTree = "<group>"; };
 		1F8FB8012195D20800C8F556 /* ViewControllerAndPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAndPresenterTests.swift; sourceTree = "<group>"; };
+		1F9B18B121B52C20009BC109 /* WinkKit+Alamofire DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WinkKit+Alamofire DataRequest.swift"; sourceTree = "<group>"; };
+		1F9B18B321B539DD009BC109 /* WKApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKApiRoute.swift; sourceTree = "<group>"; };
+		1F9B18B521B54045009BC109 /* MimeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		1F9B18BE21B6B7C3009BC109 /* WKStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKStatusCode.swift; sourceTree = "<group>"; };
+		1F9B18C121B6C411009BC109 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
+		1F9B18C321B6C426009BC109 /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
+		1F9B18C521B6C5E8009BC109 /* TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
+		1F9B18C921B6DC07009BC109 /* WKApiBodyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKApiBodyError.swift; sourceTree = "<group>"; };
+		1F9B18CB21B6DC2C009BC109 /* WKResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKResult.swift; sourceTree = "<group>"; };
+		1F9B18D121B72AFF009BC109 /* CommandLineArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
 		1FA16D501FA8D23D008602DC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1FA96983200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNetworkReachabilityHelper.swift; sourceTree = "<group>"; };
 		1FBA56651ED85AE000D4A71D /* WKTableViewInfiniteDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKTableViewInfiniteDataSourceDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +173,10 @@
 		1F1560D31F598AE700C95450 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				1F9B18C821B6DBD8009BC109 /* Serializer */,
 				1F1560D41F598AF600C95450 /* WKService.swift */,
+				1F9B18B321B539DD009BC109 /* WKApiRoute.swift */,
+				1F9B18B521B54045009BC109 /* MimeType.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -204,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				1F1560D31F598AE700C95450 /* Networking */,
-				1F1560CE1F59857A00C95450 /* Utils */,
 				1F5A5AFC1F3644FB005F7F18 /* Presentation */,
 			);
 			path = Core;
@@ -241,6 +263,7 @@
 		1F8FB7EE2194A6C100C8F556 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1F9B18C021B6C3F9009BC109 /* Networking */,
 				1F8FB7FC2195D18500C8F556 /* View Controllers */,
 				1F8FB7EF2194A6C100C8F556 /* IBDesignableTests.swift */,
 				1F8FB7F12194A6C100C8F556 /* Info.plist */,
@@ -257,6 +280,27 @@
 				1F8FB8012195D20800C8F556 /* ViewControllerAndPresenterTests.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1F9B18C021B6C3F9009BC109 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1F9B18C121B6C411009BC109 /* NetworkingTests.swift */,
+				1F9B18C321B6C426009BC109 /* TestService.swift */,
+				1F9B18C521B6C5E8009BC109 /* TestModels.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1F9B18C821B6DBD8009BC109 /* Serializer */ = {
+			isa = PBXGroup;
+			children = (
+				1F9B18B121B52C20009BC109 /* WinkKit+Alamofire DataRequest.swift */,
+				1F9B18BE21B6B7C3009BC109 /* WKStatusCode.swift */,
+				1F9B18C921B6DC07009BC109 /* WKApiBodyError.swift */,
+				1F9B18CB21B6DC2C009BC109 /* WKResult.swift */,
+			);
+			path = Serializer;
 			sourceTree = "<group>";
 		};
 		1FA96982200CC29D006E6CFC /* WKNetworkReachabilityHelper */ = {
@@ -309,11 +353,13 @@
 		1FE91E731EBB50790056D27D /* WinkKit */ = {
 			isa = PBXGroup;
 			children = (
+				1F1560CE1F59857A00C95450 /* Utils */,
 				1F780EAA1EC086C1003A326D /* Extensions */,
 				1FE548681EBD33750010A630 /* Helpers */,
 				1F780EBA1EC0B51E003A326D /* Core */,
 				1FE91E741EBB50790056D27D /* WinkKit.h */,
 				1FE91E751EBB50790056D27D /* Info.plist */,
+				1F9B18D121B72AFF009BC109 /* CommandLineArguments.swift */,
 			);
 			path = WinkKit;
 			sourceTree = "<group>";
@@ -519,8 +565,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8FB7FF2195D1B100C8F556 /* TestViewController.swift in Sources */,
+				1F9B18C621B6C5E8009BC109 /* TestModels.swift in Sources */,
 				1F8FB7F02194A6C100C8F556 /* IBDesignableTests.swift in Sources */,
 				1F8FB8022195D20800C8F556 /* ViewControllerAndPresenterTests.swift in Sources */,
+				1F9B18C421B6C426009BC109 /* TestService.swift in Sources */,
+				1F9B18C221B6C411009BC109 /* NetworkingTests.swift in Sources */,
 				1F8FB8002195D1B100C8F556 /* TestPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,13 +578,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9B18C721B6CB30009BC109 /* WKStatusCode.swift in Sources */,
 				1F780EC71EC0B51E003A326D /* WKViewController.swift in Sources */,
 				1F1BFDEC2101ED2D00A09432 /* WKTextField.swift in Sources */,
 				1F7382BF1FA540BD00B63166 /* Logger.swift in Sources */,
 				1F5A5B001F36467E005F7F18 /* WKBaseViewController.swift in Sources */,
 				1F5452EB1EC4A643008FD8F8 /* WKTableViewCell.swift in Sources */,
+				1F9B18B621B54045009BC109 /* MimeType.swift in Sources */,
+				1F9B18B221B52C20009BC109 /* WinkKit+Alamofire DataRequest.swift in Sources */,
 				1F780EC91EC0B51E003A326D /* WKImageView.swift in Sources */,
 				1F19347F1F5D4D87001A9B06 /* WKTextView.swift in Sources */,
+				1F9B18CC21B6DC2C009BC109 /* WKResult.swift in Sources */,
+				1F9B18CA21B6DC07009BC109 /* WKApiBodyError.swift in Sources */,
 				1F3A685B1FD20DE500265126 /* WKTableViewDataSource.swift in Sources */,
 				1F780EB51EC0ACA4003A326D /* Collection.swift in Sources */,
 				1F3A685D1FD20ECA00265126 /* WKTableViewInfiniteDataSourceDelegate.swift in Sources */,
@@ -544,12 +598,14 @@
 				1F5452ED1EC4A95A008FD8F8 /* WKTableView.swift in Sources */,
 				1FA96984200CC2AE006E6CFC /* WKNetworkReachabilityHelper.swift in Sources */,
 				1FC50AA91EC8999C0021C350 /* WKCollectionView.swift in Sources */,
+				1F9B18D221B72AFF009BC109 /* CommandLineArguments.swift in Sources */,
 				1F780EC81EC0B51E003A326D /* WKButton.swift in Sources */,
 				1F5A5AFE1F364523005F7F18 /* WKViewControllerPresenter.swift in Sources */,
 				1FFB42BD1FCEBA4300241678 /* WKNavigationController.swift in Sources */,
 				1F793E1F20D906C7000AEB90 /* CGColor.swift in Sources */,
 				1F1369CA1FAC7A6E008A9006 /* WKNavigator.swift in Sources */,
 				1FA16D511FA8D23D008602DC /* UIColor.swift in Sources */,
+				1F9B18B421B539DD009BC109 /* WKApiRoute.swift in Sources */,
 				1F3A685C1FD20EC900265126 /* WKCollectionViewDataSource.swift in Sources */,
 				1F5452D61EC20418008FD8F8 /* WKPresenter.swift in Sources */,
 				1F3960502025F31300C81BAB /* UIWindow.swift in Sources */,

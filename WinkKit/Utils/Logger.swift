@@ -23,7 +23,7 @@ public final class WKLog {
     ///   - items: Variadic paramenter that will be print.
     @available(*, deprecated, message: "please use info(_:) instead.")
     public static func info(tag: Any, items: Any...) {
-        print("I: \(tag)" , items);
+        print("I: \(tag)" , items)
     }
     
     /// Print message with "W" prefixed. This method logs messages only for Debug apps.
@@ -34,7 +34,7 @@ public final class WKLog {
     @available(*, deprecated, message: "please use warning(_:) instead.")
     public static func warning(tag: Any, items: Any...) {
         #if DEBUG
-        print("W: \(tag)", items);
+        print("W: \(tag)", items)
         #endif
     }
     
@@ -46,7 +46,7 @@ public final class WKLog {
     @available(*, deprecated, message: "please use error(_:) instead.")
     public static func error(tag: Any, items: Any...) {
         #if DEBUG
-        print("E: \(tag)", items);
+        print("E: \(tag)", items)
         #endif
     }
         
@@ -118,7 +118,21 @@ public final class WKLog {
     
     private static func log(level: Level, file: String, line: Int, column: Int, _ items: Any) {
         let file = file.components(separatedBy: "/").last ?? ""
-        debugPrint("\(level.rawValue) >> \(file) at \(line):\(column)", items);
+        //debugPrint("\(level.rawValue) >> \(file) at \(line):\(column) \(parseArray(items))")
+        print("\(level.rawValue) >> \(file) at \(line):\(column) \(parseArray(items))")
+    }
+
+    // This function iterate recursively every inner array to extract the single item as a String
+    private static func parseArray(_ items: Any...) -> String {
+        func recursiveParse(_ items: [Any]) -> String {
+            if let first = items.first as? [Any], items.count == 1 {
+                return recursiveParse(first)
+            }
+            
+            return items.compactMap { String(describing: $0) }.joined(separator: "\n")
+        }
+        
+        return recursiveParse(items)
     }
     
 }
