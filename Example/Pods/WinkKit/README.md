@@ -1,5 +1,5 @@
 <p align="center">
-<img src="readme-res/winkkit_logo.png" width="25%">
+<img src="readme-res/winkkit_logo.png" width="33%">
 </p>
 
 WinkKit
@@ -13,8 +13,6 @@ WinkKit
 
 An iOS framework that contains a set of classes that follow MVP pattern and solve some common problem written in Swift, used for Wink's application. Follow this guide to know how to structure a Wink iOS project.
 
-Check the [app example](./Example/README.md).
-
 ## Table of Contents
 1. [Getting Started](#Getting_Started)
 2. [Understanding Structure](#Understanding_Structure)
@@ -23,7 +21,7 @@ Check the [app example](./Example/README.md).
 5. [Using Table Views and Collection Views](#Using_TabColViews)
 6. [Utils and more](#Utils_And_More)
 
-## Getting Started <a name="Getting_Started" />
+## Getting Started <a name="Getting_Started"></a>
 
 ### Prerequisites
 
@@ -102,6 +100,10 @@ A Wink iOS project **should** be structured in the following way, expecially if 
 
 
 ![Arch diagram](./readme-res/arch_diagram.jpg)
+
+ The whole Xcode proj structure that maps this architecture is something like this:
+
+<img src="readme-res/xcode_structure.png" width=50% />
 
 <br>
 
@@ -204,12 +206,12 @@ HomePresenter and HomeViewController are two different files. You can use the fi
 
 ## Using Table Views and Collection Views <a name="Using_TabColViews"></a>
 
-WinkKit provides both `WKTableViewCell`, `WKCollectionViewCell` usable with normal `UITableView` and `UICollectionView`.
-Let's talk about `UITableView` and `WKTableViewCell` (collection view has same logic).
+WinkKit provides both `WKTableView`, `WKCollectionView` and `WKTableViewCell`, `WKCollectionViewCell`.
+Let's talk about `WKTableView` and `WKTableViewCell` (collection view has same logic).
 
 **N.B.**: To have a better structure, all cell must have a xib: do **not** create cell in the storyboard directly.
 
-The `UITableView` has an extension that provides two methods to register and dequeue a `WKTableViewCell` quickly by doing:
+The `WKTableView` provides two methods to register and dequeue a `WKTableViewCell` quickly by doing:
 
 ```swift
 tableView.register(cell: ItemTableViewCell.self) // register the cell with a xib that has same name of the class
@@ -249,9 +251,8 @@ class ItemPresenter: WKPresenter {
 	// the item that will be showed in this cell
 	private var item: Item!
 	 
-    init(view: ItemView, item: Item) {
-	 	self.view = view
-  	 	self.item = item
+    init(with item: Item) {
+    	self.item = item
     }
     
     // do all logic here
@@ -281,7 +282,7 @@ class ItemDataSource: NSObject, UITableViewDataSource {
     
     private var items = [Any]()
     
-    init(tableView: UITableView) {
+    init(tableView: WKTableView) {
     	// register cell here so when you need this data source you don't have to repeat this line of code
     	tableView.register(cell: ItemTableViewCell.self)
     }
@@ -304,16 +305,27 @@ class ItemDataSource: NSObject, UITableViewDataSource {
 
 Then in your view controller use the data source as instance variable.
 
-**Tips**: `WinkKit` provides few ready data source classes that have common methods, like inserting/deleting/reloading items or handle infinite scroll. Check `WKTableViewDataSource`, `WKCollectionViewDataSource`, `WKTableViewInfiniteDataSourceDelegate` and `WKCollectionViewInfiniteDataSourceDelegate`. 
+**Tips**: `WinkKit` provides few ready data source classes that have common methods, like inserting/deleting/reloading items or handle infinite scroll. Check `WKTableViewDataSource`, `WKCollectionViewDataSource` and `WKTableViewInfiniteDataSourceDelegate`. 
 
 ## Utils and more <a name="Utils_And_More"></a>
 
 There are other classes and extensions that can be used to achieve some behaviour:
 
 - Classes:
-	- `WKLog`: contains methods to log info and to avoid print debug info in release mode;
-- Argument passed on launch:
-	- `-WKDebugHttpRequests` pass this argument to show log of http requests made using the `responseJSONToObject` extension.
+	- `Logger`: contains methods to log info and to avoid print debug info in release mode;
+	- `OrderedSet`: it's like a `Set` but elements are ordered;
+	- `Queue`: a simple queue class
+- Extensions:
+	- `UIAlertController`: contains method to show quickly an alert
+	- `Date`: contains an `init` to create a date from a string and a format and some methods to get day, hour of month
+	- `Collection`: constains a subscript to access values even if the index is wrong (it returns an optional)
+	- `CALayer`: contains method to add border to a layer
+	- `UIColor`: allow color creation with a hex string
+	- `UIWindow`: contains method to get the current top most view controller.
+
+## Authors
+
+**Rico Crescenzio** - [Linkedin](https://www.linkedin.com/in/quirico-crescenzio-810263b9/)
 
 ## License
 

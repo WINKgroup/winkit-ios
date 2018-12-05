@@ -1,0 +1,6 @@
+framework module WinkKit {
+  umbrella header "WinkKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,35 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'WinkKitTestApp' do
+
+    pod 'WinkKit',  :path => '..'
+  # Pods for WinkKitTestApp
+
+end
+
+post_install do |installer|
+    
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            if target.name === 'AlamofireImage'
+                config.build_settings['SWIFT_VERSION'] = '3.3'
+            end
+            config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+        end
+    end
+    
+    pod_version = `pod --version`
+    pod_version ["\n"] = ""
+    if pod_version === '1.5.0'
+        installer.pods_project.build_configurations.each do |config|
+            config.build_settings.delete('CODE_SIGNING_ALLOWED')
+            config.build_settings.delete('CODE_SIGNING_REQUIRED')
+        end
+    end
+    
+end
+
