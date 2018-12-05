@@ -10,6 +10,7 @@ import Foundation
 
 /// Map all common HTTP Status Codes in enum + other errors that may occurs (like timeout request, json parsing error and so on).
 /// See https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml for better explanations of each code.
+/// `Equatable` and `Hashable` implementation are done by using the `rawValue`.
 public enum WKStatusCode {
     
     /// The kind associated to each http status code.
@@ -338,5 +339,19 @@ extension WKStatusCode: CustomStringConvertible, CustomDebugStringConvertible {
     
     public var debugDescription: String {
         return description
+    }
+}
+
+extension WKStatusCode: Equatable {
+    
+    public static func ==(lhs: WKStatusCode, rhs: WKStatusCode) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+}
+
+extension WKStatusCode: Hashable {
+
+    public var hashValue: Int {
+        return rawValue.hashValue
     }
 }

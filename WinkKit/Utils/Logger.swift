@@ -10,10 +10,10 @@
 public final class WKLog {
     
     private enum Level: String {
-        case info = "I"
-        case warning = "W"
-        case error = "E"
-        case debug = "D"
+        case info = "ℹ️"
+        case warning = "⚠️"
+        case error = "❌"
+        case debug = "☣️"
     }
     
     /// Print message with "I" prefixed. This method logs messages even for Release apps.
@@ -70,8 +70,8 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func info(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
-        WKLog.log(level: .info, file: file, line: line, column: column, items)
+    public static func info(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
+        WKLog.log(level: .info, file: file, line: line, column: column, items, separator: separator)
     }
     
     /// Print message with "D" prefixed. This method logs messages only for Debug apps.
@@ -82,9 +82,9 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func debug(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
+    public static func debug(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
         #if DEBUG
-        WKLog.log(level: .debug, file: file, line: line, column: column, items)
+        WKLog.log(level: .debug, file: file, line: line, column: column, items, separator: separator)
         #endif
     }
     
@@ -96,9 +96,9 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func warning(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
+    public static func warning(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
         #if DEBUG
-        WKLog.log(level: .warning, file: file, line: line, column: column, items)
+        WKLog.log(level: .warning, file: file, line: line, column: column, items, separator: separator)
         #endif
     }
     
@@ -110,26 +110,26 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func error(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
+    public static func error(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
         #if DEBUG
-        WKLog.log(level: .error, file: file, line: line, column: column, items)
+        WKLog.log(level: .error, file: file, line: line, column: column, items, separator: separator)
         #endif
     }
     
-    private static func log(level: Level, file: String, line: Int, column: Int, _ items: Any) {
+    private static func log(level: Level, file: String, line: Int, column: Int, _ items: Any, separator: String = " ") {
         let file = file.components(separatedBy: "/").last ?? ""
         //debugPrint("\(level.rawValue) >> \(file) at \(line):\(column) \(parseArray(items))")
-        print("\(level.rawValue) >> \(file) at \(line):\(column) \(parseArray(items))")
+        print("\(level.rawValue) \(file) at \(line):\(column) \(parseArray(items, separator: separator))")
     }
 
     // This function iterate recursively every inner array to extract the single item as a String
-    private static func parseArray(_ items: Any...) -> String {
+    private static func parseArray(_ items: Any..., separator: String) -> String {
         func recursiveParse(_ items: [Any]) -> String {
             if let first = items.first as? [Any], items.count == 1 {
                 return recursiveParse(first)
             }
             
-            return items.compactMap { String(describing: $0) }.joined(separator: "\n")
+            return items.compactMap { String(describing: $0) }.joined(separator: separator)
         }
         
         return recursiveParse(items)

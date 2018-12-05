@@ -44,7 +44,7 @@ public extension DataRequest {
                     do {
                         errorBody = try decoder.decode(E.self, from: data)
                     } catch let decodingError as DecodingError {
-                        CommandLineHelper.debugHttpRequest("DecodingError \(decodingError)")
+                        ProcessInfoUtils.debugHttpRequest("DecodingError \(decodingError)")
                         return .failure(WKApiBodyError<E>(decodingError: decodingError))
                     } catch {
                         return .failure(WKApiBodyError<E>(code: .unknown)) // should never happens
@@ -55,23 +55,23 @@ public extension DataRequest {
                     }
                 }
                 
-                CommandLineHelper.debugHttpRequest("Decoded error body -> code: \(code) body: \(String(describing: errorBody))")
+                ProcessInfoUtils.debugHttpRequest("Decoded error body -> code: \(code) body: \(String(describing: errorBody))")
                 return .failure(WKApiBodyError<E>(code: code, body: errorBody))
             } else {
                 if let data = data {
                     do {
                         let obj = try decoder.decode(T.self, from: data)
-                        CommandLineHelper.debugHttpRequest("Decoded success body -> code: \(code) body: \(String(describing: obj))")
+                        ProcessInfoUtils.debugHttpRequest("Decoded success body -> code: \(code) body: \(String(describing: obj))")
                         return .success(obj)
                     } catch let decodingError as DecodingError {
-                        CommandLineHelper.debugHttpRequest("DecodingError \(decodingError)")
+                        ProcessInfoUtils.debugHttpRequest("DecodingError \(decodingError)")
                         return .failure(WKApiBodyError<E>(decodingError: decodingError))
                     } catch {
                         return .failure(WKApiBodyError<E>(code: .unknown)) // should never happens
                     }
                     
                 } else {
-                    CommandLineHelper.debugHttpRequest("Missing expected body of type \(T.self)")
+                    ProcessInfoUtils.debugHttpRequest("Missing expected body of type \(T.self)")
                     return .failure(WKApiBodyError<E>(code: .missingBody))
                 }
             }
@@ -120,17 +120,17 @@ public extension DataRequest {
                 if let data = data {
                     do {
                         let obj = try decoder.decode(T.self, from: data)
-                        CommandLineHelper.debugHttpRequest("Decoded success body -> code: \(code) body: \(String(describing: obj))")
+                        ProcessInfoUtils.debugHttpRequest("Decoded success body -> code: \(code) body: \(String(describing: obj))")
                         return .success(obj)
                     } catch let decodingError as DecodingError {
-                        CommandLineHelper.debugHttpRequest("DecodingError \(decodingError)")
+                        ProcessInfoUtils.debugHttpRequest("DecodingError \(decodingError)")
                         return .failure(WKApiSimpleError(decodingError: decodingError))
                     } catch {
                         return .failure(WKApiSimpleError(code: .unknown)) // should never happens
                     }
                     
                 } else {
-                    CommandLineHelper.debugHttpRequest("Missing expected body of type \(T.self)")
+                    ProcessInfoUtils.debugHttpRequest("Missing expected body of type \(T.self)")
                     return .failure(WKApiSimpleError(code: .missingBody))
                 }
             }
@@ -193,7 +193,9 @@ public extension DataRequest {
 
 }
 
-private func printRequest(request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: Error?) {
+private func printRequest(file: String = #file, line: Int = #line, column: Int = #column,
+                          request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: Error?) {
     let dataString = "Body: " + (data != nil && data!.count > 0 ? String(data: data!, encoding: .utf8) ?? "empty" : "empty")
-    CommandLineHelper.debugHttpRequest(request ?? "No request", response ?? "No response", dataString, error ?? "No error")
+    ProcessInfoUtils.debugHttpRequest(file: file, line: line, column: column, request ?? "No request", response ?? "No response", dataString, error ?? "No error")
+    
 }

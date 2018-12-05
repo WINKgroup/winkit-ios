@@ -46,7 +46,7 @@ public struct WKApiSimpleError: WKApiError {
     ///
     /// - Parameter urlError: the `URLError`.
     init(urlError: URLError) {
-        self.code = .connectionError(detail: urlError)
+        code = .connectionError(detail: urlError)
     }
     
     /// Create an error starting from a `DecodingError`.

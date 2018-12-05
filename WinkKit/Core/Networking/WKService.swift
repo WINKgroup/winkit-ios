@@ -98,16 +98,16 @@ open class WKService {
     /// Enqueue the given request: the request will be stored in `requests` array and will
     /// perform http call. When request finishes, it's removed from array.
     ///
-    /// - Parameter urlRequest: The `URLRequestConvertible` that will be enqueued nd stored.
+    /// - Parameter request: The `WKRequest` that will be enqueued and stored.
     /// - Returns: The created `DataRequest` to add a response.
     @discardableResult
-    public func enqueue(urlRequest: WKRequest) -> DataRequest {
-        var urlRequest = urlRequest
-        urlRequest.baseUrl = baseUrl
-        let request = WKService.manager.request(urlRequest)
-        requests.append(request)
+    public func enqueue(_ request: WKRequest) -> DataRequest {
+        var request = request
+        request.baseUrl = baseUrl
+        let dataRequest = type(of: self).manager.request(request)
+        requests.append(dataRequest)
         let index = requests.count - 1
-        return request.response() { res in
+        return dataRequest.response() { res in
             self.requests.remove(at: index)
         }
     }
@@ -117,8 +117,8 @@ open class WKService {
     ///
     /// - Parameter urlRequests: The array of url request convertible to be enqueued.
     /// - Returns: The `RequestChain` object created.
-    public func enqueueChain(urlRequests: [WKRequest]) -> RequestChain {
-        let urlRequests = urlRequests.map { (request: WKRequest) -> WKRequest in
+    public func enqueueChain(requests: [WKRequest]) -> RequestChain {
+        let requests = requests.map { (request: WKRequest) -> WKRequest in
             var r = request
             r.baseUrl = self.baseUrl
             return r
@@ -129,7 +129,7 @@ open class WKService {
         let manager = SessionManager(configuration: configuration)
         manager.startRequestsImmediately = false
         
-        let chain = RequestChain(requests: urlRequests.map { WKService.manager.request($0) })
+        let chain = RequestChain(requests: requests.map { WKService.manager.request($0) })
         
         self.requestChains.append(chain)
         let index = requestChains.count - 1
