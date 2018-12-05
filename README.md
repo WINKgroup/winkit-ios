@@ -13,7 +13,7 @@ WinkKit
 
 An iOS framework that contains a set of classes that follow MVP pattern and solve some common problem written in Swift, used for Wink's application. Follow this guide to know how to structure a Wink iOS project.
 
-Check the [app example](./Example/README.md).
+Check the [app example](./Example).
 
 ## Table of Contents
 1. [Getting Started](#Getting_Started)
