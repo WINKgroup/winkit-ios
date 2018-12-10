@@ -86,6 +86,7 @@ open class WKViewController<P>: UIViewController, WKBaseViewController where P: 
     
     deinit {
         presenter.viewDidDestroy()
+        ProcessInfoUtils.debugViewControllerDeinit(vc: self)
     }
     
     // - MARK: Public methods.

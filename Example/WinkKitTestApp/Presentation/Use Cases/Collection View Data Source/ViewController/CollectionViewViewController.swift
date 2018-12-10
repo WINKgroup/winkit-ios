@@ -8,9 +8,9 @@
 
 import WinkKit
 
-class CollectionViewViewController: WKViewController<CollectionViewPresenter> {
+class CollectionViewViewController: CoreViewController<CollectionViewPresenter> {
     
-    override class var storyboardName: String? {
+    override class var storyboardName: String {
         return Storyboard.main.name
     }
     @IBOutlet private var separatorHeightConstraints: [NSLayoutConstraint]!
@@ -22,10 +22,10 @@ class CollectionViewViewController: WKViewController<CollectionViewPresenter> {
     private var dataSource: NameCollectionViewDataSource!
     
     override func viewDidLoad() {
-        dataSource = NameCollectionViewDataSource(collectionView: collectionView) {
+        dataSource = NameCollectionViewDataSource(collectionView: collectionView) { [unowned self] in
             self.presenter.addMore()
         }
-        verticalDataSource = NameCollectionViewDataSource(collectionView: verticalCollectionView) {
+        verticalDataSource = NameCollectionViewDataSource(collectionView: verticalCollectionView) { [unowned self] in
             self.presenter.addMore()
         }
         super.viewDidLoad()

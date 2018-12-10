@@ -72,6 +72,7 @@ open class WKTableViewController<P>: UITableViewController, WKBaseViewController
     
     deinit {
         presenter.viewDidDestroy()
+        ProcessInfoUtils.debugViewControllerDeinit(vc: self)
     }
     
     // - MARK: Public methods.

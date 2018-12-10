@@ -49,56 +49,56 @@ class NetworkingTests: XCTestCase {
     func testNotFound() {
         let request = WKRequest(endpoint: "notFound")
         makeRequestForErrorTest(request: request) { (e) in
-            XCTAssertEqual(e.code, .notFound)
+            XCTAssertEqual(e.httpCode, .notFound)
         }
     }
 
     func testBadRequest() {
         let request = WKRequest(endpoint: "status/400", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .badRequest)
+            XCTAssertEqual(e.httpCode, .badRequest)
         }
     }
     
     func testUnauthorized() {
         let request = WKRequest(endpoint: "status/401", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .unauthorized)
+            XCTAssertEqual(e.httpCode, .unauthorized)
         }
     }
     
     func testForbidden() {
         let request = WKRequest(endpoint: "status/403", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .forbidden)
+            XCTAssertEqual(e.httpCode, .forbidden)
         }
     }
     
     func testMethodNotAllowed() {
         let request = WKRequest(endpoint: "status/405", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .methodNotAllowed)
+            XCTAssertEqual(e.httpCode, .methodNotAllowed)
         }
     }
     
     func testUnprocessableEntity() {
         let request = WKRequest(endpoint: "status/422", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .unprocessableEntity)
+            XCTAssertEqual(e.httpCode, .unprocessableEntity)
         }
     }
     
     func testServerError() {
         let request = WKRequest(endpoint: "status/500", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .internalServerError)
+            XCTAssertEqual(e.httpCode, .internalServerError)
         }
     }
     
     func testServiceUnavailable() {
         let request = WKRequest(endpoint: "status/503", method: .post)
         makeRequestForErrorTest(request: request) { e in
-            XCTAssertEqual(e.code, .serviceUnavailable)
+            XCTAssertEqual(e.httpCode, .serviceUnavailable)
         }
     }
     
@@ -111,7 +111,7 @@ class NetworkingTests: XCTestCase {
             case .success:
                 XCTFail("Could not be success")
             case .failure(let e):
-                switch e.code {
+                switch e.miscCode {
                 case .jsonDecodingError(let detail):
                     switch detail {
                     case .dataCorrupted:
@@ -139,7 +139,7 @@ class NetworkingTests: XCTestCase {
             case .success:
                 XCTFail("Could not be success")
             case .failure(let e):
-                switch e.code {
+                switch e.miscCode {
                 case .jsonDecodingError(let detail):
                     switch detail {
                     case .dataCorrupted:
@@ -162,7 +162,7 @@ class NetworkingTests: XCTestCase {
         var request = WKRequest(endpoint: "delay/2") // 3 seconds of delay
         request.timeoutInterval = 1
         makeRequestForErrorTest(request: request) { e in
-            switch e.code {
+            switch e.miscCode {
             case .connectionError(let detail):
                 XCTAssertEqual(detail.code, URLError.Code.timedOut)
             default:

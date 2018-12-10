@@ -408,7 +408,7 @@ Cg
         <!--IBDesignable and WKView-->
         <scene sceneID="YmW-IO-UgC">
             <objects>
-                <tableViewController id="nlB-1s-9ru" sceneMemberID="viewController">
+                <tableViewController id="nlB-1s-9ru" customClass="IBDesignableViewController" customModule="WinkKitTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="KJP-jM-Wx7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,14 +8,14 @@
 
 import WinkKit
 
-class RESTApiIntegrationViewController: WKViewController<RESTApiIntegrationPresenter>, UITextFieldDelegate {
+class RESTApiIntegrationViewController: CoreViewController<RESTApiIntegrationPresenter>, UITextFieldDelegate {
     
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var loginButton: UIButton!
     @IBOutlet private var activityIndicatorView: UIActivityIndicatorView!
     
-    override class var storyboardName: String? {
+    override class var storyboardName: String {
         return Storyboard.main.name
     }
     
@@ -52,5 +52,17 @@ extension RESTApiIntegrationViewController: RESTApiIntegrationView {
         } else {
             activityIndicatorView.stopAnimating()
         }
+    }
+    
+    func show(user: User) {
+        let a = UIAlertController(title: "Success", message: user.description, preferredStyle: .alert)
+        a.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(a, animated: true, completion: nil)
+    }
+    
+    func show(error: String) {
+        let a = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        a.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(a, animated: true, completion: nil)
     }
 }

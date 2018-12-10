@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import Argo
 
 /// All model classes of Data layer must conform to this protocol.
-protocol DataModel: class, Argo.Decodable, Equatable {
+protocol DataModel: Decodable, Equatable {
     var id: Int { get }
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Wink srl. All rights reserved.
 //
 
-class User: Swift.Decodable {
+class User: DataModel {
     
     init(id: Int, firstName: String, lastName: String, profileImage: String?) {
         self.id = id
@@ -26,11 +26,11 @@ extension User: CustomStringConvertible {
     var description: String {
         return """
         User: {
-        id: \(id)
-        name: \(firstName)
-        surname: \(lastName)
-        profile image: \(profileImage ?? "no image")
+            id: \(id)
+            name: \(firstName)
+            surname: \(lastName)
+            profile image: \(profileImage ?? "no image")
         }
-"""
+        """
     }
 }

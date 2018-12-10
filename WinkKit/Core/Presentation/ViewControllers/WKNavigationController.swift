@@ -41,5 +41,9 @@ open class WKNavigationController: UINavigationController, WKInstantiableViewCon
         return String(describing: self)
     }
     
+    deinit {
+        ProcessInfoUtils.debugViewControllerDeinit(vc: self)
+    }
+    
     
 }

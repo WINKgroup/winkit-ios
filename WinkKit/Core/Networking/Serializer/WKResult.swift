@@ -47,7 +47,7 @@ extension WKFullResult: Equatable {
         case (.success, .success):
             return true
         case  (.failure(let e), .failure(let e2)):
-            return e.code == e2.code
+            return e.httpCode == e2.httpCode && e.miscCode == e2.miscCode
         default:
             return false
         }
@@ -60,7 +60,7 @@ extension WKResult: Equatable {
         case (.success, .success):
             return true
         case  (.failure(let e), .failure(let e2)):
-            return e.code == e2.code
+            return e.httpCode == e2.httpCode && e.miscCode == e2.miscCode
         default:
             return false
         }
@@ -73,7 +73,7 @@ extension WKSimpleResult: Equatable {
         case (.success, .success):
             return true
         case  (.failure(let e), .failure(let e2)):
-            return e.code == e2.code
+            return e.httpCode == e2.httpCode && e.miscCode == e2.miscCode
         default:
             return false
         }

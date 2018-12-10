@@ -9,11 +9,28 @@
 /// Contains methods to log messages.
 public final class WKLog {
     
-    private enum Level: String {
-        case info = "ℹ️"
-        case warning = "⚠️"
-        case error = "❌"
-        case debug = "☣️"
+    private enum Level {
+        case info
+        case warning
+        case error
+        case debug
+        case custom(String)
+        
+        var prefix: String {
+            switch self {
+            case .info:
+                return "ℹ️"
+            case .warning:
+                return "⚠️"
+            case .error:
+                return "❌"
+            case .debug:
+                return "☣️"
+            case .custom(let p):
+                return p
+            }
+        }
+        
     }
     
     /// Print message with "I" prefixed. This method logs messages even for Release apps.
@@ -82,7 +99,7 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func debug(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
+    public static func debug(file: String? = #file, line: Int? = #line, column: Int? = #column, _ items: Any..., separator: String = " ") {
         #if DEBUG
         WKLog.log(level: .debug, file: file, line: line, column: column, items, separator: separator)
         #endif
@@ -96,7 +113,7 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func warning(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
+    public static func warning(file: String? = #file, line: Int? = #line, column: Int? = #column, _ items: Any..., separator: String = " ") {
         #if DEBUG
         WKLog.log(level: .warning, file: file, line: line, column: column, items, separator: separator)
         #endif
@@ -110,16 +127,45 @@ public final class WKLog {
     ///   - line: The line where this method is called
     ///   - column: The column where this method is called
     ///   - items: Variadic paramenter that will be print.
-    public static func error(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any..., separator: String = " ") {
+    public static func error(file: String? = #file, line: Int? = #line, column: Int? = #column, _ items: Any..., separator: String = " ") {
         #if DEBUG
         WKLog.log(level: .error, file: file, line: line, column: column, items, separator: separator)
         #endif
     }
     
-    private static func log(level: Level, file: String, line: Int, column: Int, _ items: Any, separator: String = " ") {
-        let file = file.components(separatedBy: "/").last ?? ""
-        //debugPrint("\(level.rawValue) >> \(file) at \(line):\(column) \(parseArray(items))")
-        print("\(level.rawValue) \(file) at \(line):\(column) \(parseArray(items, separator: separator))")
+    /// Print message with the given prefixe string. This method logs messages only for Debug apps.
+    /// Do not provide file and line to have the default ones.
+    ///
+    /// - Parameters:
+    ///   - prefix: The prefix that will be applied.
+    ///   - file: The file where this method is called
+    ///   - line: The line where this method is called
+    ///   - column: The column where this method is called
+    ///   - items: Variadic paramenter that will be print.
+    public static func custom(prefix: String, file: String? = #file, line: Int? = #line, column: Int? = #column, _ items: Any..., separator: String = " ") {
+        #if DEBUG
+        WKLog.log(level: .custom(prefix), file: file, line: line, column: column, items, separator: separator)
+        #endif
+    }
+    
+    private static func log(level: Level, file: String?, line: Int?, column: Int?, _ items: Any, separator: String = " ") {
+        var file = file?.components(separatedBy: "/").last ?? ""
+        if file.count > 0 {
+            file = " " + file
+        }
+        var at = " at"
+        if let line = line {
+            at.append(" \(line)")
+        }
+        if let column = column {
+            at.append(":\(column)")
+        }
+        
+        if at == " at" {
+            at = ""
+        }
+        
+        print("\(level.prefix)\(file)\(at) \(parseArray(items, separator: separator))", terminator: "\n\n")
     }
 
     // This function iterate recursively every inner array to extract the single item as a String

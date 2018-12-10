@@ -5,7 +5,7 @@
 WinkKit
 ========
 
-[<img src="readme-res/badge.svg" height=40>](https://developer.wink.by)
+[<img src="https://wink.by/images/wink-readme-badge.svg" height=40>](https://developer.wink.by)
 [![Platforms](https://img.shields.io/badge/platform-iOS-lightgray.svg?logo=apple&longCache=true&style=popout)](https://developer.apple.com/ios)
 [![Swift Version](https://img.shields.io/badge/swift-4.2-orange.svg?logo=swift&longCache=true&style=popout)](https://developer.apple.com/swift)
 [![Xcode](https://img.shields.io/badge/xcode-10-blue.svg?logo=xcode&logoColor=0095D5&colorB=0095D5&longCache=true&style=popout)](https://developer.apple.com/xcode)
@@ -30,7 +30,7 @@ Check the [app example](./Example).
 
 ### Prerequisites
 
-You need [Xcode 9](https://developer.apple.com/xcode/), Swift 4 and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) installed.
+You need [Xcode](https://developer.apple.com/xcode/), Swift 4 and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) installed.
 
 ### Add project/file templates to Xcode (Optional but recommended)
 
@@ -316,7 +316,8 @@ There are other classes and extensions that can be used to achieve some behaviou
 - Classes:
 	- `WKLog`: contains methods to log info and to avoid print debug info in release mode;
 - Argument passed on launch:
-	- `-WKDebugHttpRequests` pass this argument to show log of http requests made using the `responseJSONToObject` extension.
+	- `-WKDebugHttpRequests` pass this argument to show log of http requests made using the `responseJSONToObject` extension. Every log has 🌍 as prefix.
+	- `-WKDebugViewControllerDeinit` to print deinit of every `WKViewController`. Every log has ⚡️ as prefix. It's useful to know if a view controller is successfully deinitialized on closing. **N.B:** This log doesnt' work with vanilla `UIViewController`.
 
 ## License
 

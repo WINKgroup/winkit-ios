@@ -30,6 +30,7 @@
 		1F9B18BB21B572E6009BC109 /* RESTApiIntegrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18B921B572E6009BC109 /* RESTApiIntegrationPresenter.swift */; };
 		1F9B18CE21B722EB009BC109 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18CD21B722EB009BC109 /* BaseService.swift */; };
 		1F9B18D021B7237D009BC109 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B18CF21B7237D009BC109 /* Config.swift */; };
+		1FAE11BE21BAD04300498D4B /* IBDesignableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE11BD21BAD04300498D4B /* IBDesignableViewController.swift */; };
 		1FBA10F22146D2B3002DED19 /* TableViewExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA10F02146D2B3002DED19 /* TableViewExamplePresenter.swift */; };
 		1FBA10F42146D2CF002DED19 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA10F32146D2CF002DED19 /* Storyboards.swift */; };
 		8F551C5162B65E701783A1DD /* Pods_WinkKitTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397EDF7FFAD3C4279F24D309 /* Pods_WinkKitTestApp.framework */; };
@@ -58,6 +59,7 @@
 		1F9B18B921B572E6009BC109 /* RESTApiIntegrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTApiIntegrationPresenter.swift; sourceTree = "<group>"; };
 		1F9B18CD21B722EB009BC109 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		1F9B18CF21B7237D009BC109 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1FAE11BD21BAD04300498D4B /* IBDesignableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableViewController.swift; sourceTree = "<group>"; };
 		1FBA10EF2146D2B3002DED19 /* TableViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExampleViewController.swift; sourceTree = "<group>"; };
 		1FBA10F02146D2B3002DED19 /* TableViewExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExamplePresenter.swift; sourceTree = "<group>"; };
 		1FBA10F32146D2CF002DED19 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -119,12 +121,13 @@
 		1F1304D11F53461600DBEA1C /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
-				1F9B18B721B572C6009BC109 /* REST Api Integration */,
 				1F408FDD1F535DCC00C50340 /* LaunchScreen.storyboard */,
 				1F408FDF1F535DCD00C50340 /* Main.storyboard */,
 				1FBA10F32146D2CF002DED19 /* Storyboards.swift */,
 				1F1304D21F53462000DBEA1C /* Table View Data Source */,
 				1F86ED752167A139009ED260 /* Collection View Data Source */,
+				1F9B18B721B572C6009BC109 /* REST Api Integration */,
+				1FAE11BC21BAD02F00498D4B /* IBDesignable */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -291,6 +294,14 @@
 				1F2BA20C21661B30000877A3 /* NameTableViewDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		1FAE11BC21BAD02F00498D4B /* IBDesignable */ = {
+			isa = PBXGroup;
+			children = (
+				1FAE11BD21BAD04300498D4B /* IBDesignableViewController.swift */,
+			);
+			path = IBDesignable;
 			sourceTree = "<group>";
 		};
 		1FE91E7F1EBB6A8C0056D27D = {
@@ -479,6 +490,7 @@
 				1F2BA20A21661A83000877A3 /* NamePresenter.swift in Sources */,
 				1F9B18CE21B722EB009BC109 /* BaseService.swift in Sources */,
 				1FBA10F42146D2CF002DED19 /* Storyboards.swift in Sources */,
+				1FAE11BE21BAD04300498D4B /* IBDesignableViewController.swift in Sources */,
 				1F2BA20E21661D0D000877A3 /* TableViewExampleViewController.swift in Sources */,
 				1F9B18BB21B572E6009BC109 /* RESTApiIntegrationPresenter.swift in Sources */,
 				1F4F8E781F54680300CC35E1 /* CoreViewController.swift in Sources */,

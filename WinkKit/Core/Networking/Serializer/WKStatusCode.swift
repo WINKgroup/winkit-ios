@@ -8,10 +8,35 @@
 
 import Foundation
 
-/// Map all common HTTP Status Codes in enum + other errors that may occurs (like timeout request, json parsing error and so on).
+/// Define requirement for a representable error.
+public protocol WKCode: RawRepresentable, CustomStringConvertible, CustomDebugStringConvertible, Hashable {
+    associatedtype CodeKind : RawRepresentable
+    
+    /// The code kind of the current status code.
+    var kind: CodeKind { get }
+    
+    /// If true this code represents an error.
+    var isError: Bool { get }
+}
+
+extension WKCode where Self.RawValue == Int {
+    
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+    
+    public var hashValue: Int {
+        return rawValue.hashValue
+    }
+}
+
+// MARK: HTTP Code
+/// Map all common HTTP status codes in enum.
 /// See https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml for better explanations of each code.
 /// `Equatable` and `Hashable` implementation are done by using the `rawValue`.
-public enum WKStatusCode {
+public enum HTTPStatusCode : WKCode {
+    
+    public typealias CodeKind = HTTPStatusCode.Kind
     
     /// The kind associated to each http status code.
     public enum Kind: String {
@@ -32,12 +57,6 @@ public enum WKStatusCode {
         
         /// All status codes between 500 and 599. The server failed to fulfill an apparently valid request.
         case serverError
-        
-        /// All codes that indicate a connection error, such as server not found, connection lost, timeout errors.
-        case connectionError
-        
-        /// All codes that indicate a wrong body parsing error. For example if a body returned in response doesn't match the `Decodable` or if the returned body is not a valid serializable (For instance if you expect a json but the server returns an html page).
-        case serializationError
     }
     
     // MARK: HTTP Status Codes
@@ -105,13 +124,6 @@ public enum WKStatusCode {
     case notExtended
     case networkAuthenticationRequired
     
-    // MARK: Connection trouble status codes
-    case connectionError(detail: URLError)
-    
-    // MARK: Parsing errors
-    case jsonDecodingError(detail: DecodingError)
-    case missingBody
-    
     case unknown
     
     /// The `Kind` of the current status code.
@@ -127,23 +139,18 @@ public enum WKStatusCode {
             return .clientError
         case 500 ... 599:
             return .serverError
-        case -99 ... -1:
-            return .connectionError
-        case -199 ... -100:
-            return .serializationError
         default:
             return .unknown
         }
     }
     
-    /// If true this code represents an error.
     public var isError: Bool {
         return kind != .success
     }
     
 }
 
-extension WKStatusCode: RawRepresentable {
+public extension HTTPStatusCode {
     
     public typealias RawValue = Int
     
@@ -220,13 +227,6 @@ extension WKStatusCode: RawRepresentable {
         case 508: self = .loopDetected
         case 510: self = .notExtended
         case 511: self = .networkAuthenticationRequired
-            
-            
-        case -1: self = .connectionError(detail: URLError(.unknown))
-            
-            
-        case -100: self = .jsonDecodingError(detail: .dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Error automatically created by WKStatusCode.init(rawValue:) initializer")))
-        case -101: self = .missingBody
             
         default: self = .unknown
         }
@@ -306,35 +306,16 @@ extension WKStatusCode: RawRepresentable {
         case .notExtended: return 510
         case .networkAuthenticationRequired: return 511
             
-            
-        case .connectionError: return -1
-            
-            
-        case .jsonDecodingError: return -100
-        case .missingBody: return -101
-            
-        case .unknown: return -10000
+        case .unknown: return -9999
         }
     }
     
 }
 
-extension WKStatusCode: CustomStringConvertible, CustomDebugStringConvertible {
+public extension HTTPStatusCode {
     
     public var description: String {
-        
-        var description = "Code: \(rawValue)"
-        switch self {
-        case .connectionError(let detail):
-            description += "\nDetail: \(detail)"
-        case .jsonDecodingError(let detail):
-            description += "\nDetail: \(detail)"
-            
-        default:
-            break
-        }
-        
-        return description
+        return "HTTP code: \(rawValue)"
     }
     
     public var debugDescription: String {
@@ -342,16 +323,115 @@ extension WKStatusCode: CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
-extension WKStatusCode: Equatable {
+// MARK: Other status code
+
+/// Represent statuses that are non-http.
+public enum WKMiscCode : WKCode {
     
-    public static func ==(lhs: WKStatusCode, rhs: WKStatusCode) -> Bool {
-        return lhs.rawValue == rhs.rawValue
+    public typealias CodeKind = Kind
+    
+    /// The kind associated to the code.
+    public enum Kind: String {
+        
+        /// This case is used to avoid problem if a new http status code is added to the official list, but in general it will never be used.
+        case unknown
+        
+        /// Indicates that no error occurred.
+        case success
+        
+        /// Indicates that the connection has been successfully executed, but there are Application error (like http 500 or bad requests).
+        case failure
+        
+        /// All codes that indicate a connection error, such as server not found, connection lost, timeout errors.
+        /// Connection error means that the communication failed and no response will be fetched.
+        case connectionError
+        
+        /// All codes that indicate a wrong body parsing error. For example if a body returned in response doesn't match the `Decodable` or if the returned body is not a valid serializable (For instance if you expect a json but the server returns an html page).
+        case serializationError
+    }
+    
+    /// No error occurred. Code: 0
+    case ok
+    
+    /// HTTP connection went well but an application error occurred. Code: 1
+    case failure
+    
+    // MARK: Connection trouble status codes
+    /// A connection error occurred, detail is a `URLError`. Code: -1
+    case connectionError(detail: URLError)
+    
+    // MARK: Parsing errors
+    /// HTTP connection went well but the response/error body has not been decoded successfully, detail is a `DecodingError`. Code: -100
+    case jsonDecodingError(detail: DecodingError)
+    
+    /// HTTP connection went well but there was an empty response/error body. Code: -101
+    case missingBody
+    
+    case unknown
+    
+    public var kind: Kind {
+        switch rawValue {
+        case -99 ... -1:
+            return .connectionError
+        case -199 ... -100:
+            return .serializationError
+        case 0:
+            return .success
+        case 1:
+            return .failure
+        default:
+            return .unknown
+        }
+    }
+    
+    public var isError: Bool {
+        return kind != .success
     }
 }
 
-extension WKStatusCode: Hashable {
+public extension WKMiscCode {
+    
+    public typealias RawValue = Int
+    
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case -1: self = .connectionError(detail: URLError(.unknown))
+        case -100: self = .jsonDecodingError(detail: .dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Error automatically created by WKStatusCode.init(rawValue:) initializer")))
+        case -101: self = .missingBody
+        default: self = .unknown
+        }
+    }
+    
+    public var rawValue: RawValue {
+        switch self {
+        case .ok: return 0
+        case .failure: return 1
+        case .connectionError: return -1
+        case .jsonDecodingError: return -100
+        case .missingBody: return -101
+        case .unknown: return -10000
+        }
+    }
+    
+}
 
-    public var hashValue: Int {
-        return rawValue.hashValue
+public extension WKMiscCode {
+    
+    public var description: String {
+        var desc = "Misc code: \(rawValue)"
+        switch self {
+        case .connectionError(let detail):
+            desc += " Detail: \(detail)"
+            
+        case .jsonDecodingError(let detail):
+            desc += " Detail: \(detail)"
+        default:
+            break
+        }
+        return desc
+    }
+    
+    public var debugDescription: String {
+        return description
     }
 }

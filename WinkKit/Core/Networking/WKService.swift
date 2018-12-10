@@ -8,17 +8,17 @@
 
 import Alamofire
 
-/// A `WKService` is the class that performs http calls. It must use `Alamofire` to do it.
-/// This class is intended to be subclassed. A tipical implementation could be a PostService class
+/// A `WKService` is the class that performs http calls. It wraps `Alamofire` to do it.
+/// This class could be used as it is, but could be subclassed. For instance, a tipical implementation could be a PostService class
 /// for a social network app. PostService will have methods like `createPost(_:completion:)`, `fetchPosts(completion:)`
-/// that create `DataRequest` and use `enqueue(_:)` method to start the request.
+/// that create `WKRequest` and use `enqueue(_:)` method to start the request.
 /// When a service get destroyed, every request enqueued with `enqueue(_:)` method is cancelled.
 open class WKService {
     
     /// The base url of the service.
     public let baseUrl: URL
     
-    /// The manager that will perform every http request. Default managaer is `SessionManager.default`.
+    /// The `Alamofire` session manager that will perform every http request. Default managaer is `SessionManager.default`.
     open class var manager: SessionManager {
         return SessionManager.default
     }

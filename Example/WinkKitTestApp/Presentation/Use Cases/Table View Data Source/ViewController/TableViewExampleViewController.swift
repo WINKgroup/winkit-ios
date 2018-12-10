@@ -8,18 +8,18 @@
 
 import WinkKit
 
-class TableViewExampleViewController: WKViewController<TableViewExamplePresenter> {
+class TableViewExampleViewController: CoreViewController<TableViewExamplePresenter> {
     
     @IBOutlet private var tableView: UITableView!
     
     var dataSource: NameTableViewDataSource!
     
-    override class var storyboardName: String? {
+    override class var storyboardName: String {
         return Storyboard.main.name
     }
     
     override func viewDidLoad() {
-        dataSource = NameTableViewDataSource(tableView: tableView) {
+        dataSource = NameTableViewDataSource(tableView: tableView) { [unowned self] in
             self.presenter.addMore()
         }
         super.viewDidLoad()

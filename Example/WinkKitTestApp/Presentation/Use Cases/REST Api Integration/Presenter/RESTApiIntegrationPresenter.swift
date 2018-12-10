@@ -11,6 +11,8 @@ import WinkKit
 /// The protocol that the view controller handled by presenter must conforms to.
 protocol RESTApiIntegrationView: WKPresentableView {
     func showLoading(_ loading: Bool)
+    func show(user: User)
+    func show(error: String)
 }
 
 /// The presenter that will handle all logic of the view.
@@ -29,10 +31,10 @@ class RESTApiIntegrationPresenter: WKGenericViewControllerPresenter {
         view?.showLoading(true)
         userService.login(email: "", password: "") { [weak self] result in
             switch result {
-            case .success:
-                WKLog.debug("success")
+            case .success(let u):
+                self?.view?.show(user: u)
             case .failure(let e):
-                WKLog.debug(e)
+                self?.view?.show(error: e.description)
             }
             self?.view?.showLoading(false)
         }

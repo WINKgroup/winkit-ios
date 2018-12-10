@@ -14,27 +14,19 @@ struct ProcessInfoUtils {
         return ProcessInfo.processInfo.arguments.contains("-WKDebugHttpRequests")
     }
     
-    static func debugHttpRequest(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
+    private static var debugViewControllerDeinitEnabled: Bool {
+        return ProcessInfo.processInfo.arguments.contains("-WKDebugViewControllerDeinit")
+    }
+    
+    static func debugHttpRequest(line: Int = #line, column: Int = #column, _ items: Any...) {
         if debugHttpRequestsEnabled {
-            WKLog.debug(file: file, line: line, column: column, items, separator: "\n")
+            WKLog.custom(prefix: "🌍", file: nil, line: line, column: column, items, separator: "\n")
         }
     }
     
-    static func errorHttpRequest(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
-        if debugHttpRequestsEnabled {
-            WKLog.error(file: file, line: line, column: column, items, separator: "\n")
-        }
-    }
-    
-    static func warningHttpRequest(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
-        if debugHttpRequestsEnabled {
-            WKLog.warning(file: file, line: line, column: column, items, separator: "\n")
-        }
-    }
-    
-    static func infoHttpRequest(file: String = #file, line: Int = #line, column: Int = #column, _ items: Any...) {
-        if debugHttpRequestsEnabled {
-            WKLog.info(file: file, line: line, column: column, items, separator: "\n")
+    static func debugViewControllerDeinit(vc: UIViewController) {
+        if debugViewControllerDeinitEnabled {
+            WKLog.custom(prefix: "⚡️", file: nil, line: nil, column: nil, "Deinitialized", vc)
         }
     }
     

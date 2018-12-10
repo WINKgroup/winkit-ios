@@ -72,6 +72,7 @@ open class WKCollectionViewController<P>: UICollectionViewController, WKBaseView
     
     deinit {
         presenter.viewDidDestroy()
+        ProcessInfoUtils.debugViewControllerDeinit(vc: self)
     }
     
     // - MARK: Public methods.

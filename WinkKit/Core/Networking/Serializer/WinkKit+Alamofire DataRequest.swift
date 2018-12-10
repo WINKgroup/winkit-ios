@@ -20,59 +20,72 @@ public extension DataRequest {
     /// - Returns: The `DataRequest` itself.
     @discardableResult public func responseJSONToObject<T: Decodable, E: Decodable>(decoder: JSONDecoder = JSONDecoder(), completion: @escaping (WKFullResult<T, E>) -> Void) -> Self {
         let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
-            printRequest(request: request, response: response, data: data, error: error)
 
             // If error and no response, the connection failed before communicating with the server
             guard error == nil, let response = response else {
+                printRequest(request: request, response: nil, data: data, error: error, otherInfo: nil)
                 if let urlError = error as? URLError {
                     return .failure(WKApiBodyError<E>(urlError: urlError))
                 }
                 else {
-                    return .failure(WKApiBodyError<E>(code: .unknown))
+                    return .failure(WKApiBodyError<E>.unknown)
                 }
             }
             
             // Otherwise the communication worked. Now let's check the server response.
-            guard let code = WKStatusCode(rawValue: response.statusCode), code.kind != .unknown else {
+            guard let code = HTTPStatusCode(rawValue: response.statusCode), code.kind != .unknown else {
                 WKLog.error("Found unexpected error code \(response.statusCode). Please open issue in WinkKit repo and add that code to enum.")
-                return .failure(WKApiBodyError<E>(code: .unknown))
+                return .failure(WKApiBodyError<E>.unknown)
             }
             
             if code.isError {
-                var errorBody: E?
-                if let data = data {
+                if let data = data, data.count > 0 {
                     do {
-                        errorBody = try decoder.decode(E.self, from: data)
+                        let errorBody = try decoder.decode(E.self, from: data)
+                        printRequest(request: request, response: response, data: data, error: error,
+                                     otherInfo: "Decoded error body: \(String(describing: errorBody))")
+                        return .failure(WKApiBodyError<E>(miscCode: .failure, httpCode: code, body: errorBody))
                     } catch let decodingError as DecodingError {
-                        ProcessInfoUtils.debugHttpRequest("DecodingError \(decodingError)")
-                        return .failure(WKApiBodyError<E>(decodingError: decodingError))
+                        printRequest(request: request, response: response, data: data, error: error, otherInfo:
+                            """
+                            Could not decode error body: \(String(data: data, encoding: .utf8) ?? "data non convertible to string"),
+                            DecodingError: \(decodingError)
+                            response error: \(code)
+                            """
+                        )
+                        return .failure(WKApiBodyError<E>(miscCode: .jsonDecodingError(detail: decodingError), httpCode: code))
                     } catch {
-                        return .failure(WKApiBodyError<E>(code: .unknown)) // should never happens
-                    }
-        
-                    if errorBody == nil {
-                        return .failure(WKApiBodyError<E>(code: code))
+                        return .failure(WKApiBodyError<E>.unknown) // should never happens
                     }
                 }
-                
-                ProcessInfoUtils.debugHttpRequest("Decoded error body -> code: \(code) body: \(String(describing: errorBody))")
-                return .failure(WKApiBodyError<E>(code: code, body: errorBody))
+                printRequest(request: request, response: response, data: data, error: error, otherInfo: "No error body to decode")
+                return .failure(WKApiBodyError<E>(miscCode: .failure, httpCode: code))
             } else {
-                if let data = data {
+                if let data = data, data.count > 0 {
                     do {
                         let obj = try decoder.decode(T.self, from: data)
-                        ProcessInfoUtils.debugHttpRequest("Decoded success body -> code: \(code) body: \(String(describing: obj))")
+                        
+                        printRequest(request: request, response: response, data: data, error: error,
+                                     otherInfo: "Decoded success body: \(String(describing: obj))")
+                        
                         return .success(obj)
                     } catch let decodingError as DecodingError {
-                        ProcessInfoUtils.debugHttpRequest("DecodingError \(decodingError)")
-                        return .failure(WKApiBodyError<E>(decodingError: decodingError))
+                        printRequest(request: request, response: response, data: data, error: error, otherInfo:
+                            """
+                            Could not decode response body: \(String(data: data, encoding: .utf8) ?? "data non convertible to string"),
+                            DecodingError: \(decodingError)
+                            response error: \(code)
+                            """
+                        )
+                        return .failure(WKApiBodyError<E>(decodingError: decodingError, httpCode: code))
                     } catch {
-                        return .failure(WKApiBodyError<E>(code: .unknown)) // should never happens
+                        return .failure(WKApiBodyError<E>.unknown) // should never happens
                     }
                     
                 } else {
-                    ProcessInfoUtils.debugHttpRequest("Missing expected body of type \(T.self)")
-                    return .failure(WKApiBodyError<E>(code: .missingBody))
+                    printRequest(request: request, response: response, data: data, error: error,
+                                 otherInfo: "Missing expected body of type \(T.self)")
+                    return .failure(WKApiBodyError<E>(miscCode: .missingBody, httpCode: code))
                 }
             }
         }
@@ -96,42 +109,51 @@ public extension DataRequest {
     /// - Returns: The `DataRequest` itself.
     @discardableResult public func responseJSONToObject<T: Decodable>(decoder: JSONDecoder = JSONDecoder(), completion: @escaping (WKResult<T>) -> Void) -> Self {
         let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
-            printRequest(request: request, response: response, data: data, error: error)
             
             // If error and no response, the connection failed before communicating with the server
             guard error == nil, let response = response else {
+                printRequest(request: request, response: nil, data: data, error: error, otherInfo: nil)
                 if let urlError = error as? URLError {
                     return .failure(WKApiSimpleError(urlError: urlError))
                 }
                 else {
-                    return .failure(WKApiSimpleError(code: .unknown))
+                    return .failure(WKApiSimpleError.unknown)
                 }
             }
             
             // Otherwise the communication worked. Now let's check the server response.
-            guard let code = WKStatusCode(rawValue: response.statusCode), code.kind != .unknown else {
+            guard let code = HTTPStatusCode(rawValue: response.statusCode), code.kind != .unknown else {
                 WKLog.error("Found unexpected error code \(response.statusCode). Please open issue in WinkKit repo and add that code to enum.")
-                return .failure(WKApiSimpleError(code: .unknown))
+                return .failure(WKApiSimpleError.unknown)
             }
             
             if code.isError {
-                return .failure(WKApiSimpleError(code: code))
+                printRequest(request: request, response: response, data: data, error: error, otherInfo: nil)
+                return .failure(WKApiSimpleError(miscCode: .failure, httpCode: code))
             } else {
-                if let data = data {
+                if let data = data, data.count > 0 {
                     do {
                         let obj = try decoder.decode(T.self, from: data)
-                        ProcessInfoUtils.debugHttpRequest("Decoded success body -> code: \(code) body: \(String(describing: obj))")
+                        printRequest(request: request, response: response, data: data, error: error,
+                                     otherInfo: "Decoded success body: \(String(describing: obj))")
                         return .success(obj)
                     } catch let decodingError as DecodingError {
-                        ProcessInfoUtils.debugHttpRequest("DecodingError \(decodingError)")
-                        return .failure(WKApiSimpleError(decodingError: decodingError))
+                        printRequest(request: request, response: response, data: data, error: error, otherInfo:
+                            """
+                            Could not decode response body: \(String(data: data, encoding: .utf8) ?? "data non convertible to string"),
+                            DecodingError: \(decodingError)
+                            response error: \(code)
+                            """
+                        )
+                        return .failure(WKApiSimpleError(decodingError: decodingError, httpCode: code))
                     } catch {
-                        return .failure(WKApiSimpleError(code: .unknown)) // should never happens
+                        return .failure(WKApiSimpleError.unknown) // should never happens
                     }
                     
                 } else {
-                    ProcessInfoUtils.debugHttpRequest("Missing expected body of type \(T.self)")
-                    return .failure(WKApiSimpleError(code: .missingBody))
+                    printRequest(request: request, response: response, data: data, error: error,
+                                 otherInfo: "Missing expected body of type \(T.self)")
+                    return .failure(WKApiSimpleError(miscCode: .missingBody, httpCode: code))
                 }
             }
         }
@@ -155,26 +177,28 @@ public extension DataRequest {
     /// - Returns: The `DataRequest` itself.
     @discardableResult public func responseJSONToObject(decoder: JSONDecoder = JSONDecoder(), completion: @escaping (WKSimpleResult) -> Void) -> Self {
         let responseSerializer = DataResponseSerializer<Any> { request, response, data, error in
-            printRequest(request: request, response: response, data: data, error: error)
             
             // If error and no response, the connection failed before communicating with the server
             guard error == nil, let response = response else {
+                printRequest(request: request, response: nil, data: data, error: error, otherInfo: nil)
                 if let urlError = error as? URLError {
                     return .failure(WKApiSimpleError(urlError: urlError))
                 }
                 else {
-                    return .failure(WKApiSimpleError(code: .unknown))
+                    return .failure(WKApiSimpleError.unknown)
                 }
             }
             
             // Otherwise the communication worked. Now let's check the server response.
-            guard let code = WKStatusCode(rawValue: response.statusCode), code.kind != .unknown else {
+            guard let code = HTTPStatusCode(rawValue: response.statusCode), code.kind != .unknown else {
                 WKLog.error("Found unexpected error code \(response.statusCode). Please open issue in WinkKit repo and add that code to enum.")
-                return .failure(WKApiSimpleError(code: .unknown))
+                return .failure(WKApiSimpleError.unknown)
             }
             
+            printRequest(request: request, response: response, data: data, error: error, otherInfo: nil)
+            
             if code.isError {
-                return .failure(WKApiSimpleError(code: code))
+                return .failure(WKApiSimpleError(miscCode: .failure, httpCode: code))
             } else {
                 return .success(())
             }
@@ -193,9 +217,9 @@ public extension DataRequest {
 
 }
 
-private func printRequest(file: String = #file, line: Int = #line, column: Int = #column,
-                          request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: Error?) {
+private func printRequest(line: Int = #line, column: Int = #column,
+                          request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: Error?, otherInfo: String?) {
     let dataString = "Body: " + (data != nil && data!.count > 0 ? String(data: data!, encoding: .utf8) ?? "empty" : "empty")
-    ProcessInfoUtils.debugHttpRequest(file: file, line: line, column: column, request ?? "No request", response ?? "No response", dataString, error ?? "No error")
+    ProcessInfoUtils.debugHttpRequest(line: line, column: column, request ?? "No request", response ?? "No response", dataString, error ?? "No connection error", otherInfo ?? "")
     
 }

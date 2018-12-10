@@ -12,19 +12,16 @@ import WinkKit
 class CoreViewController<P>: WKViewController<P> where P: WKGenericViewControllerPresenter {
     
     override class var storyboardName: String {
-        return "Main"
+        return Storyboard.main.name
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("called view did load in \(self)")
+        WKLog.debug("called view did load in \(self)")
     }
     
     func showErrorMessage(of error: Error) {
-        print("show error \(error.localizedDescription)")
+        WKLog.debug("show error \(error.localizedDescription)")
     }
     
-    deinit {
-        print("destrying \(self)")
-    }
 }
