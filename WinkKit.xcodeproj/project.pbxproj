@@ -64,6 +64,10 @@
 		1FB7F321226A68450006DA76 /* TestPresenterWithInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F320226A68450006DA76 /* TestPresenterWithInit.swift */; };
 		1FB7F323226A72EF0006DA76 /* TestViewControllerWithInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F322226A72EF0006DA76 /* TestViewControllerWithInit.swift */; };
 		1FB7F328226A75AD0006DA76 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F327226A75AD0006DA76 /* Globals.swift */; };
+		1FB7F32A226B9D5D0006DA76 /* WKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F329226B9D5D0006DA76 /* WKTabBarController.swift */; };
+		1FB7F331226B9E6C0006DA76 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F32B226B9E020006DA76 /* TestTableViewController.swift */; };
+		1FB7F332226B9E6C0006DA76 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F32D226B9E030006DA76 /* TestCollectionViewController.swift */; };
+		1FB7F333226B9E6C0006DA76 /* TestTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB7F32F226B9E050006DA76 /* TestTabBarController.swift */; };
 		1FE91E761EBB50790056D27D /* WinkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE91E741EBB50790056D27D /* WinkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4736E0C757E718BBECDEC45 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F05869E2199016500C862E6 /* Pods_Tests.framework */; };
 		FFFFF82EFAB0274D5673E38B /* Pods_WinkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEF2ED53E98E905916B620B /* Pods_WinkKit.framework */; };
@@ -151,6 +155,10 @@
 		1FB7F320226A68450006DA76 /* TestPresenterWithInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPresenterWithInit.swift; sourceTree = "<group>"; };
 		1FB7F322226A72EF0006DA76 /* TestViewControllerWithInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewControllerWithInit.swift; sourceTree = "<group>"; };
 		1FB7F327226A75AD0006DA76 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		1FB7F329226B9D5D0006DA76 /* WKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKTabBarController.swift; sourceTree = "<group>"; };
+		1FB7F32B226B9E020006DA76 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		1FB7F32D226B9E030006DA76 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
+		1FB7F32F226B9E050006DA76 /* TestTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTabBarController.swift; sourceTree = "<group>"; };
 		1FE91E711EBB50790056D27D /* WinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91E741EBB50790056D27D /* WinkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinkKit.h; sourceTree = "<group>"; };
 		1FE91E751EBB50790056D27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,16 +277,8 @@
 			children = (
 				1F34AD8522636D5F00371DEC /* WKViewControllerPresenter.swift */,
 				1F34AD8622636D5F00371DEC /* WKPresenter.swift */,
-				1F34AD8722636D5F00371DEC /* WKNetworkObservableViewControllerPresenter */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		1F34AD8722636D5F00371DEC /* WKNetworkObservableViewControllerPresenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WKNetworkObservableViewControllerPresenter;
 			sourceTree = "<group>";
 		};
 		1F34AD8822636D5F00371DEC /* ViewControllers */ = {
@@ -287,6 +287,7 @@
 				1F34AD8922636D5F00371DEC /* WKViewController.swift */,
 				1F34AD8A22636D5F00371DEC /* WKCollectionViewController.swift */,
 				1F34AD8C22636D5F00371DEC /* WKTableViewController.swift */,
+				1FB7F329226B9D5D0006DA76 /* WKTabBarController.swift */,
 				1F34AD8D22636D5F00371DEC /* WKBaseViewController.swift */,
 				1F34AD8B22636D5F00371DEC /* SharedViewControllerMethods.swift */,
 			);
@@ -413,6 +414,9 @@
 			isa = PBXGroup;
 			children = (
 				1F8FB7FD2195D1B100C8F556 /* TestViewController.swift */,
+				1FB7F32B226B9E020006DA76 /* TestTableViewController.swift */,
+				1FB7F32D226B9E030006DA76 /* TestCollectionViewController.swift */,
+				1FB7F32F226B9E050006DA76 /* TestTabBarController.swift */,
 				1F8FB7FE2195D1B100C8F556 /* TestPresenter.swift */,
 			);
 			path = "Test View Controller";
@@ -647,9 +651,12 @@
 				1F9B18C621B6C5E8009BC109 /* TestModels.swift in Sources */,
 				1FB7F323226A72EF0006DA76 /* TestViewControllerWithInit.swift in Sources */,
 				1F8FB7F02194A6C100C8F556 /* IBDesignableTests.swift in Sources */,
+				1FB7F333226B9E6C0006DA76 /* TestTabBarController.swift in Sources */,
 				1F8FB8022195D20800C8F556 /* ViewControllerAndPresenterTests.swift in Sources */,
+				1FB7F331226B9E6C0006DA76 /* TestTableViewController.swift in Sources */,
 				1F9B18C221B6C411009BC109 /* NetworkingTests.swift in Sources */,
 				1FB7F321226A68450006DA76 /* TestPresenterWithInit.swift in Sources */,
+				1FB7F332226B9E6C0006DA76 /* TestCollectionViewController.swift in Sources */,
 				1F8FB8002195D1B100C8F556 /* TestPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,6 +670,7 @@
 				1F34ADCD22636E4700371DEC /* WKVoidBody.swift in Sources */,
 				1F34ADC622636D5F00371DEC /* WKCollectionView.swift in Sources */,
 				1F34ADAB22636D5F00371DEC /* MimeType.swift in Sources */,
+				1FB7F32A226B9D5D0006DA76 /* WKTabBarController.swift in Sources */,
 				1F34ADC822636D5F00371DEC /* WKCollectionViewInfiniteDataSourceDelegate.swift in Sources */,
 				1F34ADC922636D5F00371DEC /* WKCollectionViewCell.swift in Sources */,
 				1F34ADD122636EAE00371DEC /* WKSimpleResult.swift in Sources */,
