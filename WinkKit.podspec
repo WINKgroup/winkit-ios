@@ -8,6 +8,8 @@
 
 Pod::Spec.new do |s|
 
+  s.swift_version = '5.0'
+
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  These will help people to find your library, and whilst it
