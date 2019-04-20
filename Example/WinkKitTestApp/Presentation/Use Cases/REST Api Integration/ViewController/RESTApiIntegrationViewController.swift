@@ -42,6 +42,8 @@ class RESTApiIntegrationViewController: CoreViewController<RESTApiIntegrationPre
         view.endEditing(true)
         presenter.loginDidTap()
     }
+    
+    
 }
 
 extension RESTApiIntegrationViewController: RESTApiIntegrationView {
@@ -62,7 +64,10 @@ extension RESTApiIntegrationViewController: RESTApiIntegrationView {
     
     func show(error: String) {
         let a = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        a.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        a.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            WKNavigator.shared.show(viewControllerType: IBDesignableViewController.self, animated: true)
+        }))
         present(a, animated: true, completion: nil)
     }
 }
+

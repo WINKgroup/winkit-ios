@@ -11,10 +11,16 @@ import XCTest
 class ViewControllerAndPresenterTests: XCTestCase {
     
     var vc: TestViewController!
+    var vc2: TestViewControllerWithInit!
     
     override func setUp() {
+        guard vc == nil else { return }
         vc = TestViewController.instantiate(bundle: Bundle(for: type(of: self)))
         vc.loadViewIfNeeded()
+    }
+    
+    func testInitWithObject() {
+        vc2 = TestViewControllerWithInit.instantiate(initObject: TestInitObject(), bundle: Bundle(for: type(of: self)))
     }
     
     func testPresenterNotNil() {
@@ -22,7 +28,6 @@ class ViewControllerAndPresenterTests: XCTestCase {
     }
     
     func testViewDidLoad() {
-        // view did load is automatically called after `loadViewIfNeeded`, so no need to call viewDidLoad manually
         XCTAssert(vc.presenter.isViewDidLoadCalled)
     }
     
@@ -49,6 +54,5 @@ class ViewControllerAndPresenterTests: XCTestCase {
         vc.viewDidDisappear(true)
         XCTAssert(vc.presenter.isViewDidDisappearCalled)
     }
-
 
 }

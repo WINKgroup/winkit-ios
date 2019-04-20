@@ -164,7 +164,7 @@ class NetworkingTests: XCTestCase {
         makeRequestForErrorTest(request: request) { e in
             switch e.miscCode {
             case .connectionError(let detail):
-                XCTAssertEqual(detail.code, URLError.Code.timedOut)
+                XCTAssertEqual(detail.code, .timedOut)
             default:
                 XCTFail("Wrong error code")
             }

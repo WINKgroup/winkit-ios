@@ -15,6 +15,12 @@ protocol RESTApiIntegrationView: WKPresentableView {
     func show(error: String)
 }
 
+struct RESTApiInit {
+    
+    let userService = UserService()
+    
+}
+
 /// The presenter that will handle all logic of the view.
 class RESTApiIntegrationPresenter: WKGenericViewControllerPresenter {
     
@@ -25,7 +31,7 @@ class RESTApiIntegrationPresenter: WKGenericViewControllerPresenter {
     // The view associated to this presenter.
     weak var view: RESTApiIntegrationView?
 
-    required init() {}
+    required init(with object: Void) {}
     
     func loginDidTap() {
         view?.showLoading(true)
