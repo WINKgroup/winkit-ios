@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WinkKit"
-  s.version      = "1.0.2"
+  s.version      = "1.5"
   s.summary      = "Base UIKit classes with more features and MVP implementation."
 
   # This description is used to generate tags and improve search results.
@@ -66,7 +66,6 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
   s.platform     = :ios, "10.0"
 
   #  When using multiple platforms
@@ -119,9 +118,7 @@ Pod::Spec.new do |s|
   #
 
   s.frameworks  = "UIKit", "Foundation"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
 
-  # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
 
@@ -134,11 +131,8 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "Alamofire", "~> 4.5"
-  s.dependency "AlamofireImage", "~> 3.2"
-  s.dependency "Argo"
-  s.dependency "Runes"
-  s.dependency "Curry"
+  s.dependency "Alamofire", "~> 4.7"
+  s.dependency "AlamofireImage", "~> 3.4.1"
   s.dependency "DateTools"
 
 

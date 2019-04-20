@@ -1,6 +1,6 @@
 {
   "name": "WinkKit",
-  "version": "1.0.2",
+  "version": "1.5",
   "summary": "Base UIKit classes with more features and MVP implementation.",
   "description": "This framework have a set of UIKit subclasses to improve their implementation; \nit has been written to create a guideline for Wink's projects and to have some common\nbehaviours: for example `UIView` is sublcassed to provide more control in InterfaceBuilder.\nMorover, it follows a kind of MVP/Viper architecture implementation.",
   "homepage": "https://github.com/WINKgroup/WinkKit",
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/WINKgroup/WinkKit.git",
-    "tag": "1.0.2"
+    "tag": "1.5"
   },
   "source_files": "WinkKit/**/*.swift",
   "frameworks": [
@@ -25,19 +25,10 @@
   ],
   "dependencies": {
     "Alamofire": [
-      "~> 4.5"
+      "~> 4.7"
     ],
     "AlamofireImage": [
-      "~> 3.2"
-    ],
-    "Argo": [
-
-    ],
-    "Runes": [
-
-    ],
-    "Curry": [
-
+      "~> 3.4.1"
     ],
     "DateTools": [
 

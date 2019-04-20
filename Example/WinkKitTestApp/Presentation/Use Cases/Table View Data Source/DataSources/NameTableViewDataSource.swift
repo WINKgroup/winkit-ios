@@ -39,7 +39,7 @@ class NameTableViewDataSource: WKTableViewInfiniteDataSourceDelegate<String> {
 public class CustomSpinnerView: WKLoadableUIView {
     
     let label = UILabel()
-    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     
     public override init(frame: CGRect) {
         super.init(frame: frame)

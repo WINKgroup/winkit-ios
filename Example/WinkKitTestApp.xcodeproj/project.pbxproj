@@ -33,7 +33,7 @@
 		1FAE11BE21BAD04300498D4B /* IBDesignableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE11BD21BAD04300498D4B /* IBDesignableViewController.swift */; };
 		1FBA10F22146D2B3002DED19 /* TableViewExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA10F02146D2B3002DED19 /* TableViewExamplePresenter.swift */; };
 		1FBA10F42146D2CF002DED19 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA10F32146D2CF002DED19 /* Storyboards.swift */; };
-		8F551C5162B65E701783A1DD /* Pods_WinkKitTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397EDF7FFAD3C4279F24D309 /* Pods_WinkKitTestApp.framework */; };
+		796169411D765084EF479985 /* Pods_WinkKitTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713AD130FFD52E1B2BF34FE1 /* Pods_WinkKitTestApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,9 +65,9 @@
 		1FBA10F32146D2CF002DED19 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1FE91E881EBB6A8C0056D27D /* WinkKitTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinkKitTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91E971EBB6A8C0056D27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		397EDF7FFAD3C4279F24D309 /* Pods_WinkKitTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinkKitTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F44B841ACE9F1122CA85D6B /* Pods-WinkKitTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKitTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp.release.xcconfig"; sourceTree = "<group>"; };
-		E1EF6083C348F5F9B4EFBC50 /* Pods-WinkKitTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKitTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3C64A7FA069CE49352EBAD91 /* Pods-WinkKitTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKitTestApp.release.xcconfig"; path = "Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		713AD130FFD52E1B2BF34FE1 /* Pods_WinkKitTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinkKitTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B993745996D229D4903C4C1F /* Pods-WinkKitTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinkKitTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F551C5162B65E701783A1DD /* Pods_WinkKitTestApp.framework in Frameworks */,
+				796169411D765084EF479985 /* Pods_WinkKitTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +309,8 @@
 			children = (
 				1FE91E8A1EBB6A8C0056D27D /* WinkKitTestApp */,
 				1FE91E891EBB6A8C0056D27D /* Products */,
-				77256429DFB07BF2D32014F3 /* Pods */,
-				3629AC5132E1948B456B6973 /* Frameworks */,
+				9E0771BAB401FB1C28B96335 /* Pods */,
+				9806ECA3DD4D19F669FA52BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -334,21 +334,22 @@
 			path = WinkKitTestApp;
 			sourceTree = "<group>";
 		};
-		3629AC5132E1948B456B6973 /* Frameworks */ = {
+		9806ECA3DD4D19F669FA52BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				397EDF7FFAD3C4279F24D309 /* Pods_WinkKitTestApp.framework */,
+				713AD130FFD52E1B2BF34FE1 /* Pods_WinkKitTestApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		77256429DFB07BF2D32014F3 /* Pods */ = {
+		9E0771BAB401FB1C28B96335 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1EF6083C348F5F9B4EFBC50 /* Pods-WinkKitTestApp.debug.xcconfig */,
-				3F44B841ACE9F1122CA85D6B /* Pods-WinkKitTestApp.release.xcconfig */,
+				B993745996D229D4903C4C1F /* Pods-WinkKitTestApp.debug.xcconfig */,
+				3C64A7FA069CE49352EBAD91 /* Pods-WinkKitTestApp.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,11 +359,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FE91E9A1EBB6A8C0056D27D /* Build configuration list for PBXNativeTarget "WinkKitTestApp" */;
 			buildPhases = (
-				9A42B5869D33836E8B2C32AB /* [CP] Check Pods Manifest.lock */,
+				91601F3F984744B23A09CDE3 /* [CP] Check Pods Manifest.lock */,
 				1FE91E841EBB6A8C0056D27D /* Sources */,
 				1FE91E851EBB6A8C0056D27D /* Frameworks */,
 				1FE91E861EBB6A8C0056D27D /* Resources */,
-				F2DFFFEE244628EC8E23B1E1 /* [CP] Embed Pods Frameworks */,
+				A2AB4B334EBAD73482F6E9A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +396,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -424,16 +426,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9A42B5869D33836E8B2C32AB /* [CP] Check Pods Manifest.lock */ = {
+		91601F3F984744B23A09CDE3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-WinkKitTestApp-checkManifestLockResult.txt",
 			);
@@ -442,34 +448,32 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2DFFFEE244628EC8E23B1E1 /* [CP] Embed Pods Frameworks */ = {
+		A2AB4B334EBAD73482F6E9A5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Argo/Argo.framework",
-				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
-				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
 				"${BUILT_PRODUCTS_DIR}/WinkKit/WinkKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Runes.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WinkKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WinkKitTestApp/Pods-WinkKitTestApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -624,7 +628,7 @@
 		};
 		1FE91E9B1EBB6A8C0056D27D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1EF6083C348F5F9B4EFBC50 /* Pods-WinkKitTestApp.debug.xcconfig */;
+			baseConfigurationReference = B993745996D229D4903C4C1F /* Pods-WinkKitTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W532XC988Y;
@@ -633,13 +637,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = by.wink.WinkKitTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		1FE91E9C1EBB6A8C0056D27D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F44B841ACE9F1122CA85D6B /* Pods-WinkKitTestApp.release.xcconfig */;
+			baseConfigurationReference = 3C64A7FA069CE49352EBAD91 /* Pods-WinkKitTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W532XC988Y;
@@ -648,7 +652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = by.wink.WinkKitTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

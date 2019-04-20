@@ -23,9 +23,7 @@ class CollectionViewPresenter: WKGenericViewControllerPresenter {
     // The view associated to this presenter.
     weak var view: CollectionViewView?
 
-    required init() {
-        // Required empty initializer, put here other init stuff
-    }
+    required init(with object: Void) {}
     
     func viewDidLoad() {
         view?.show(names: (i...(i + 99)).map{ "\($0)"})

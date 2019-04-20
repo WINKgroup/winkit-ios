@@ -23,10 +23,8 @@ class TableViewExamplePresenter: WKGenericViewControllerPresenter {
     // The view associated to this presenter.
     weak var view: TableViewExampleView?
 
-    required init() {
-        // Required empty initializer, put here other init stuff
-    }
-    
+    required init(with object: Void) {}
+
     func viewDidLoad() {
         view?.show(names: (i...(i + 99)).map{ "\($0)"})
         i += 100
@@ -34,7 +32,7 @@ class TableViewExamplePresenter: WKGenericViewControllerPresenter {
     
     func addMore() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.view?.addMoreNames(names: (self.i...(self.i + 99)).map{ "\($0)"})
+            self.view?.addMoreNames(names: (self.i...(self.i + 99)).map { "\($0)" })
             self.i += 100
         }
     }
