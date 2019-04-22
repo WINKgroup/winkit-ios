@@ -8,6 +8,8 @@
 
 Pod::Spec.new do |s|
 
+  s.swift_version = '5.0'
+
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  These will help people to find your library, and whilst it
@@ -16,7 +18,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WinkKit"
-  s.version      = "1.5"
+  s.version      = `git describe --abbrev=0 --tags`
   s.summary      = "Base UIKit classes with more features and MVP implementation."
 
   # This description is used to generate tags and improve search results.
