@@ -78,7 +78,7 @@ open class WKImageView: UIImageView {
     }
     
     deinit {
-        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
+        removeCornerRadiusObserver()
     }
     
 }

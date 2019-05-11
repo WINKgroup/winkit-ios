@@ -35,6 +35,7 @@ open class WKLabel: UILabel {
     }
     
     deinit {
-        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
+        removeCornerRadiusObserver()
     }
+    
 }

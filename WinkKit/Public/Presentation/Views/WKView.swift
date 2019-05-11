@@ -467,30 +467,31 @@ open class WKView: UIView {
     }
     
     deinit {
-        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
+        removeCornerRadiusObserver()
     }
+    
 }
-
-private var cornerRadiusChangeContext: String = "WinkKit.cornerRadiusObserver"
 
 extension UIView {
     
-    var cornerRadiusKeyPath: String {
-        return #keyPath(layer.cornerRadius)
+    static var cornerRadiusObservers = [Int: NSKeyValueObservation]()
+    
+    var cornerRadiusObserver: NSKeyValueObservation? {
+        return UIView.cornerRadiusObservers[hashValue]
     }
     
     func addCornerRadiusObserver() {
-        addObserver(self, forKeyPath: cornerRadiusKeyPath, options: .new, context: &cornerRadiusChangeContext)
+        UIView.cornerRadiusObservers[hashValue] = observe(\.layer.cornerRadius) { [weak self] (_, change) in
+            guard let aliveSelf = self else { return }
+            if aliveSelf.layer.cornerRadius != aliveSelf.bounds.width / 2 {
+                aliveSelf.isRounded = false
+            }
+        }
     }
     
-    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if context == &cornerRadiusChangeContext && keyPath == cornerRadiusKeyPath {
-            if layer.cornerRadius != bounds.width / 2 {
-                isRounded = false
-            }
-        } else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
+    func removeCornerRadiusObserver() {
+        print("removeCornerRadiusObserver in \(self)")
+        UIView.cornerRadiusObservers[hashValue] = nil
     }
     
 }
