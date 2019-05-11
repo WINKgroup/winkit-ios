@@ -23,9 +23,9 @@ class TestPresenterWithInit: WKGenericViewControllerPresenter {
     isViewWillDisappearCalled = false,
     isViewDidDisappearCalled = false,
     isViewDidDestroyCalled = false
-    let testInitObject: TestInitObject
+    let testInitObject: TestInitObject?
     
-    required init(with object: TestInitObject) {
+    required init(with object: TestInitObject?) {
         self.testInitObject = object
     }
     

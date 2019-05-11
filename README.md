@@ -7,10 +7,11 @@ WinkKit
 
 [<img src="https://wink.by/images/wink-readme-badge.svg" height=40>](https://developer.wink.by)
 [![Platforms](https://img.shields.io/badge/platform-iOS-lightgray.svg?logo=apple&longCache=true&style=popout)](https://developer.apple.com/ios)
-[![Swift Version](https://img.shields.io/badge/swift-4.2-orange.svg?logo=swift&longCache=true&style=popout)](https://developer.apple.com/swift)
-[![Xcode](https://img.shields.io/badge/xcode-10-blue.svg?logo=xcode&logoColor=0095D5&colorB=0095D5&longCache=true&style=popout)](https://developer.apple.com/xcode)
+[![Swift Version](https://img.shields.io/badge/swift-5.0-orange.svg?logo=swift&longCache=true&style=popout)](https://developer.apple.com/swift)
+[![Xcode](https://img.shields.io/badge/xcode-10.2-blue.svg?logo=xcode&logoColor=0095D5&colorB=0095D5&longCache=true&style=popout)](https://developer.apple.com/xcode)
 
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/WinkKit.svg)](https://cocoapods.org/pods/WinkKit)
+[![Build Status](https://app.bitrise.io/app/478d6802e8c2d432/status.svg?token=m-U8kE3akh6mGw4k3A9i-g&branch=master)](https://app.bitrise.io/app/478d6802e8c2d432)
 [![License](https://img.shields.io/cocoapods/l/WinkKit.svg?style=flat)](./LICENSE)
 
 
@@ -30,7 +31,7 @@ Check the [app example](./Example).
 
 ### Prerequisites
 
-You need [Xcode](https://developer.apple.com/xcode/), Swift 4 and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) installed.
+You need [Xcode 10.2](https://developer.apple.com/xcode/), Swift 5 and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) installed.
 
 ### Add project/file templates to Xcode (Optional but recommended)
 
@@ -79,9 +80,6 @@ end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-            if target.name === 'AlamofireImage'
-                config.build_settings['SWIFT_VERSION'] = '3.3' # set swift 3.3 on AlamofireImage
-            end
             config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
         end
     end
@@ -145,11 +143,11 @@ It's the layer that handles all data stuff, such as http calls, cache uploading/
 
 WinkKit provides common view classes that have more `@IBDesignable` in InterfaceBuilder.
 
-- WKView
-- WKImageView
-- WKButton
-- WKLabel
-- WKTextView
+- `WKView`
+- `WKImageView`
+- `WKButton`
+- `WKLabel`
+- `WKTextView`
 
 Every class extends the `UIKit` one; for example `WKView` extends `UIView`. To use these classes in InterfaceBuilder, drag the object from the Object library and make it extends the desired WinkKit view.
 For example to use a `WKButton`, drag a Button from Object library, then go to Identity Inspector and set the custom class:
@@ -164,7 +162,14 @@ Then you can customize the button from Attributes inspector:
 
 ## Using ViewControllers and Presenters <a name="Using_ViewControllers"></a>
 
-In a WinkKit app every view controller should extends the `WKViewController<P>` (or `WKTableViewController<P>` or `WKCollectionViewContrller<P>`, they have all same behaviours).
+In a WinkKit app every view controller should extends one of:
+
+- `WKViewController<P>`
+- `WKTableViewController<P>`
+- `WKCollectionViewContrller<P>`
+- `WKTabBarContrller<P>`
+
+They have all same behaviours.
 
 A `WKViewController` wants a subclass of `WKGenericViewControllerPresenter` (which is a protocol that extends the base presenter protocol `WKPresenter`) because the view controller life-cycle is bound to this kind of presenter. A typical implementation of home page is
 
@@ -184,26 +189,37 @@ extension HomeViewController: LoginView {
 // HomePresenter.swift
 
 // Define what the view can do
-protocol LoginView: PresentableView {
+protocol LoginView: WKPresentableView {
 
 }
 
 class HomePresenter: WKGenericViewControllerPresenter {
-
-    typealias View = LoginView // need to tell the protocol which is the view handled
     
     weak var view: LoginView? // keep view weak to avoid retain-cycle since view controller holds a reference to this presenter
     
-    required init() {} // framework wants empty init
+    required init(initObject: Void) {}
     
+    func viewDidLoad() {
+    	// called automatically by the view controller that owns this presenter
+    }
     // do all logic here, such as use a Service to fetch data and tell the view to update
 }
 
 ```
 **Notice that you don't need to call any method to bind the view controller and the presenter, everything is automatically done by the framework!** 🎉🎉🎉
 
-HomePresenter and HomeViewController are two different files. You can use the file template to create quickly this structure 😉.
+`HomePresenter` and `HomeViewController` are two different files. You can use the file template to create quickly this structure 😉.
 
+### Instantiating a view controller
+To instantiate all of this stuff you can just call the class method `WKViewController.instantiate(initObject:bundle:)` or `WKViewController.instantiate(bundle:)` (depending on the `initObject` type of your presenter: if it's `Void` you can skip it otherwise you must pass an object).
+
+```swift
+// without an initObject
+let homeViewController = HomeViewController.instantiate() // main bundle by default
+
+// with an initObject
+let detailViewController = RecipeDetailViewController.instantiate(initObject: recipeID)
+```
 
 ## Using Table Views and Collection Views <a name="Using_TabColViews"></a>
 
@@ -243,9 +259,7 @@ protocol ItemView: PresentableView {
 
 /// The presenter that will handle all logic of the view.
 class ItemPresenter: WKPresenter {
-    
-    typealias View = ItemView
-    
+        
     // The view associated to this presenter. Keep weak to avoid retain-cycle
     weak var view: ItemView?
 	
