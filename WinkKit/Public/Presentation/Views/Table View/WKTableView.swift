@@ -36,9 +36,9 @@ public extension UITableView {
 
 }
 
-
 /// A `WKTableView` is basically a `tableView` with some common behaviours already implemented,
 /// like pull to refresh.
+@available(*, deprecated, message: "use plain UITableView instead")
 open class WKTableView: UITableView {
     
     // MARK: - Properties
@@ -49,7 +49,7 @@ open class WKTableView: UITableView {
         return pullToRefreshHandling != nil
     }
     
-    fileprivate var pullToRefreshHandling: WKPullToRefreshClosure?
+    private var pullToRefreshHandling: WKPullToRefreshClosure?
     
     // MARK: - Methods
     
@@ -79,7 +79,5 @@ open class WKTableView: UITableView {
     @objc private func refreshControlDidChange(_ sender: UIRefreshControl) {
         pullToRefreshHandling?(sender)
     }
-    
-    
     
 }

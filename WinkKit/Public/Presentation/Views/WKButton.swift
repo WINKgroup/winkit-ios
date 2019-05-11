@@ -35,6 +35,7 @@ open class WKButton: UIButton {
     }
     
     deinit {
-        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
+        removeCornerRadiusObserver()
     }
+    
 }

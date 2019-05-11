@@ -72,6 +72,7 @@ class IBDesignableTests: XCTestCase {
     }
     
     func testIsRounded() {
+        XCTAssertNotNil(view.cornerRadiusObserver)
         view.isRounded = true // if set to true, the view must have corner radius = width / 2
         XCTAssertEqual(view.layer.cornerRadius, view.bounds.width / 2)
         
@@ -80,7 +81,6 @@ class IBDesignableTests: XCTestCase {
         
         view.layer.cornerRadius = view.bounds.width / 2 // now, it doesn't matter that the corner radius is equals to to the view width, it's only a specific case. isRounded must remain false
         XCTAssert(!view.isRounded)
-        
     }
     
     func testShadowOffset() {
@@ -149,6 +149,32 @@ class IBDesignableTests: XCTestCase {
         
         view.gradientColorsCount = -121 // test if < 0, return 0
         XCTAssertNil(view.gradientLayer)
+    }
+    
+    func testCornerRadiusObservers() {
+        var views: [UIView]? = [
+            WKLabel(frame: .zero),
+            WKTextView(frame: .zero),
+            WKImageView(frame: .zero),
+            WKButton(frame: .zero),
+            WKLabel(frame: .zero),
+            WKTextView(frame: .zero),
+            WKImageView(frame: .zero),
+            WKButton(frame: .zero),
+            WKLabel(frame: .zero),
+            WKTextView(frame: .zero),
+            WKImageView(frame: .zero),
+            WKButton(frame: .zero)
+        ]
+        let hashes = views!.map { $0.hashValue }
+        hashes.forEach {
+            print($0)
+            XCTAssertNotNil(UIView.cornerRadiusObservers[$0])
+        }
+        views = nil
+        hashes.forEach {
+            XCTAssertNil(UIView.cornerRadiusObservers[$0])
+        }
     }
 
 }

@@ -35,6 +35,7 @@ open class WKTextField: UITextField {
     }
     
     deinit {
-        removeObserver(self, forKeyPath: cornerRadiusKeyPath)
+        removeCornerRadiusObserver()
     }
+    
 }

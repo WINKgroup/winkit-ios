@@ -303,14 +303,14 @@
 				1F34AD9222636D5F00371DEC /* WKImageView.swift */,
 				1F34AD9322636D5F00371DEC /* WKButton.swift */,
 				1F34AD9422636D5F00371DEC /* WKSpinnerCell.swift */,
-				1F34AD9522636D5F00371DEC /* WKTableView */,
+				1F34AD9522636D5F00371DEC /* Table View */,
 				1F34AD9A22636D5F00371DEC /* WKView.swift */,
-				1F34AD9B22636D5F00371DEC /* WKCollectionView */,
+				1F34AD9B22636D5F00371DEC /* Collection View */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1F34AD9522636D5F00371DEC /* WKTableView */ = {
+		1F34AD9522636D5F00371DEC /* Table View */ = {
 			isa = PBXGroup;
 			children = (
 				1F34AD9622636D5F00371DEC /* WKTableView.swift */,
@@ -318,10 +318,10 @@
 				1F34AD9822636D5F00371DEC /* WKTableViewCell.swift */,
 				1F34AD9922636D5F00371DEC /* WKTableViewInfiniteDataSourceDelegate.swift */,
 			);
-			path = WKTableView;
+			path = "Table View";
 			sourceTree = "<group>";
 		};
-		1F34AD9B22636D5F00371DEC /* WKCollectionView */ = {
+		1F34AD9B22636D5F00371DEC /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
 				1F34AD9C22636D5F00371DEC /* WKCollectionView.swift */,
@@ -329,7 +329,7 @@
 				1F34AD9E22636D5F00371DEC /* WKCollectionViewInfiniteDataSourceDelegate.swift */,
 				1F34AD9F22636D5F00371DEC /* WKCollectionViewCell.swift */,
 			);
-			path = WKCollectionView;
+			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		1F34ADA022636D5F00371DEC /* Helpers */ = {

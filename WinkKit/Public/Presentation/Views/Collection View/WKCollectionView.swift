@@ -34,6 +34,7 @@ public extension UICollectionView {
 
 /// A `WKCollectionView` is basically a `collectionView` with some common behaviours already implemented,
 /// like pull to refresh.
+@available(*, deprecated, message: "use plain UICollectionView instead")
 open class WKCollectionView: UICollectionView {
     
     // MARK: - Properties
@@ -44,7 +45,7 @@ open class WKCollectionView: UICollectionView {
         return pullToRefreshHandling != nil
     }
     
-    fileprivate var pullToRefreshHandling: WKPullToRefreshClosure?
+    private var pullToRefreshHandling: WKPullToRefreshClosure?
     
     // MARK: - Methods
     

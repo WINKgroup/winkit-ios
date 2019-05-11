@@ -34,6 +34,10 @@ class ViewControllerAndPresenterTests: XCTestCase {
         tabBarC.loadViewIfNeeded()
     }
     
+    func testInitWithNilInitObject() {
+        vc2 = TestViewControllerWithInit.instantiate(initObject: nil, bundle: Bundle(for: type(of: self)))
+    }
+    
     func testInitWithObject() {
         vc2 = TestViewControllerWithInit.instantiate(initObject: TestInitObject(), bundle: Bundle(for: type(of: self)))
     }
