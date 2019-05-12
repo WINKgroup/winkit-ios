@@ -14,28 +14,29 @@ import Foundation
 ///
 open class WKTextField: UITextField {
     
-    // MARK: Initializers
+    // MARK: - Initializers
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        addCornerRadiusObserver()
+        WKViewLifecycleImplementations.initWithFrame(in: self)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        addCornerRadiusObserver()
+        WKViewLifecycleImplementations.initWithCoder(in: self)
     }
     
-    // MARK: UIView Lifecycle
+    // MARK: - Lifecycle
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        roundLayerIfNeeded()
-        updateShadowIfNeeded()
+        WKViewLifecycleImplementations.layoutSubviews(in: self)
     }
     
+    // MARK: - deinit
+    
     deinit {
-        removeCornerRadiusObserver()
+        WKViewLifecycleImplementations.deinitIn(view: self)
     }
     
 }
