@@ -55,6 +55,7 @@
 		1F34ADD622636F6100371DEC /* WKMiscCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34ADD522636F6100371DEC /* WKMiscCode.swift */; };
 		1F34ADD92263718A00371DEC /* WKApiSimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34ADD82263718A00371DEC /* WKApiSimpleError.swift */; };
 		1F34ADDB226371B300371DEC /* WKApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34ADDA226371B300371DEC /* WKApiError.swift */; };
+		1F431BE6228845FB008D802C /* WKViewLifecycleImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F431BE5228845FB008D802C /* WKViewLifecycleImplementations.swift */; };
 		1F8FB7F02194A6C100C8F556 /* IBDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB7EF2194A6C100C8F556 /* IBDesignableTests.swift */; };
 		1F8FB7FF2195D1B100C8F556 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB7FD2195D1B100C8F556 /* TestViewController.swift */; };
 		1F8FB8002195D1B100C8F556 /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB7FE2195D1B100C8F556 /* TestPresenter.swift */; };
@@ -143,6 +144,7 @@
 		1F34ADD522636F6100371DEC /* WKMiscCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKMiscCode.swift; sourceTree = "<group>"; };
 		1F34ADD82263718A00371DEC /* WKApiSimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKApiSimpleError.swift; sourceTree = "<group>"; };
 		1F34ADDA226371B300371DEC /* WKApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKApiError.swift; sourceTree = "<group>"; };
+		1F431BE5228845FB008D802C /* WKViewLifecycleImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewLifecycleImplementations.swift; sourceTree = "<group>"; };
 		1F8FB7ED2194A6C100C8F556 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8FB7EF2194A6C100C8F556 /* IBDesignableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTests.swift; sourceTree = "<group>"; };
 		1F8FB7F12194A6C100C8F556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				1F34AD9522636D5F00371DEC /* Table View */,
 				1F34AD9A22636D5F00371DEC /* WKView.swift */,
 				1F34AD9B22636D5F00371DEC /* Collection View */,
+				1F431BE5228845FB008D802C /* WKViewLifecycleImplementations.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				1F34ADBF22636D5F00371DEC /* WKButton.swift in Sources */,
 				1F34ADD422636F0C00371DEC /* WKCode.swift in Sources */,
 				1F34ADB422636D5F00371DEC /* WKViewControllerPresenter.swift in Sources */,
+				1F431BE6228845FB008D802C /* WKViewLifecycleImplementations.swift in Sources */,
 				1F34ADCF22636E6D00371DEC /* WKFullResult.swift in Sources */,
 				1F34ADC122636D5F00371DEC /* WKTableView.swift in Sources */,
 				1F34ADC422636D5F00371DEC /* WKTableViewInfiniteDataSourceDelegate.swift in Sources */,

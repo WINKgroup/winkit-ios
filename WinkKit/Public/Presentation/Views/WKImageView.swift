@@ -10,17 +10,17 @@ import UIKit
 
 @IBDesignable
 open class WKImageView: UIImageView {
-
-    // MARK: Initializers
+    
+    // MARK: - Initializers
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        addCornerRadiusObserver()
+        WKViewLifecycleImplementations.initWithFrame(in: self)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        addCornerRadiusObserver()
+        WKViewLifecycleImplementations.initWithCoder(in: self)
     }
     
     public override init(image: UIImage?) {
@@ -32,16 +32,13 @@ open class WKImageView: UIImageView {
         super.init(image: image, highlightedImage: highlightedImage)
         addCornerRadiusObserver()
     }
-
     
-    // MARK: UIView Lifecycle
+    // MARK: - Lifecycle
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        roundLayerIfNeeded()
-        updateShadowIfNeeded()
+        WKViewLifecycleImplementations.layoutSubviews(in: self)
     }
-    
     
     // MARK: Overriden `WKPropertiesInspectable` methods
     
@@ -58,27 +55,18 @@ open class WKImageView: UIImageView {
     // MARK: - Private Methods
     
     private func roundImage() {
-        if let image = self.image {
-            
-            // Begin a new image that will be the new image with the rounded corners
-            // (here with the size of an UIImageView)
-            UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
-            
-            // Add a clip before drawing anything, in the shape of an rounded rect
-            UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).addClip()
-            
-            image.draw(in: bounds)
-            
-            // Get the image, here setting the UIImageView image
-            self.image = UIGraphicsGetImageFromCurrentImageContext()
-            
-            // Lets forget about that we were drawing
-            UIGraphicsEndImageContext()
-        }
+        guard let image = image else { return }
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
+        UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).addClip()
+        image.draw(in: bounds)
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
+
+    // MARK: - deinit
     
     deinit {
-        removeCornerRadiusObserver()
+        WKViewLifecycleImplementations.deinitIn(view: self)
     }
     
 }
